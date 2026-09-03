@@ -18,7 +18,7 @@ pub use energy::EnergyLedgerState;
 pub use xi_constitution::{CslOperators, LawfulRecursionState};
 pub use lambda_proof::LambdaIdentityCommitment;
 pub use hundian_codebook::CodebookState;
-pub use civic_spec::CivicNodeState;
+pub use civic_spec::{CivicNodeState, SovereigntyNodeState, DunaOperatingWrapper};
 pub use social_physics::SocialPhysicsEngine;
 pub use buurtzorg::BuurtzorgTeamEngine;
 pub use trifecta_protocol::TrifectaGovernanceEngine;

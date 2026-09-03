@@ -1,10 +1,10 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["2e05840aa204abd9.olean"],
+ {"o": ["62efe58392db046d.olean"],
   "m": false,
-  "i": "4e65417a609ed569.ilean",
-  "c": "32ad7fc6a427bdf7.c"},
+  "i": "45c71085ddb0a01f.ilean",
+  "c": "8bc3bcb284a6eb0f.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/lean /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/SocialPhysicsParts.lean -o /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/SocialPhysicsParts.olean -i /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/SocialPhysicsParts.ilean -c /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/SocialPhysicsParts.c --setup /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/SocialPhysicsParts.setup.json --json",
@@ -15,7 +15,10 @@
      [["@Echonomics:extraDep", "00000000000006bb"]]],
     ["imports",
      [["Echonomics.Core transitive imports (legacy)", "00000000000006bb"],
-      ["Echonomics.Core:importAllArts", "74c47d4f1dfe6424"]]]]],
+      ["Echonomics.Core:importAllArts", "74c47d4f1dfe6424"],
+      ["Echonomics.HundianOccupancy transitive imports (legacy)",
+       "ef3ff9c007dbdf64"],
+      ["Echonomics.HundianOccupancy:importAllArts", "bcb0c4e41718a974"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -24,10 +27,10 @@
   ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
    "3eca9d16ab6c877d"],
   ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/SocialPhysicsParts.lean",
-   "dbf791d21e276f84"],
+   "a1c5ea013c086236"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: Echonomics.SocialPhysicsParts", "dcb184a3e1669942"],
   ["Package.id?: (some Echonomics)", "d80dab19a23b5a78"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "8133a310e58ddf52"}
+ "depHash": "effd79efbd213749"}

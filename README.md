@@ -14,18 +14,18 @@
 
 | ADR ID | Specification Title | Status | Primary Formal Invariant |
 | :--- | :--- | :---: | :--- |
-| **`ADR-0001`** | Hundian Occupancy Governance & Pauli Gate Priority | Proposed | Pauli key $K = (\text{role}, \text{slot}, \text{period})$, G0–G5 fail-closed gates |
-| **`ADR-0002`** | Citizen Gardens DUNA Constitutional Gate | Proposed | DUNA quorum threshold ($\text{active} \times 100 \ge \text{total} \times \text{thresh}$) |
-| **`ADR-0003`** | UOR Healthcare Nexus & L0 Prime Geometry | Proposed | Prime-factor sum conservation bound ($\sum p_i \le \text{bound}$) |
-| **`ADR-0004`** | Period-0 Energy Ledger Schema & Ground State | Proposed | Separated ledgers $V_{\text{pair}}, V_{\text{nuc}}$, total energy $E = V_{\text{pair}} - V_{\text{nuc}}$ |
-| **`ADR-0005`** | Ξ-Constitution & Ξ-License Integration | Proposed | Conscious Sovereignty Layer $(\mathcal{N}, \mathcal{B}, \mathcal{S})$ and drift limit $\delta(t) \le \varepsilon(t)$ |
-| **`ADR-0006`** | Lambda-Proof Smart Contracts & ZK Circuits | Proposed | Local EVM smart contracts & Circom ZK proof receipts |
-| **`ADR-0007`** | Hundian Occupancy Codebook v1 Specification | Proposed | Pauli key allocation & derived multiplicity $M = n_{\text{unpaired}} + 1$ |
-| **`ADR-0008`** | Hundian Period-0 Occupancy Runbook v1 Execution | Proposed | Period-0 7-row transaction replay, `propose_vacate`, period status handling |
-| **`ADR-0009`** | Hundian Revision and Forbidden Terms Deprecation | Proposed | Strike retired terms (`MSC`, `1+2R`, reciprocity) from ledgers |
-| **`ADR-0010`** | Citizen Gardens DUNA Governing Principles | Proposed | Non-coercive participation & constitutional voting bounds |
-| **`ADR-0011`** | Citizen Gardens System Model Specification v1.0 | Proposed | Domain entity bindings & prime-decomposable identity |
-| **`ADR-0012`** | Unified Civic Infrastructure Blueprint | Proposed | Healthcare care team ledgers & zero-knowledge attestation |
+| **`ADR-0001`** | Hundian Occupancy Governance & Pauli Gate Priority | Completed | Pauli key $K = (\text{role}, \text{slot}, \text{period})$, G0–G5 fail-closed gates |
+| **`ADR-0002`** | Citizen Gardens DUNA Constitutional Gate | Completed | DUNA quorum threshold ($\text{active} \times 100 \ge \text{total} \times \text{thresh}$) |
+| **`ADR-0003`** | UOR Healthcare Nexus & L0 Prime Geometry | Completed | Prime-factor sum conservation bound ($\sum p_i \le \text{bound}$) |
+| **`ADR-0004`** | Period-0 Energy Ledger Schema & Ground State | Completed | Separated ledgers $V_{\text{pair}}, V_{\text{nuc}}$, total energy $E = V_{\text{pair}} - V_{\text{nuc}}$ |
+| **`ADR-0005`** | Ξ-Constitution & Ξ-License Integration | Completed | Conscious Sovereignty Layer $(\mathcal{N}, \mathcal{B}, \mathcal{S})$ and drift limit $\delta(t) \le \varepsilon(t)$ |
+| **`ADR-0006`** | Lambda-Proof Smart Contracts & ZK Circuits | Completed | Local EVM smart contracts & Circom ZK proof receipts |
+| **`ADR-0007`** | Hundian Occupancy Codebook v1 Specification | Completed | Pauli key allocation & derived multiplicity $M = n_{\text{unpaired}} + 1$ |
+| **`ADR-0008`** | Hundian Period-0 Occupancy Runbook v1 Execution | Completed | Period-0 7-row transaction replay, `propose_vacate`, period status handling |
+| **`ADR-0009`** | Hundian Revision and Forbidden Terms Deprecation | Completed | Strike retired terms (`MSC`, `1+2R`, reciprocity) from ledgers |
+| **`ADR-0010`** | Citizen Gardens DUNA Governing Principles | Completed | Non-coercive participation & constitutional voting bounds |
+| **`ADR-0011`** | Citizen Gardens System Model Specification v1.0 | Completed | Domain entity bindings & prime-decomposable identity |
+| **`ADR-0012`** | Unified Civic Infrastructure Blueprint | Accepted | Healthcare care team ledgers & zero-knowledge attestation |
 | **`ADR-0013`** | Multiplicity Social Physics Part 1 — Pauli Exclusion | Proposed | Slot capacity limit max 2 occupants and spin tags ($\alpha/\beta$) |
 | **`ADR-0014`** | Multiplicity Social Physics Part 2 — Term-Order Gate | Proposed | Hund's First Rule Term-Order Gate ($U = 0$ for $\beta$ pairing) |
 | **`ADR-0015`** | Multiplicity Social Physics Part 3 — Energy Ledgers | Proposed | Separated friction $V_{\text{pair}} \ge 0$ & attraction $V_{\text{nuc}} \ge 0$ |
