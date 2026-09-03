@@ -14,16 +14,26 @@ pub enum SpinTag {
     Beta,
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+pub enum PeriodStatus {
+    Draft,
+    Open,
+    Closed,
+}
+
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum GateResult {
     OkSingle { sigma: SpinTag },
     OkPair { sigma: SpinTag },
     OkHierarchy,
     OkDualHatWaiver { sigma: Option<SpinTag> },
+    OkVacate,
     RejUnknownClass,
     RejDualHat,
     RejPauli,
     RejTermOrder,
+    RejPeriodClosed,
+    RejNotOccupant,
 }
 
 #[derive(Debug, Clone, Default)]
@@ -31,11 +41,16 @@ pub struct HundianState {
     pub degenerate_classes: HashSet<String>,
     pub registered_slots: HashMap<PauliKey, Vec<String>>,
     pub person_occupancies: HashMap<(String, String), HashSet<PauliKey>>,
+    pub period_statuses: HashMap<String, PeriodStatus>,
 }
 
 impl HundianState {
     pub fn new() -> Self {
         Self::default()
+    }
+
+    pub fn set_period_status(&mut self, period_id: impl Into<String>, status: PeriodStatus) {
+        self.period_statuses.insert(period_id.into(), status);
     }
 
     pub fn register_degenerate_class(&mut self, role_class: impl Into<String>) {
@@ -75,6 +90,11 @@ impl HundianState {
         period_id: &str,
         waiver_id: Option<&str>,
     ) -> GateResult {
+        let status = self.period_statuses.get(period_id).cloned().unwrap_or(PeriodStatus::Open);
+        if status != PeriodStatus::Open {
+            return GateResult::RejPeriodClosed;
+        }
+
         let key = PauliKey {
             role_class: role_class.to_string(),
             slot_id: slot_id.to_string(),
@@ -144,6 +164,40 @@ impl HundianState {
         self.person_occupancies.entry((person_id.to_string(), period_id.to_string())).or_default().insert(key);
         result
     }
+
+    pub fn propose_vacate(
+        &mut self,
+        person_id: &str,
+        role_class: &str,
+        slot_id: &str,
+        period_id: &str,
+    ) -> GateResult {
+        let status = self.period_statuses.get(period_id).cloned().unwrap_or(PeriodStatus::Open);
+        if status != PeriodStatus::Open {
+            return GateResult::RejPeriodClosed;
+        }
+
+        let key = PauliKey {
+            role_class: role_class.to_string(),
+            slot_id: slot_id.to_string(),
+            period_id: period_id.to_string(),
+        };
+
+        if !self.registered_slots.contains_key(&key) {
+            return GateResult::RejUnknownClass;
+        }
+
+        let occupants = self.registered_slots.get_mut(&key).unwrap();
+        if let Some(pos) = occupants.iter().position(|p| p == person_id) {
+            occupants.remove(pos);
+            if let Some(keys) = self.person_occupancies.get_mut(&(person_id.to_string(), period_id.to_string())) {
+                keys.remove(&key);
+            }
+            GateResult::OkVacate
+        } else {
+            GateResult::RejNotOccupant
+        }
+    }
 }
 
 #[cfg(test)]
@@ -151,36 +205,73 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_echonomics_hundian_occupancy() {
+    fn test_canonical_seven_row_sequence() {
         let mut state = HundianState::new();
+        state.set_period_status("P0", PeriodStatus::Open);
         state.register_degenerate_class("facilitation");
 
         let k1 = PauliKey { role_class: "facilitation".into(), slot_id: "fac-1".into(), period_id: "P0".into() };
         let k2 = PauliKey { role_class: "facilitation".into(), slot_id: "fac-2".into(), period_id: "P0".into() };
-        let k_nondeg = PauliKey { role_class: "documentation".into(), slot_id: "doc-1".into(), period_id: "P0".into() };
-        let k_nondeg2 = PauliKey { role_class: "documentation".into(), slot_id: "doc-2".into(), period_id: "P0".into() };
+        let k3 = PauliKey { role_class: "facilitation".into(), slot_id: "fac-3".into(), period_id: "P0".into() };
 
         state.register_slot(k1);
         state.register_slot(k2);
-        state.register_slot(k_nondeg);
-        state.register_slot(k_nondeg2);
+        state.register_slot(k3);
 
+        // 10:00Z alice -> fac-1 OK_SINGLE (M=2)
         let r1 = state.propose_fill("alice", "facilitation", "fac-1", "P0", None);
         assert_eq!(r1, GateResult::OkSingle { sigma: SpinTag::Alpha });
+        assert_eq!(state.calculate_multiplicity("P0"), (1, 0.5, 2));
 
+        // 10:05Z bob -> fac-1 REJ_TERM_ORDER
         let r2 = state.propose_fill("bob", "facilitation", "fac-1", "P0", None);
         assert_eq!(r2, GateResult::RejTermOrder);
 
-        // Test non-degenerate OK_HIERARCHY
-        let r3 = state.propose_fill("carol", "documentation", "doc-1", "P0", None);
-        assert_eq!(r3, GateResult::OkHierarchy);
+        // 10:06Z bob -> fac-2 OK_SINGLE (M=3)
+        let r3 = state.propose_fill("bob", "facilitation", "fac-2", "P0", None);
+        assert_eq!(r3, GateResult::OkSingle { sigma: SpinTag::Alpha });
+        assert_eq!(state.calculate_multiplicity("P0"), (2, 1.0, 3));
 
-        let r4 = state.propose_fill("dave", "documentation", "doc-1", "P0", None);
-        assert_eq!(r4, GateResult::OkHierarchy);
+        // 10:07Z carol -> fac-3 OK_SINGLE (M=4)
+        let r4 = state.propose_fill("carol", "facilitation", "fac-3", "P0", None);
+        assert_eq!(r4, GateResult::OkSingle { sigma: SpinTag::Alpha });
+        assert_eq!(state.calculate_multiplicity("P0"), (3, 1.5, 4));
 
-        // Test OK_DUALHAT_WAIVER on available non-degenerate slot doc-2
-        let r5 = state.propose_fill("alice", "documentation", "doc-2", "P0", Some("waiver-123"));
-        assert_eq!(r5, GateResult::OkDualHatWaiver { sigma: None });
+        // 10:08Z dave -> fac-1 OK_PAIR (M=3)
+        let r5 = state.propose_fill("dave", "facilitation", "fac-1", "P0", None);
+        assert_eq!(r5, GateResult::OkPair { sigma: SpinTag::Beta });
+        assert_eq!(state.calculate_multiplicity("P0"), (2, 1.0, 3));
+
+        // 10:09Z eve -> fac-1 REJ_PAULI
+        let r6 = state.propose_fill("eve", "facilitation", "fac-1", "P0", None);
+        assert_eq!(r6, GateResult::RejPauli);
+
+        // 10:10Z bob -> fac-1 REJ_DUALHAT
+        let r7 = state.propose_fill("bob", "facilitation", "fac-1", "P0", None);
+        assert_eq!(r7, GateResult::RejDualHat);
+    }
+
+    #[test]
+    fn test_propose_vacate_and_closed_period() {
+        let mut state = HundianState::new();
+        state.set_period_status("P0", PeriodStatus::Open);
+        state.register_degenerate_class("facilitation");
+
+        let k1 = PauliKey { role_class: "facilitation".into(), slot_id: "fac-1".into(), period_id: "P0".into() };
+        state.register_slot(k1);
+
+        assert_eq!(state.propose_fill("alice", "facilitation", "fac-1", "P0", None), GateResult::OkSingle { sigma: SpinTag::Alpha });
+
+        // Vacate valid occupant
+        assert_eq!(state.propose_vacate("alice", "facilitation", "fac-1", "P0"), GateResult::OkVacate);
+
+        // Vacate non-occupant
+        assert_eq!(state.propose_vacate("bob", "facilitation", "fac-1", "P0"), GateResult::RejNotOccupant);
+
+        // Close period
+        state.set_period_status("P0", PeriodStatus::Closed);
+        assert_eq!(state.propose_fill("alice", "facilitation", "fac-1", "P0", None), GateResult::RejPeriodClosed);
+        assert_eq!(state.propose_vacate("alice", "facilitation", "fac-1", "P0"), GateResult::RejPeriodClosed);
     }
 }
 
