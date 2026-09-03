@@ -13,18 +13,20 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+uint8_t lean_nat_dec_lt(lean_object*, lean_object*);
 lean_object* lean_nat_to_int(lean_object*);
 uint8_t lean_nat_dec_eq(lean_object*, lean_object*);
 lean_object* lean_nat_add(lean_object*, lean_object*);
 uint8_t lean_nat_dec_le(lean_object*, lean_object*);
+lean_object* l_Repr_addAppParen(lean_object*, lean_object*);
 lean_object* l_Nat_reprFast(lean_object*);
 lean_object* lean_string_length(lean_object*);
-uint8_t lean_nat_dec_lt(lean_object*, lean_object*);
+uint8_t lean_nat_dec_le(lean_object*, lean_object*);
 static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 64, .m_capacity = 64, .m_length = 63, .m_data = "Citizen Gardens DUNA Governing Principles & Constitutional Gate"};
 static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__0 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__0_value;
-static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__1_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 126, .m_capacity = 126, .m_length = 125, .m_data = "Decentralized Unincorporated Nonprofit Association (DUNA) governing principles require formal quorum & vote validation gates."};
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__1_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 152, .m_capacity = 152, .m_length = 151, .m_data = "Decentralized Unincorporated Nonprofit Association (DUNA) governing principles require formal quorum & vote validation gates prior to ledger anchoring."};
 static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__1 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__1_value;
-static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__2_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 94, .m_capacity = 94, .m_length = 93, .m_data = "Enforce quorum thresholds and constitutional vote validation gates prior to ledger anchoring."};
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__2_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 155, .m_capacity = 155, .m_length = 152, .m_data = "Enforce quorum (votes_for + votes_against ≥ quorum_threshold) and strict-majority (votes_for > votes_against) validation gates before state transitions."};
 static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__2 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__2_value;
 static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__3_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 32, .m_capacity = 32, .m_length = 31, .m_data = "Machine-checked DUNA compliance"};
 static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__3 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__3_value;
@@ -93,10 +95,69 @@ LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDunaSt
 LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDunaState_decEq___boxed(lean_object*, lean_object*);
 LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDunaState(lean_object*, lean_object*);
 LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDunaState___boxed(lean_object*, lean_object*);
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_instDecidableDunaInvariant(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instDecidableDunaInvariant___boxed(lean_object*);
 LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isQuorumReached(lean_object*);
 LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isQuorumReached___boxed(lean_object*);
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isStrictMajority(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isStrictMajority___boxed(lean_object*);
 LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isProposalPassed(lean_object*);
 LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isProposalPassed___boxed(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorIdx(uint8_t);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorIdx___boxed(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_toCtorIdx(uint8_t);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_toCtorIdx___boxed(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorElim___redArg(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorElim___redArg___boxed(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorElim(lean_object*, lean_object*, uint8_t, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorElim___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_Pass_elim___redArg(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_Pass_elim___redArg___boxed(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_Pass_elim(lean_object*, uint8_t, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_Pass_elim___boxed(lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejQuorum_elim___redArg(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejQuorum_elim___redArg___boxed(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejQuorum_elim(lean_object*, uint8_t, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejQuorum_elim___boxed(lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejMajority_elim___redArg(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejMajority_elim___redArg___boxed(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejMajority_elim(lean_object*, uint8_t, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejMajority_elim___boxed(lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejInvalid_elim___redArg(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejInvalid_elim___redArg___boxed(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejInvalid_elim(lean_object*, uint8_t, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejInvalid_elim___boxed(lean_object*, lean_object*, lean_object*, lean_object*);
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 53, .m_capacity = 53, .m_length = 52, .m_data = "Echonomics.CivicDunaGate.ConstitutionalDecision.Pass"};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__0 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__0_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__1_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*1 + 0, .m_other = 1, .m_tag = 3}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__0_value)}};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__1 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__1_value;
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__2_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 58, .m_capacity = 58, .m_length = 57, .m_data = "Echonomics.CivicDunaGate.ConstitutionalDecision.RejQuorum"};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__2 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__2_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__3_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*1 + 0, .m_other = 1, .m_tag = 3}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__2_value)}};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__3 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__3_value;
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__4_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 60, .m_capacity = 60, .m_length = 59, .m_data = "Echonomics.CivicDunaGate.ConstitutionalDecision.RejMajority"};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__4 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__4_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__5_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*1 + 0, .m_other = 1, .m_tag = 3}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__4_value)}};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__5 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__5_value;
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__6_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 59, .m_capacity = 59, .m_length = 58, .m_data = "Echonomics.CivicDunaGate.ConstitutionalDecision.RejInvalid"};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__6 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__6_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__7_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*1 + 0, .m_other = 1, .m_tag = 3}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__6_value)}};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__7 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__7_value;
+static lean_once_cell_t lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8_once = LEAN_ONCE_CELL_INITIALIZER;
+static lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8;
+static lean_once_cell_t lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9_once = LEAN_ONCE_CELL_INITIALIZER;
+static lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9;
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr(uint8_t, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___boxed(lean_object*, lean_object*);
+static const lean_closure_object lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_closure_object) + sizeof(void*)*0, .m_other = 0, .m_tag = 245}, .m_fun = (void*)lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___boxed, .m_arity = 2, .m_num_fixed = 0, .m_objs = {} };
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision___closed__0 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision___closed__0_value;
+LEAN_EXPORT const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision___closed__0_value;
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ofNat(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ofNat___boxed(lean_object*);
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqConstitutionalDecision(uint8_t, uint8_t);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqConstitutionalDecision___boxed(lean_object*, lean_object*);
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_evaluateConstitutionalGate(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_evaluateConstitutionalGate___boxed(lean_object*);
 static lean_object* _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__7(void){
 _start:
 {
@@ -358,63 +419,636 @@ v_r_149_ = lean_box(v_res_148_);
 return v_r_149_;
 }
 }
-LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isQuorumReached(lean_object* v_st_150_){
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_instDecidableDunaInvariant(lean_object* v_st_150_){
 _start:
 {
-lean_object* v_quorumThreshold_151_; lean_object* v_votesFor_152_; lean_object* v_votesAgainst_153_; lean_object* v___x_154_; uint8_t v___x_155_; 
-v_quorumThreshold_151_ = lean_ctor_get(v_st_150_, 1);
-v_votesFor_152_ = lean_ctor_get(v_st_150_, 2);
-v_votesAgainst_153_ = lean_ctor_get(v_st_150_, 3);
-v___x_154_ = lean_nat_add(v_votesFor_152_, v_votesAgainst_153_);
-v___x_155_ = lean_nat_dec_le(v_quorumThreshold_151_, v___x_154_);
-lean_dec(v___x_154_);
+lean_object* v_totalMembers_151_; lean_object* v_quorumThreshold_152_; lean_object* v_votesFor_153_; lean_object* v_votesAgainst_154_; uint8_t v___x_155_; 
+v_totalMembers_151_ = lean_ctor_get(v_st_150_, 0);
+v_quorumThreshold_152_ = lean_ctor_get(v_st_150_, 1);
+v_votesFor_153_ = lean_ctor_get(v_st_150_, 2);
+v_votesAgainst_154_ = lean_ctor_get(v_st_150_, 3);
+v___x_155_ = lean_nat_dec_le(v_quorumThreshold_152_, v_totalMembers_151_);
+if (v___x_155_ == 0)
+{
 return v___x_155_;
 }
+else
+{
+lean_object* v___x_156_; uint8_t v___x_157_; 
+v___x_156_ = lean_nat_add(v_votesFor_153_, v_votesAgainst_154_);
+v___x_157_ = lean_nat_dec_le(v___x_156_, v_totalMembers_151_);
+lean_dec(v___x_156_);
+return v___x_157_;
 }
-LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isQuorumReached___boxed(lean_object* v_st_156_){
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instDecidableDunaInvariant___boxed(lean_object* v_st_158_){
 _start:
 {
-uint8_t v_res_157_; lean_object* v_r_158_; 
-v_res_157_ = lp_Echonomics_Echonomics_CivicDunaGate_isQuorumReached(v_st_156_);
-lean_dec_ref(v_st_156_);
-v_r_158_ = lean_box(v_res_157_);
-return v_r_158_;
+uint8_t v_res_159_; lean_object* v_r_160_; 
+v_res_159_ = lp_Echonomics_Echonomics_CivicDunaGate_instDecidableDunaInvariant(v_st_158_);
+lean_dec_ref(v_st_158_);
+v_r_160_ = lean_box(v_res_159_);
+return v_r_160_;
 }
 }
-LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isProposalPassed(lean_object* v_st_159_){
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isQuorumReached(lean_object* v_st_161_){
 _start:
 {
-uint8_t v___x_160_; 
-v___x_160_ = lp_Echonomics_Echonomics_CivicDunaGate_isQuorumReached(v_st_159_);
-if (v___x_160_ == 0)
+lean_object* v_quorumThreshold_162_; lean_object* v_votesFor_163_; lean_object* v_votesAgainst_164_; lean_object* v___x_165_; uint8_t v___x_166_; 
+v_quorumThreshold_162_ = lean_ctor_get(v_st_161_, 1);
+v_votesFor_163_ = lean_ctor_get(v_st_161_, 2);
+v_votesAgainst_164_ = lean_ctor_get(v_st_161_, 3);
+v___x_165_ = lean_nat_add(v_votesFor_163_, v_votesAgainst_164_);
+v___x_166_ = lean_nat_dec_le(v_quorumThreshold_162_, v___x_165_);
+lean_dec(v___x_165_);
+return v___x_166_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isQuorumReached___boxed(lean_object* v_st_167_){
+_start:
 {
-return v___x_160_;
+uint8_t v_res_168_; lean_object* v_r_169_; 
+v_res_168_ = lp_Echonomics_Echonomics_CivicDunaGate_isQuorumReached(v_st_167_);
+lean_dec_ref(v_st_167_);
+v_r_169_ = lean_box(v_res_168_);
+return v_r_169_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isStrictMajority(lean_object* v_st_170_){
+_start:
+{
+lean_object* v_votesFor_171_; lean_object* v_votesAgainst_172_; uint8_t v___x_173_; 
+v_votesFor_171_ = lean_ctor_get(v_st_170_, 2);
+v_votesAgainst_172_ = lean_ctor_get(v_st_170_, 3);
+v___x_173_ = lean_nat_dec_lt(v_votesAgainst_172_, v_votesFor_171_);
+return v___x_173_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isStrictMajority___boxed(lean_object* v_st_174_){
+_start:
+{
+uint8_t v_res_175_; lean_object* v_r_176_; 
+v_res_175_ = lp_Echonomics_Echonomics_CivicDunaGate_isStrictMajority(v_st_174_);
+lean_dec_ref(v_st_174_);
+v_r_176_ = lean_box(v_res_175_);
+return v_r_176_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isProposalPassed(lean_object* v_st_177_){
+_start:
+{
+uint8_t v___x_178_; 
+v___x_178_ = lp_Echonomics_Echonomics_CivicDunaGate_isQuorumReached(v_st_177_);
+if (v___x_178_ == 0)
+{
+return v___x_178_;
 }
 else
 {
-lean_object* v_votesFor_161_; lean_object* v_votesAgainst_162_; uint8_t v___x_163_; 
-v_votesFor_161_ = lean_ctor_get(v_st_159_, 2);
-v_votesAgainst_162_ = lean_ctor_get(v_st_159_, 3);
-v___x_163_ = lean_nat_dec_lt(v_votesAgainst_162_, v_votesFor_161_);
-if (v___x_163_ == 0)
+uint8_t v___x_179_; 
+v___x_179_ = lp_Echonomics_Echonomics_CivicDunaGate_isStrictMajority(v_st_177_);
+return v___x_179_;
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isProposalPassed___boxed(lean_object* v_st_180_){
+_start:
 {
-return v___x_163_;
+uint8_t v_res_181_; lean_object* v_r_182_; 
+v_res_181_ = lp_Echonomics_Echonomics_CivicDunaGate_isProposalPassed(v_st_180_);
+lean_dec_ref(v_st_180_);
+v_r_182_ = lean_box(v_res_181_);
+return v_r_182_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorIdx(uint8_t v_x_183_){
+_start:
+{
+switch(v_x_183_)
+{
+case 0:
+{
+lean_object* v___x_184_; 
+v___x_184_ = lean_unsigned_to_nat(0u);
+return v___x_184_;
+}
+case 1:
+{
+lean_object* v___x_185_; 
+v___x_185_ = lean_unsigned_to_nat(1u);
+return v___x_185_;
+}
+case 2:
+{
+lean_object* v___x_186_; 
+v___x_186_ = lean_unsigned_to_nat(2u);
+return v___x_186_;
+}
+default: 
+{
+lean_object* v___x_187_; 
+v___x_187_ = lean_unsigned_to_nat(3u);
+return v___x_187_;
+}
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorIdx___boxed(lean_object* v_x_188_){
+_start:
+{
+uint8_t v_x_boxed_189_; lean_object* v_res_190_; 
+v_x_boxed_189_ = lean_unbox(v_x_188_);
+v_res_190_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorIdx(v_x_boxed_189_);
+return v_res_190_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_toCtorIdx(uint8_t v_x_191_){
+_start:
+{
+lean_object* v___x_192_; 
+v___x_192_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorIdx(v_x_191_);
+return v___x_192_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_toCtorIdx___boxed(lean_object* v_x_193_){
+_start:
+{
+uint8_t v_x_4__boxed_194_; lean_object* v_res_195_; 
+v_x_4__boxed_194_ = lean_unbox(v_x_193_);
+v_res_195_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_toCtorIdx(v_x_4__boxed_194_);
+return v_res_195_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorElim___redArg(lean_object* v_k_196_){
+_start:
+{
+lean_inc(v_k_196_);
+return v_k_196_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorElim___redArg___boxed(lean_object* v_k_197_){
+_start:
+{
+lean_object* v_res_198_; 
+v_res_198_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorElim___redArg(v_k_197_);
+lean_dec(v_k_197_);
+return v_res_198_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorElim(lean_object* v_motive_199_, lean_object* v_ctorIdx_200_, uint8_t v_t_201_, lean_object* v_h_202_, lean_object* v_k_203_){
+_start:
+{
+lean_inc(v_k_203_);
+return v_k_203_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorElim___boxed(lean_object* v_motive_204_, lean_object* v_ctorIdx_205_, lean_object* v_t_206_, lean_object* v_h_207_, lean_object* v_k_208_){
+_start:
+{
+uint8_t v_t_boxed_209_; lean_object* v_res_210_; 
+v_t_boxed_209_ = lean_unbox(v_t_206_);
+v_res_210_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorElim(v_motive_204_, v_ctorIdx_205_, v_t_boxed_209_, v_h_207_, v_k_208_);
+lean_dec(v_k_208_);
+lean_dec(v_ctorIdx_205_);
+return v_res_210_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_Pass_elim___redArg(lean_object* v_Pass_211_){
+_start:
+{
+lean_inc(v_Pass_211_);
+return v_Pass_211_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_Pass_elim___redArg___boxed(lean_object* v_Pass_212_){
+_start:
+{
+lean_object* v_res_213_; 
+v_res_213_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_Pass_elim___redArg(v_Pass_212_);
+lean_dec(v_Pass_212_);
+return v_res_213_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_Pass_elim(lean_object* v_motive_214_, uint8_t v_t_215_, lean_object* v_h_216_, lean_object* v_Pass_217_){
+_start:
+{
+lean_inc(v_Pass_217_);
+return v_Pass_217_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_Pass_elim___boxed(lean_object* v_motive_218_, lean_object* v_t_219_, lean_object* v_h_220_, lean_object* v_Pass_221_){
+_start:
+{
+uint8_t v_t_boxed_222_; lean_object* v_res_223_; 
+v_t_boxed_222_ = lean_unbox(v_t_219_);
+v_res_223_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_Pass_elim(v_motive_218_, v_t_boxed_222_, v_h_220_, v_Pass_221_);
+lean_dec(v_Pass_221_);
+return v_res_223_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejQuorum_elim___redArg(lean_object* v_RejQuorum_224_){
+_start:
+{
+lean_inc(v_RejQuorum_224_);
+return v_RejQuorum_224_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejQuorum_elim___redArg___boxed(lean_object* v_RejQuorum_225_){
+_start:
+{
+lean_object* v_res_226_; 
+v_res_226_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejQuorum_elim___redArg(v_RejQuorum_225_);
+lean_dec(v_RejQuorum_225_);
+return v_res_226_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejQuorum_elim(lean_object* v_motive_227_, uint8_t v_t_228_, lean_object* v_h_229_, lean_object* v_RejQuorum_230_){
+_start:
+{
+lean_inc(v_RejQuorum_230_);
+return v_RejQuorum_230_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejQuorum_elim___boxed(lean_object* v_motive_231_, lean_object* v_t_232_, lean_object* v_h_233_, lean_object* v_RejQuorum_234_){
+_start:
+{
+uint8_t v_t_boxed_235_; lean_object* v_res_236_; 
+v_t_boxed_235_ = lean_unbox(v_t_232_);
+v_res_236_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejQuorum_elim(v_motive_231_, v_t_boxed_235_, v_h_233_, v_RejQuorum_234_);
+lean_dec(v_RejQuorum_234_);
+return v_res_236_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejMajority_elim___redArg(lean_object* v_RejMajority_237_){
+_start:
+{
+lean_inc(v_RejMajority_237_);
+return v_RejMajority_237_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejMajority_elim___redArg___boxed(lean_object* v_RejMajority_238_){
+_start:
+{
+lean_object* v_res_239_; 
+v_res_239_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejMajority_elim___redArg(v_RejMajority_238_);
+lean_dec(v_RejMajority_238_);
+return v_res_239_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejMajority_elim(lean_object* v_motive_240_, uint8_t v_t_241_, lean_object* v_h_242_, lean_object* v_RejMajority_243_){
+_start:
+{
+lean_inc(v_RejMajority_243_);
+return v_RejMajority_243_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejMajority_elim___boxed(lean_object* v_motive_244_, lean_object* v_t_245_, lean_object* v_h_246_, lean_object* v_RejMajority_247_){
+_start:
+{
+uint8_t v_t_boxed_248_; lean_object* v_res_249_; 
+v_t_boxed_248_ = lean_unbox(v_t_245_);
+v_res_249_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejMajority_elim(v_motive_244_, v_t_boxed_248_, v_h_246_, v_RejMajority_247_);
+lean_dec(v_RejMajority_247_);
+return v_res_249_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejInvalid_elim___redArg(lean_object* v_RejInvalid_250_){
+_start:
+{
+lean_inc(v_RejInvalid_250_);
+return v_RejInvalid_250_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejInvalid_elim___redArg___boxed(lean_object* v_RejInvalid_251_){
+_start:
+{
+lean_object* v_res_252_; 
+v_res_252_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejInvalid_elim___redArg(v_RejInvalid_251_);
+lean_dec(v_RejInvalid_251_);
+return v_res_252_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejInvalid_elim(lean_object* v_motive_253_, uint8_t v_t_254_, lean_object* v_h_255_, lean_object* v_RejInvalid_256_){
+_start:
+{
+lean_inc(v_RejInvalid_256_);
+return v_RejInvalid_256_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejInvalid_elim___boxed(lean_object* v_motive_257_, lean_object* v_t_258_, lean_object* v_h_259_, lean_object* v_RejInvalid_260_){
+_start:
+{
+uint8_t v_t_boxed_261_; lean_object* v_res_262_; 
+v_t_boxed_261_ = lean_unbox(v_t_258_);
+v_res_262_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_RejInvalid_elim(v_motive_257_, v_t_boxed_261_, v_h_259_, v_RejInvalid_260_);
+lean_dec(v_RejInvalid_260_);
+return v_res_262_;
+}
+}
+static lean_object* _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8(void){
+_start:
+{
+lean_object* v___x_275_; lean_object* v___x_276_; 
+v___x_275_ = lean_unsigned_to_nat(2u);
+v___x_276_ = lean_nat_to_int(v___x_275_);
+return v___x_276_;
+}
+}
+static lean_object* _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9(void){
+_start:
+{
+lean_object* v___x_277_; lean_object* v___x_278_; 
+v___x_277_ = lean_unsigned_to_nat(1u);
+v___x_278_ = lean_nat_to_int(v___x_277_);
+return v___x_278_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr(uint8_t v_x_279_, lean_object* v_prec_280_){
+_start:
+{
+lean_object* v___y_282_; lean_object* v___y_289_; lean_object* v___y_296_; lean_object* v___y_303_; 
+switch(v_x_279_)
+{
+case 0:
+{
+lean_object* v___x_309_; uint8_t v___x_310_; 
+v___x_309_ = lean_unsigned_to_nat(1024u);
+v___x_310_ = lean_nat_dec_le(v___x_309_, v_prec_280_);
+if (v___x_310_ == 0)
+{
+lean_object* v___x_311_; 
+v___x_311_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8, &lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8);
+v___y_282_ = v___x_311_;
+goto v___jp_281_;
 }
 else
 {
-return v___x_160_;
+lean_object* v___x_312_; 
+v___x_312_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9, &lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9);
+v___y_282_ = v___x_312_;
+goto v___jp_281_;
+}
+}
+case 1:
+{
+lean_object* v___x_313_; uint8_t v___x_314_; 
+v___x_313_ = lean_unsigned_to_nat(1024u);
+v___x_314_ = lean_nat_dec_le(v___x_313_, v_prec_280_);
+if (v___x_314_ == 0)
+{
+lean_object* v___x_315_; 
+v___x_315_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8, &lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8);
+v___y_289_ = v___x_315_;
+goto v___jp_288_;
+}
+else
+{
+lean_object* v___x_316_; 
+v___x_316_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9, &lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9);
+v___y_289_ = v___x_316_;
+goto v___jp_288_;
+}
+}
+case 2:
+{
+lean_object* v___x_317_; uint8_t v___x_318_; 
+v___x_317_ = lean_unsigned_to_nat(1024u);
+v___x_318_ = lean_nat_dec_le(v___x_317_, v_prec_280_);
+if (v___x_318_ == 0)
+{
+lean_object* v___x_319_; 
+v___x_319_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8, &lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8);
+v___y_296_ = v___x_319_;
+goto v___jp_295_;
+}
+else
+{
+lean_object* v___x_320_; 
+v___x_320_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9, &lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9);
+v___y_296_ = v___x_320_;
+goto v___jp_295_;
+}
+}
+default: 
+{
+lean_object* v___x_321_; uint8_t v___x_322_; 
+v___x_321_ = lean_unsigned_to_nat(1024u);
+v___x_322_ = lean_nat_dec_le(v___x_321_, v_prec_280_);
+if (v___x_322_ == 0)
+{
+lean_object* v___x_323_; 
+v___x_323_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8, &lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__8);
+v___y_303_ = v___x_323_;
+goto v___jp_302_;
+}
+else
+{
+lean_object* v___x_324_; 
+v___x_324_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9, &lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__9);
+v___y_303_ = v___x_324_;
+goto v___jp_302_;
 }
 }
 }
+v___jp_281_:
+{
+lean_object* v___x_283_; lean_object* v___x_284_; uint8_t v___x_285_; lean_object* v___x_286_; lean_object* v___x_287_; 
+v___x_283_ = ((lean_object*)(lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__1));
+lean_inc(v___y_282_);
+v___x_284_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v___x_284_, 0, v___y_282_);
+lean_ctor_set(v___x_284_, 1, v___x_283_);
+v___x_285_ = 0;
+v___x_286_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_286_, 0, v___x_284_);
+lean_ctor_set_uint8(v___x_286_, sizeof(void*)*1, v___x_285_);
+v___x_287_ = l_Repr_addAppParen(v___x_286_, v_prec_280_);
+return v___x_287_;
 }
-LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isProposalPassed___boxed(lean_object* v_st_164_){
+v___jp_288_:
+{
+lean_object* v___x_290_; lean_object* v___x_291_; uint8_t v___x_292_; lean_object* v___x_293_; lean_object* v___x_294_; 
+v___x_290_ = ((lean_object*)(lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__3));
+lean_inc(v___y_289_);
+v___x_291_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v___x_291_, 0, v___y_289_);
+lean_ctor_set(v___x_291_, 1, v___x_290_);
+v___x_292_ = 0;
+v___x_293_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_293_, 0, v___x_291_);
+lean_ctor_set_uint8(v___x_293_, sizeof(void*)*1, v___x_292_);
+v___x_294_ = l_Repr_addAppParen(v___x_293_, v_prec_280_);
+return v___x_294_;
+}
+v___jp_295_:
+{
+lean_object* v___x_297_; lean_object* v___x_298_; uint8_t v___x_299_; lean_object* v___x_300_; lean_object* v___x_301_; 
+v___x_297_ = ((lean_object*)(lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__5));
+lean_inc(v___y_296_);
+v___x_298_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v___x_298_, 0, v___y_296_);
+lean_ctor_set(v___x_298_, 1, v___x_297_);
+v___x_299_ = 0;
+v___x_300_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_300_, 0, v___x_298_);
+lean_ctor_set_uint8(v___x_300_, sizeof(void*)*1, v___x_299_);
+v___x_301_ = l_Repr_addAppParen(v___x_300_, v_prec_280_);
+return v___x_301_;
+}
+v___jp_302_:
+{
+lean_object* v___x_304_; lean_object* v___x_305_; uint8_t v___x_306_; lean_object* v___x_307_; lean_object* v___x_308_; 
+v___x_304_ = ((lean_object*)(lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___closed__7));
+lean_inc(v___y_303_);
+v___x_305_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v___x_305_, 0, v___y_303_);
+lean_ctor_set(v___x_305_, 1, v___x_304_);
+v___x_306_ = 0;
+v___x_307_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_307_, 0, v___x_305_);
+lean_ctor_set_uint8(v___x_307_, sizeof(void*)*1, v___x_306_);
+v___x_308_ = l_Repr_addAppParen(v___x_307_, v_prec_280_);
+return v___x_308_;
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr___boxed(lean_object* v_x_325_, lean_object* v_prec_326_){
 _start:
 {
-uint8_t v_res_165_; lean_object* v_r_166_; 
-v_res_165_ = lp_Echonomics_Echonomics_CivicDunaGate_isProposalPassed(v_st_164_);
-lean_dec_ref(v_st_164_);
-v_r_166_ = lean_box(v_res_165_);
-return v_r_166_;
+uint8_t v_x_233__boxed_327_; lean_object* v_res_328_; 
+v_x_233__boxed_327_ = lean_unbox(v_x_325_);
+v_res_328_ = lp_Echonomics_Echonomics_CivicDunaGate_instReprConstitutionalDecision_repr(v_x_233__boxed_327_, v_prec_326_);
+lean_dec(v_prec_326_);
+return v_res_328_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ofNat(lean_object* v_n_331_){
+_start:
+{
+lean_object* v___x_332_; uint8_t v___x_333_; 
+v___x_332_ = lean_unsigned_to_nat(1u);
+v___x_333_ = lean_nat_dec_le(v_n_331_, v___x_332_);
+if (v___x_333_ == 0)
+{
+lean_object* v___x_334_; uint8_t v___x_335_; 
+v___x_334_ = lean_unsigned_to_nat(2u);
+v___x_335_ = lean_nat_dec_le(v_n_331_, v___x_334_);
+if (v___x_335_ == 0)
+{
+uint8_t v___x_336_; 
+v___x_336_ = 3;
+return v___x_336_;
+}
+else
+{
+uint8_t v___x_337_; 
+v___x_337_ = 2;
+return v___x_337_;
+}
+}
+else
+{
+lean_object* v___x_338_; uint8_t v___x_339_; 
+v___x_338_ = lean_unsigned_to_nat(0u);
+v___x_339_ = lean_nat_dec_le(v_n_331_, v___x_338_);
+if (v___x_339_ == 0)
+{
+uint8_t v___x_340_; 
+v___x_340_ = 1;
+return v___x_340_;
+}
+else
+{
+uint8_t v___x_341_; 
+v___x_341_ = 0;
+return v___x_341_;
+}
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ofNat___boxed(lean_object* v_n_342_){
+_start:
+{
+uint8_t v_res_343_; lean_object* v_r_344_; 
+v_res_343_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ofNat(v_n_342_);
+lean_dec(v_n_342_);
+v_r_344_ = lean_box(v_res_343_);
+return v_r_344_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqConstitutionalDecision(uint8_t v_x_345_, uint8_t v_y_346_){
+_start:
+{
+lean_object* v___x_347_; lean_object* v___x_348_; uint8_t v___x_349_; 
+v___x_347_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorIdx(v_x_345_);
+v___x_348_ = lp_Echonomics_Echonomics_CivicDunaGate_ConstitutionalDecision_ctorIdx(v_y_346_);
+v___x_349_ = lean_nat_dec_eq(v___x_347_, v___x_348_);
+lean_dec(v___x_348_);
+lean_dec(v___x_347_);
+return v___x_349_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqConstitutionalDecision___boxed(lean_object* v_x_350_, lean_object* v_y_351_){
+_start:
+{
+uint8_t v_x_13__boxed_352_; uint8_t v_y_14__boxed_353_; uint8_t v_res_354_; lean_object* v_r_355_; 
+v_x_13__boxed_352_ = lean_unbox(v_x_350_);
+v_y_14__boxed_353_ = lean_unbox(v_y_351_);
+v_res_354_ = lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqConstitutionalDecision(v_x_13__boxed_352_, v_y_14__boxed_353_);
+v_r_355_ = lean_box(v_res_354_);
+return v_r_355_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_evaluateConstitutionalGate(lean_object* v_st_356_){
+_start:
+{
+uint8_t v___x_357_; 
+v___x_357_ = lp_Echonomics_Echonomics_CivicDunaGate_instDecidableDunaInvariant(v_st_356_);
+if (v___x_357_ == 0)
+{
+uint8_t v___x_358_; 
+v___x_358_ = 3;
+return v___x_358_;
+}
+else
+{
+uint8_t v___x_359_; 
+v___x_359_ = lp_Echonomics_Echonomics_CivicDunaGate_isQuorumReached(v_st_356_);
+if (v___x_359_ == 0)
+{
+uint8_t v___x_360_; 
+v___x_360_ = 1;
+return v___x_360_;
+}
+else
+{
+uint8_t v___x_361_; 
+v___x_361_ = lp_Echonomics_Echonomics_CivicDunaGate_isStrictMajority(v_st_356_);
+if (v___x_361_ == 0)
+{
+uint8_t v___x_362_; 
+v___x_362_ = 2;
+return v___x_362_;
+}
+else
+{
+uint8_t v___x_363_; 
+v___x_363_ = 0;
+return v___x_363_;
+}
+}
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_evaluateConstitutionalGate___boxed(lean_object* v_st_364_){
+_start:
+{
+uint8_t v_res_365_; lean_object* v_r_366_; 
+v_res_365_ = lp_Echonomics_Echonomics_CivicDunaGate_evaluateConstitutionalGate(v_st_364_);
+lean_dec_ref(v_st_364_);
+v_r_366_ = lean_box(v_res_365_);
+return v_r_366_;
 }
 }
 lean_object* initialize_Init(uint8_t builtin);

@@ -1,6 +1,6 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
- "outputs": "0604ad382bf0f526",
+ "outputs": "f4e5b38479990301",
  "log":
  [{"message":
    ".> /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/clang -o /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/bin/TestDriver @/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/bin/TestDriver.rsp",
@@ -9,7 +9,7 @@
  [["Echonomics.Test:linkInfo",
    [["Module.moreLinkObjs",
      [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/Test.c.o.export",
-       "64961c90cd0842e3"],
+       "517662c8729ba567"],
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/Core.c.o.export",
        "a0f6e8a65d834236"],
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/Proofs.c.o.export",
@@ -17,13 +17,13 @@
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/HundianOccupancy.c.o.export",
        "70ab16171250f566"],
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/CivicDunaGate.c.o.export",
-       "90e0a97e1bdbd441"],
+       "b7799d13bbdf49d8"],
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/UorPrimeGeometry.c.o.export",
-       "97cbd5a5b6baef59"],
+       "759a717b6bebb5a8"],
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/EnergyLedger.c.o.export",
-       "b0d745bcac3285b8"],
+       "8a7bda4fd31c99f6"],
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/XiConstitutionLicense.c.o.export",
-       "51462da7cda6943a"],
+       "a88f05a7173f4f26"],
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/LambdaProof.c.o.export",
        "05eeabda421d140f"],
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/HundianCodebookRunbook.c.o.export",
@@ -42,4 +42,4 @@
   ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
    "3eca9d16ab6c877d"],
   ["x86_64-unknown-linux-gnu", "53a0e8937c307c28"]],
- "depHash": "210c5d57d07de2e5"}
+ "depHash": "47b316d6d5bf3d8f"}

@@ -1,21 +1,39 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["1939f2862dfce8b7.olean"],
+ {"o": ["a51ec3dbf84a692f.olean"],
   "m": false,
-  "i": "8922cb1ff58534f2.ilean",
-  "c": "5ccb21f0b3ef7705.c"},
+  "i": "a16cc802daf4286a.ilean",
+  "c": "1102f8e2835b801a.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/lean /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/EnergyLedger.lean -o /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/EnergyLedger.olean -i /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/EnergyLedger.ilean -c /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/EnergyLedger.c --setup /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/EnergyLedger.setup.json --json",
-   "level": "trace"}],
+   "level": "trace"},
+  {"message":
+   "lean/Echonomics/EnergyLedger.lean:278:5: Variable name `hMA` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hMA\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "level": "warning"},
+  {"message":
+   "lean/Echonomics/EnergyLedger.lean:279:5: Variable name `hMB` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hMB\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "level": "warning"},
+  {"message":
+   "lean/Echonomics/EnergyLedger.lean:288:38: Variable name `frame` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _frame\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "level": "warning"},
+  {"message":
+   "lean/Echonomics/EnergyLedger.lean:299:28: Variable name `nA` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _nA\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "level": "warning"},
+  {"message":
+   "lean/Echonomics/EnergyLedger.lean:299:31: Variable name `nB` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _nB\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "level": "warning"}],
  "inputs":
  [["deps",
    [["Echonomics/Echonomics:extraDep",
      [["@Echonomics:extraDep", "00000000000006bb"]]],
     ["imports",
      [["Echonomics.Core transitive imports (legacy)", "00000000000006bb"],
-      ["Echonomics.Core:importAllArts", "74c47d4f1dfe6424"]]]]],
+      ["Echonomics.Core:importAllArts", "74c47d4f1dfe6424"],
+      ["Echonomics.HundianOccupancy transitive imports (legacy)",
+       "ef3ff9c007dbdf64"],
+      ["Echonomics.HundianOccupancy:importAllArts", "bcb0c4e41718a974"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -24,10 +42,10 @@
   ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
    "3eca9d16ab6c877d"],
   ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/EnergyLedger.lean",
-   "5f6d955119f51b2d"],
+   "6f8a3623c4962cd3"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: Echonomics.EnergyLedger", "1e5808db13ebf682"],
   ["Package.id?: (some Echonomics)", "d80dab19a23b5a78"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "eda861611bfbd6f1"}
+ "depHash": "493b312727040552"}

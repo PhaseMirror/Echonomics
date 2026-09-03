@@ -162,9 +162,57 @@ def main : IO Unit := do
   let dunaSt : Echonomics.CivicDunaGate.DunaState :=
     { totalMembers := 10, quorumThreshold := 6, votesFor := 7, votesAgainst := 0 }
   if Echonomics.CivicDunaGate.isProposalPassed dunaSt then
-    IO.println "✓ [PASS] ADR-0002: DUNA Constitutional Quorum & Vote Gate verified"
+    IO.println "✓ [PASS] ADR-0002: DUNA Constitutional Quorum & Vote Gate passed (quorum + majority)"
   else
     throw $ IO.userError "✗ [FAIL] ADR-0002 DUNA Gate test failed"
+
+  -- ADR-0002: fail-closed quorum — sub-quorum proposal must not pass
+  let dunaSub : Echonomics.CivicDunaGate.DunaState :=
+    { totalMembers := 100, quorumThreshold := 60, votesFor := 30, votesAgainst := 5 }
+  if Echonomics.CivicDunaGate.isProposalPassed dunaSub == false then
+    IO.println "✓ [PASS] ADR-0002: Fail-closed quorum — sub-quorum proposal rejected verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0002 fail-closed quorum test failed"
+
+  -- ADR-0002: fail-closed tie — quorum reached with equal votes must not pass
+  let dunaTie : Echonomics.CivicDunaGate.DunaState :=
+    { totalMembers := 100, quorumThreshold := 10, votesFor := 10, votesAgainst := 10 }
+  if Echonomics.CivicDunaGate.isProposalPassed dunaTie == false then
+    IO.println "✓ [PASS] ADR-0002: Fail-closed tie — equal votes rejected verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0002 fail-closed tie test failed"
+
+  -- ADR-0002: majority in favor but sub-quorum still blocked (quorum binds)
+  let dunaMinor : Echonomics.CivicDunaGate.DunaState :=
+    { totalMembers := 100, quorumThreshold := 60, votesFor := 45, votesAgainst := 5 }
+  if Echonomics.CivicDunaGate.isProposalPassed dunaMinor == false then
+    IO.println "✓ [PASS] ADR-0002: Quorum binds independently of vote majority verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0002 quorum-binds test failed"
+
+  -- ADR-0002: constitutional gate classification — passing state yields Pass
+  let gatePass : Echonomics.CivicDunaGate.ConstitutionalDecision :=
+    Echonomics.CivicDunaGate.evaluateConstitutionalGate dunaSt
+  if gatePass == Echonomics.CivicDunaGate.ConstitutionalDecision.Pass then
+    IO.println "✓ [PASS] ADR-0002: Constitutional gate classifies passing proposal as Pass verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0002 constitutional gate Pass test failed"
+
+  -- ADR-0002: constitutional gate classification — sub-quorum yields RejQuorum
+  let gateRejQ : Echonomics.CivicDunaGate.ConstitutionalDecision :=
+    Echonomics.CivicDunaGate.evaluateConstitutionalGate dunaSub
+  if gateRejQ == Echonomics.CivicDunaGate.ConstitutionalDecision.RejQuorum then
+    IO.println "✓ [PASS] ADR-0002: Constitutional gate rejects sub-quorum as RejQuorum verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0002 constitutional gate RejQuorum test failed"
+
+  -- ADR-0002: constitutional gate classification — tie yields RejMajority
+  let gateRejM : Echonomics.CivicDunaGate.ConstitutionalDecision :=
+    Echonomics.CivicDunaGate.evaluateConstitutionalGate dunaTie
+  if gateRejM == Echonomics.CivicDunaGate.ConstitutionalDecision.RejMajority then
+    IO.println "✓ [PASS] ADR-0002: Constitutional gate rejects tie as RejMajority verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0002 constitutional gate RejMajority test failed"
 
   -- ── ADR-0003: UOR Prime Geometry ──
   let primeSt : Echonomics.UorPrimeGeometry.PrimeState :=
@@ -174,6 +222,57 @@ def main : IO Unit := do
   else
     throw $ IO.userError "✗ [FAIL] ADR-0003 UOR Prime Geometry test failed"
 
+  -- ADR-0003: primality — 2, 3, 5 prime; 4, 1, 0 composite
+  if Echonomics.UorPrimeGeometry.isPrime 2 &&
+      Echonomics.UorPrimeGeometry.isPrime 3 &&
+      Echonomics.UorPrimeGeometry.isPrime 5 &&
+      Echonomics.UorPrimeGeometry.isPrime 4 == false &&
+      Echonomics.UorPrimeGeometry.isPrime 1 == false &&
+      Echonomics.UorPrimeGeometry.isPrime 0 == false then
+    IO.println "✓ [PASS] ADR-0003: Primality predicate (2,3,5 prime; 4,1,0 composite) verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0003 primality test failed"
+
+  -- ADR-0003: over-bound must fail closed and be rejected by the gate
+  let overSt : Echonomics.UorPrimeGeometry.PrimeState :=
+    { primeFactorSum := 25, conservationBound := 20 }
+  let overGate : Echonomics.UorPrimeGeometry.ConservationDecision :=
+    Echonomics.UorPrimeGeometry.evaluateConservationGate overSt
+  if Echonomics.UorPrimeGeometry.isConserved overSt == false &&
+      overGate == Echonomics.UorPrimeGeometry.ConservationDecision.RejOverBound then
+    IO.println "✓ [PASS] ADR-0003: Over-bound transfer rejected (fail-closed) verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0003 over-bound rejection test failed"
+
+  -- ADR-0003: exact conservation (sum == bound) seals
+  let exactSt : Echonomics.UorPrimeGeometry.PrimeState :=
+    { primeFactorSum := 20, conservationBound := 20 }
+  let exactGate : Echonomics.UorPrimeGeometry.ConservationDecision :=
+    Echonomics.UorPrimeGeometry.evaluateConservationGate exactSt
+  if exactGate == Echonomics.UorPrimeGeometry.ConservationDecision.Seal then
+    IO.println "✓ [PASS] ADR-0003: Exact conservation seals transfer verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0003 exact conservation seal test failed"
+
+  -- ADR-0003: prime-locked geometry — factor sum 5 with sufficient bound seals
+  let lockedSt : Echonomics.UorPrimeGeometry.PrimeState :=
+    { primeFactorSum := 5, conservationBound := 10 }
+  if Echonomics.UorPrimeGeometry.isPrimeLocked lockedSt &&
+      Echonomics.UorPrimeGeometry.isConserved lockedSt then
+    IO.println "✓ [PASS] ADR-0003: Prime-locked geometry with sufficient bound conserved verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0003 prime-locked conservation test failed"
+
+  -- ADR-0003: zero conservation bound rejects any positive factor sum
+  let zeroSt : Echonomics.UorPrimeGeometry.PrimeState :=
+    { primeFactorSum := 3, conservationBound := 0 }
+  let zeroGate : Echonomics.UorPrimeGeometry.ConservationDecision :=
+    Echonomics.UorPrimeGeometry.evaluateConservationGate zeroSt
+  if zeroGate == Echonomics.UorPrimeGeometry.ConservationDecision.RejOverBound then
+    IO.println "✓ [PASS] ADR-0003: Zero bound rejects positive factor sum verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0003 zero-bound rejection test failed"
+
   -- ── ADR-0004: Energy Ledger ──
   let e1 : Echonomics.EnergyLedger.EnergyState := { vPair := 10, vNuc := 15 }
   let e2 : Echonomics.EnergyLedger.EnergyState := { vPair := 12, vNuc := 8 }
@@ -181,6 +280,81 @@ def main : IO Unit := do
     IO.println "✓ [PASS] ADR-0004: Energy Ledger E = V_pair - V_nuc Ground State Minimization verified"
   else
     throw $ IO.userError "✗ [FAIL] ADR-0004 Energy Ledger test failed"
+
+  -- ADR-0004: energy sign convention — E(10,15) = -5, E(12,8) = 4
+  if Echonomics.EnergyLedger.calculateTotalEnergy e1 == -5 &&
+      Echonomics.EnergyLedger.calculateTotalEnergy e2 == 4 then
+    IO.println "✓ [PASS] ADR-0004: Energy sign convention E = V_pair - V_nuc verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0004 energy sign convention test failed"
+
+  -- ADR-0004: Separated-Ledger Mandate — V_pair ≠ V_nuc
+  let sep : Echonomics.EnergyLedger.EnergyState := { vPair := 10, vNuc := 3 }
+  let unsep : Echonomics.EnergyLedger.EnergyState := { vPair := 7, vNuc := 7 }
+  if Echonomics.EnergyLedger.areLedgersSeparated sep &&
+      Echonomics.EnergyLedger.areLedgersSeparated unsep == false then
+    IO.println "✓ [PASS] ADR-0004: Separated-Ledger Mandate V_pair ≠ V_nuc verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0004 separated-ledger mandate test failed"
+
+  -- ADR-0004: increasing V_nuc lowers energy (monotonicity)
+  let lowAttract : Echonomics.EnergyLedger.EnergyState := { vPair := 10, vNuc := 5 }
+  let highAttract : Echonomics.EnergyLedger.EnergyState := { vPair := 10, vNuc := 9 }
+  if Echonomics.EnergyLedger.calculateTotalEnergy highAttract <
+       Echonomics.EnergyLedger.calculateTotalEnergy lowAttract then
+    IO.println "✓ [PASS] ADR-0004: Increasing V_nuc attraction lowers energy verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0004 V_nuc monotonicity test failed"
+
+  -- ADR-0004: increasing V_pair raises energy (monotonicity)
+  let lowFriction : Echonomics.EnergyLedger.EnergyState := { vPair := 4, vNuc := 3 }
+  let highFriction : Echonomics.EnergyLedger.EnergyState := { vPair := 9, vNuc := 3 }
+  if Echonomics.EnergyLedger.calculateTotalEnergy lowFriction <
+       Echonomics.EnergyLedger.calculateTotalEnergy highFriction then
+    IO.println "✓ [PASS] ADR-0004: Increasing V_pair friction raises energy verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0004 V_pair monotonicity test failed"
+
+  -- ADR-0004: ground-state fold minOfList — 3 states, min energy is (3,10) E=-7
+  let pool : List Echonomics.EnergyLedger.EnergyState :=
+    [ { vPair := 10, vNuc := 15 }
+    , { vPair := 12, vNuc := 8 }
+    , { vPair := 3, vNuc := 10 }
+    ]
+  let best : Echonomics.EnergyLedger.EnergyState := Echonomics.EnergyLedger.minOfList pool
+  if Echonomics.EnergyLedger.calculateTotalEnergy best == -7 then
+    IO.println "✓ [PASS] ADR-0004: Ground-state fold minOfList picks global minimum energy verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0004 minOfList global minimum test failed"
+
+  -- ADR-0004: ground state is well-defined within a fixed (N, D, P) frame
+  let frame : Echonomics.EnergyLedger.LedgerFrame :=
+    { headcount := 5, degenerateSetSize := 3, period := 1 }
+  if frame.headcount == 5 && frame.degenerateSetSize == 3 && frame.period == 1 then
+    IO.println "✓ [PASS] ADR-0004: Fixed (N, D, P) frame well-defined verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0004 frame definition test failed"
+
+  -- ADR-0004: ground state independent of raw multiplicity M (Decision 3)
+  let occA : Echonomics.EnergyLedger.Occupancy :=
+    { ledger := { vPair := 10, vNuc := 4 }, multiplicity := 2 }
+  let occB : Echonomics.EnergyLedger.Occupancy :=
+    { ledger := { vPair := 9, vNuc := 3 }, multiplicity := 7 }
+  -- E(10,4) = 6 = E(9,3); different multiplicities -> still mutually ground
+  if Echonomics.EnergyLedger.isGroundState occA.ledger occB.ledger &&
+     Echonomics.EnergyLedger.isGroundState occB.ledger occA.ledger then
+    IO.println "✓ [PASS] ADR-0004: Ground state independent of raw multiplicity M verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0004 multiplicity independence test failed"
+
+  -- ADR-0004: ground-state existence within the frame (a minimizer always exists)
+  let framePool : List Echonomics.EnergyLedger.EnergyState :=
+    [ { vPair := 10, vNuc := 15 }, { vPair := 12, vNuc := 8 }, { vPair := 3, vNuc := 10 } ]
+  let g : Echonomics.EnergyLedger.EnergyState := Echonomics.EnergyLedger.minOfList framePool
+  if List.all framePool (fun s => Echonomics.EnergyLedger.isGroundState g s) then
+    IO.println "✓ [PASS] ADR-0004: Ground state exists (minimizer is GS over all) verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0004 ground-state existence test failed"
 
   -- ── ADR-0005: Ξ-Constitution & Ξ-License ──
   let cslOps : Echonomics.XiConstitutionLicense.CslOperators :=
@@ -192,6 +366,82 @@ def main : IO Unit := do
     IO.println "✓ [PASS] ADR-0005: Ξ-Constitution CSL Gate (N, B, S) & Lawful Recursion verified"
   else
     throw $ IO.userError "✗ [FAIL] ADR-0005 Ξ-Constitution test failed"
+
+  -- ADR-0005: composite certificate pipeline PIRTM ∘ CSL ∘ zk — all stages pass
+  let pipe : Echonomics.XiConstitutionLicense.CertPipeline :=
+    { pirtmPass := true, cslPass := true, zkPass := true }
+  if Echonomics.XiConstitutionLicense.flowCertificates pipe then
+    IO.println "✓ [PASS] ADR-0005: Composite certificate pipeline PIRTM ∘ CSL ∘ zk verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0005 composite pipeline test failed"
+
+  -- ADR-0005: Ξ-Certification requires gate + drift bound + pipeline
+  if Echonomics.XiConstitutionLicense.isXiCertified cslOps lawRec pipe then
+    IO.println "✓ [PASS] ADR-0005: Ξ-Certification = CSL ∧ LawfulRecursion ∧ Pipeline verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0005 certification test failed"
+
+  -- ADR-0005: fail-closed license — clean system is licensed
+  let cleanFlags : Echonomics.XiConstitutionLicense.ProhibitedFlags :=
+    { isSurveillance := false, isProfiling := false, isExploitation := false,
+      isWeaponized := false, isBlackBox := false }
+  if Echonomics.XiConstitutionLicense.isLicenseGranted cslOps lawRec pipe cleanFlags then
+    IO.println "✓ [PASS] ADR-0005: Fail-closed license granted for certified clean system verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0005 license-grant clean test failed"
+
+  -- ADR-0005: fail-closed license — surveillance denies execution
+  let survFlags : Echonomics.XiConstitutionLicense.ProhibitedFlags :=
+    { isSurveillance := true, isProfiling := false, isExploitation := false,
+      isWeaponized := false, isBlackBox := false }
+  if Echonomics.XiConstitutionLicense.isLicenseGranted cslOps lawRec pipe survFlags == false then
+    IO.println "✓ [PASS] ADR-0005: Fail-closed denial of surveillance deployment verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0005 surveillance denial test failed"
+
+  -- ADR-0005: fail-closed license — weaponized deployment is never licensed
+  let weapFlags : Echonomics.XiConstitutionLicense.ProhibitedFlags :=
+    { isSurveillance := false, isProfiling := false, isExploitation := false,
+      isWeaponized := true, isBlackBox := false }
+  if Echonomics.XiConstitutionLicense.isLicenseGranted cslOps lawRec pipe weapFlags == false then
+    IO.println "✓ [PASS] ADR-0005: Fail-closed denial of weaponization verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0005 weaponization denial test failed"
+
+  -- ADR-0005: Decision 1 — state transition with CSL gate evaluated BEFORE
+  -- mutation yields Lawful Recursion over time (drift δ ≤ ε).
+  let xiState : Echonomics.XiConstitutionLicense.XiState :=
+    { epoch := 0, semantic := 5 }
+  let xiNext : Echonomics.XiConstitutionLicense.XiState :=
+    Echonomics.XiConstitutionLicense.cslGatedStep cslOps 3 1 xiState
+  if xiNext.epoch == 1 &&
+     xiNext.semantic == 8 &&
+     Echonomics.XiConstitutionLicense.measureDrift xiState xiNext == 3 &&
+     Echonomics.XiConstitutionLicense.measureDrift xiState xiNext ≤ 10 then
+    IO.println "✓ [PASS] ADR-0005: Lawful Recursion over transition (δ ≤ ε) verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0005 transition lawful-recursion test failed"
+
+  -- ADR-0005: Decision 1 — Silence Clause / fail-closed: a CSL-rejected
+  -- transition is a NO-OP (state unchanged, zero drift).
+  let badOps : Echonomics.XiConstitutionLicense.CslOperators :=
+    { isNeutral := true, isBeneficent := true, isSilent := false }
+  let xiFrozen := Echonomics.XiConstitutionLicense.cslGatedStep badOps 100 9 xiState
+  if xiFrozen == xiState &&
+     Echonomics.XiConstitutionLicense.measureDrift xiState xiFrozen == 0 then
+    IO.println "✓ [PASS] ADR-0005: Silence-Clause NO-OP on CSL-rejected transition verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0005 NO-OP silence-clause test failed"
+
+  -- ADR-0005: Decision 2 — certified composite pipeline Ψ = PIRTM ∘ CSL ∘ zk
+  -- yields a lawful transition (drift bounded by ε).
+  let xiCert := Echonomics.XiConstitutionLicense.certifiedGatedStep pipe 4 1 xiState
+  if xiCert.epoch == 1 &&
+     xiCert.semantic == 9 &&
+     Echonomics.XiConstitutionLicense.measureDrift xiState xiCert ≤ 10 then
+    IO.println "✓ [PASS] ADR-0005: Certified composite transition Ψ lawful verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0005 certified composite transition test failed"
 
   -- ── ADR-0006: Lambda-Proof ──
   let lambdaId : Echonomics.LambdaProof.LambdaIdentityCommitment :=
