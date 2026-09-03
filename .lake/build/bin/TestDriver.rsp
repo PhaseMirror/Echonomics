@@ -4,6 +4,7 @@
 "/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/HundianOccupancy.c.o.export"
 "/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/CivicDunaGate.c.o.export"
 "/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/UorPrimeGeometry.c.o.export"
+"/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/EnergyLedger.c.o.export"
 "-L"
 "/home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/lib/lean"
 "--sysroot"
