@@ -1,3 +1,18 @@
+---
+id: ADR-0008
+title: "ADR-0008: Hundian Period-0 Occupancy Runbook v1 Execution"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.HundianCodebookRunbook
+rust_module: echonomics_engine::hundian_codebook
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0008: Hundian Period-0 Occupancy Runbook v1 Execution
 
 - **Status**: Proposed

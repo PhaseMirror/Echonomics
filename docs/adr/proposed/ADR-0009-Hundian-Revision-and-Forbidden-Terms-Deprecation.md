@@ -1,3 +1,18 @@
+---
+id: ADR-0009
+title: "ADR-0009: Hundian Revision and Forbidden Terms Deprecation"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.HundianCodebookRunbook
+rust_module: echonomics_engine::hundian_codebook
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0009: Hundian Revision and Forbidden Terms Deprecation
 
 - **Status**: Proposed

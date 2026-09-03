@@ -1,3 +1,18 @@
+---
+id: ADR-0016
+title: "ADR-0016: Eight Virtues of Buurtzorg Self-Governing Care Model"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.BuurtzorgModel
+rust_module: echonomics_engine::buurtzorg
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0016: Eight Virtues of Buurtzorg Self-Governing Care Model
 
 - **Status**: Proposed

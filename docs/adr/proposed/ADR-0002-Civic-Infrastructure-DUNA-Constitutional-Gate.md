@@ -1,3 +1,18 @@
+---
+id: ADR-0002
+title: "ADR-0002: Citizen Gardens DUNA Governing Principles & Constitutional Gate"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.CivicDunaGate
+rust_module: echonomics_engine::duna
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0002: Citizen Gardens DUNA Governing Principles & Constitutional Gate
 
 - **Status**: Proposed

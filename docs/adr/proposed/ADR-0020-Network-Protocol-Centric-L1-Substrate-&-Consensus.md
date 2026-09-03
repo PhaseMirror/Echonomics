@@ -1,3 +1,18 @@
+---
+id: ADR-0020
+title: "ADR-0020: Network Protocol-Centric L1 Substrate & Consensus"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.TrifectaProtocolReview
+rust_module: echonomics_engine::trifecta_protocol
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0020: Network Protocol-Centric L1 Substrate & Consensus
 
 - **Status**: Proposed

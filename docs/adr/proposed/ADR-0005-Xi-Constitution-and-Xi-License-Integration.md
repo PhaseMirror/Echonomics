@@ -1,3 +1,18 @@
+---
+id: ADR-0005
+title: "ADR-0005: Integration of Ξ-Constitution and Ξ-License Governance Invariants"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.XiConstitutionLicense
+rust_module: echonomics_engine::xi_constitution
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0005: Integration of Ξ-Constitution and Ξ-License Governance Invariants
 
 - **Status**: Proposed

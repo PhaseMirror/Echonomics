@@ -1,3 +1,18 @@
+---
+id: ADR-0017
+title: "ADR-0017: Buurtzorg Civic Infrastructure Integration Schema"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.BuurtzorgModel
+rust_module: echonomics_engine::buurtzorg
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0017: Buurtzorg Civic Infrastructure Integration Schema
 
 - **Status**: Proposed

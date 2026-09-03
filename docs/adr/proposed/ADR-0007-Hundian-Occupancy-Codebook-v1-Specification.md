@@ -1,3 +1,18 @@
+---
+id: ADR-0007
+title: "ADR-0007: Hundian Occupancy Codebook v1 Specification"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.HundianCodebookRunbook
+rust_module: echonomics_engine::hundian_codebook
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0007: Hundian Occupancy Codebook v1 Specification
 
 - **Status**: Proposed

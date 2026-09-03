@@ -1,3 +1,18 @@
+---
+id: ADR-0012
+title: "ADR-0012: Unified Civic Infrastructure Architectural Blueprint"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.CivicInfrastructureSpec
+rust_module: echonomics_engine::civic_spec
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0012: Unified Civic Infrastructure Architectural Blueprint
 
 - **Status**: Proposed

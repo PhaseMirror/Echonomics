@@ -1,3 +1,18 @@
+---
+id: ADR-0014
+title: "ADR-0014: Multiplicity Social Physics Part 2 - Term-Order Gate & Ground State"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.SocialPhysicsParts
+rust_module: echonomics_engine::social_physics
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0014: Multiplicity Social Physics Part 2 - Term-Order Gate & Ground State
 
 - **Status**: Proposed

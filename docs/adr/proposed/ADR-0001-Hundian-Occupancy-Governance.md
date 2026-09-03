@@ -1,3 +1,18 @@
+---
+id: ADR-0001
+title: "ADR-0001: Hundian Social Physics Occupancy Governance & Term-Order Gate"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.HundianOccupancy
+rust_module: echonomics_engine::hundian
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0001: Hundian Social Physics Occupancy Governance & Term-Order Gate
 
 - **Status**: Proposed

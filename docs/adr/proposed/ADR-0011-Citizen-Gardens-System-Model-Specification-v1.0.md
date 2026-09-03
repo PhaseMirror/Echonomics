@@ -1,3 +1,18 @@
+---
+id: ADR-0011
+title: "ADR-0011: Citizen Gardens System Model Specification v1.0"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.CivicInfrastructureSpec
+rust_module: echonomics_engine::civic_spec
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0011: Citizen Gardens System Model Specification v1.0
 
 - **Status**: Proposed

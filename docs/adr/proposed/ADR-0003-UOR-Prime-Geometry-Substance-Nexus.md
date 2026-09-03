@@ -1,3 +1,18 @@
+---
+id: ADR-0003
+title: "ADR-0003: UOR Healthcare Nexus and L0 Prime Geometry Substance Protocol"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.UorPrimeGeometry
+rust_module: echonomics_engine::uor_geometry
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0003: UOR Healthcare Nexus and L0 Prime Geometry Substance Protocol
 
 - **Status**: Proposed

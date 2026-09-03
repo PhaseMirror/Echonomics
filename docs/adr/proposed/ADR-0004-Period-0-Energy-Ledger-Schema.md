@@ -1,3 +1,18 @@
+---
+id: ADR-0004
+title: "ADR-0004: Period-0 Energy Ledger Schema & Ground State Minimization"
+status: Proposed
+date: 2026-09-03
+author: Phase Mirror Formal Methods Engineering & Echonomics Group
+decider: Echonomics Architectural Review Board
+lean_module: Echonomics.EnergyLedger
+rust_module: echonomics_engine::energy
+tags:
+  - echonomics
+  - social-physics
+  - formal-verification
+---
+
 # ADR-0004: Period-0 Energy Ledger Schema & Ground State Minimization
 
 - **Status**: Proposed
