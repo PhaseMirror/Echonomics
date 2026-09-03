@@ -1,19 +1,19 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["dbe440dc928d670e.olean"],
+ {"o": ["b0f1bc5bed4dd1fe.olean"],
   "m": false,
-  "i": "fb67d96d4da9c9d1.ilean",
-  "c": "56205c4c744fe095.c"},
+  "i": "893858fd7b9ed6f0.ilean",
+  "c": "d821b461befba96c.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/lean /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/HundianCodebookRunbook.lean -o /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/HundianCodebookRunbook.olean -i /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/HundianCodebookRunbook.ilean -c /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/HundianCodebookRunbook.c --setup /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/HundianCodebookRunbook.setup.json --json",
    "level": "trace"},
   {"message":
-   "lean/Echonomics/HundianCodebookRunbook.lean:100:32: Variable name `e` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _e\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "lean/Echonomics/HundianCodebookRunbook.lean:182:32: Variable name `e` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _e\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
    "level": "warning"},
   {"message":
-   "lean/Echonomics/HundianCodebookRunbook.lean:105:26: Variable name `w` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _w\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "lean/Echonomics/HundianCodebookRunbook.lean:187:26: Variable name `w` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _w\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
    "level": "warning"}],
  "inputs":
  [["deps",
@@ -30,10 +30,10 @@
   ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
    "3eca9d16ab6c877d"],
   ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/HundianCodebookRunbook.lean",
-   "2197147147b445af"],
+   "1d7bd0533a335b87"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: Echonomics.HundianCodebookRunbook", "0199cd91d3ea56ea"],
   ["Package.id?: (some Echonomics)", "d80dab19a23b5a78"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "0a2857387ef61e56"}
+ "depHash": "91c0f2c0ef0556d3"}
