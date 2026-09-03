@@ -1,0 +1,17 @@
+{"plugins": [],
+ "package": "Echonomics",
+ "options": {},
+ "name": "Echonomics.Test",
+ "isModule": false,
+ "importArts":
+ {"Echonomics.UorPrimeGeometry":
+  [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/UorPrimeGeometry.olean"]],
+  "Echonomics.Proofs":
+  [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/Proofs.olean"]],
+  "Echonomics.HundianOccupancy":
+  [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/HundianOccupancy.olean"]],
+  "Echonomics.Core":
+  [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/Core.olean"]],
+  "Echonomics.CivicDunaGate":
+  [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/CivicDunaGate.olean"]]},
+ "dynlibs": []}

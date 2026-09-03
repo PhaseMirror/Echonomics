@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "rust/echonomics-engine"
+]
+resolver = "2"
