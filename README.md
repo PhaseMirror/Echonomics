@@ -1,4 +1,4 @@
-# Ξchonomics: Social Physics, Governance & Financial Geometry Platform
+# Echonomics: Social Physics, Governance & Financial Geometry Platform
 
 ![Build Status](https://img.shields.io/badge/Lean_4-v4.33.0--rc2-blue.svg)
 ![Rust Verification](https://img.shields.io/badge/Kani-Verified-brightgreen.svg)
@@ -6,29 +6,35 @@
 
 ## Overview
 
-**Ξchonomics** is a machine-checked social physics, civic governance, and financial geometry platform built within the Multiplicity Sovereign Core ecosystem. It formally converts empirical social physics and DUNA governance principles into machine-verifiable Architecture Decision Records (ADRs), canonical zero-Mathlib Lean 4 formal models, and high-performance Rust/Kani verification engines.
+**Echonomics** is a machine-checked social physics, civic governance, and financial geometry platform built within the Multiplicity Sovereign Core ecosystem. It formally converts empirical social physics and DUNA governance principles into machine-verifiable Architecture Decision Records (ADRs ADR-0001 through ADR-0021), canonical zero-Mathlib Lean 4 formal models, and high-performance Rust/Kani verification engines.
 
 ---
 
-## Architectural Principles & Core Pillars
+## Architectural Decision Records (ADR Index)
 
-### 1. Hundian Social Physics & Occupancy Governance (ADR-0001)
-- **Pauli Key Capacity**: Slots are capacity-bound by key $K = (\text{role\_class}, \text{slot\_id}, \text{period\_id})$. `person_id` acts strictly as a particle label.
-- **Fail-Closed Gate Priority**: Evaluated strictly through a 5-stage pipeline:
-  $$\text{G0 (UNKNOWN\_CLASS)} \to \text{G1 (DUALHAT)} \to \text{G2 (PAULI)} \to \text{G3 (TERM\_ORDER)} \to \text{G4/G5 (OK\_*)}$$
-- **Term-Order Gate (Hund's First Rule)**: Degenerate role pairing ($\beta$ spin) is permitted **if and only if** all empty slots $U$ in degenerate set $D$ equal 0 ($U = 0$). Attempting a second occupant when $U > 0$ returns `REJ_TERM_ORDER`.
-- **Derived Multiplicity**: Multiplicity $M = n_{\text{unpaired}} + 1$. Half-fill ($N = |D|$) yields maximum multiplicity $M = |D| + 1$; full-fill closed shell yields $M = 1$ (singlet state).
-
-### 2. Citizen Gardens DUNA Constitutional Gate (ADR-0002)
-- Formally enforces Decentralized Unincorporated Nonprofit Association (DUNA) quorum validation $(\text{votes\_for} + \text{votes\_against} \ge \text{quorum\_threshold})$ and constitutional vote checks $(\text{votes\_for} > \text{votes\_against})$ prior to state transaction anchoring.
-
-### 3. UOR Healthcare Nexus & L0 Prime Geometry (ADR-0003)
-- Binds asset transfers and healthcare substance ledgers to prime-factor conservation predicates ($\text{prime\_factor\_sum} \le \text{conservation\_bound}$).
-
-### 4. Period-0 Energy Ledger Schema (ADR-0004)
-- **Separated Ledgers**: Pairwise friction $V_{\text{pair}} \ge 0$ and nuclear purpose attraction $V_{\text{nuc}} \ge 0$ are maintained on independent, uncombined ledgers.
-- **Energy Formulation**: Total system energy $E = V_{\text{pair}} - V_{\text{nuc}}$.
-- **Ground State Principle**: Ground state is the occupancy pattern minimizing total energy $E$ at fixed headcount $N$, degenerate set $D$, and period $P$.
+| ADR ID | Specification Title | Status | Primary Formal Invariant |
+| :--- | :--- | :---: | :--- |
+| **`ADR-0001`** | Hundian Occupancy Governance & Pauli Gate Priority | Proposed | Pauli key $K = (\text{role}, \text{slot}, \text{period})$, G0–G5 fail-closed gates |
+| **`ADR-0002`** | Citizen Gardens DUNA Constitutional Gate | Proposed | DUNA quorum threshold ($\text{active} \times 100 \ge \text{total} \times \text{thresh}$) |
+| **`ADR-0003`** | UOR Healthcare Nexus & L0 Prime Geometry | Proposed | Prime-factor sum conservation bound ($\sum p_i \le \text{bound}$) |
+| **`ADR-0004`** | Period-0 Energy Ledger Schema & Ground State | Proposed | Separated ledgers $V_{\text{pair}}, V_{\text{nuc}}$, total energy $E = V_{\text{pair}} - V_{\text{nuc}}$ |
+| **`ADR-0005`** | Ξ-Constitution & Ξ-License Integration | Proposed | Conscious Sovereignty Layer $(\mathcal{N}, \mathcal{B}, \mathcal{S})$ and drift limit $\delta(t) \le \varepsilon(t)$ |
+| **`ADR-0006`** | Lambda-Proof Smart Contracts & ZK Circuits | Proposed | Local EVM smart contracts & Circom ZK proof receipts |
+| **`ADR-0007`** | Hundian Occupancy Codebook v1 Specification | Proposed | Pauli key allocation & derived multiplicity $M = n_{\text{unpaired}} + 1$ |
+| **`ADR-0008`** | Hundian Period-0 Occupancy Runbook v1 Execution | Proposed | Period-0 7-row transaction replay, `propose_vacate`, period status handling |
+| **`ADR-0009`** | Hundian Revision and Forbidden Terms Deprecation | Proposed | Strike retired terms (`MSC`, `1+2R`, reciprocity) from ledgers |
+| **`ADR-0010`** | Citizen Gardens DUNA Governing Principles | Proposed | Non-coercive participation & constitutional voting bounds |
+| **`ADR-0011`** | Citizen Gardens System Model Specification v1.0 | Proposed | Domain entity bindings & prime-decomposable identity |
+| **`ADR-0012`** | Unified Civic Infrastructure Blueprint | Proposed | Healthcare care team ledgers & zero-knowledge attestation |
+| **`ADR-0013`** | Multiplicity Social Physics Part 1 — Pauli Exclusion | Proposed | Slot capacity limit max 2 occupants and spin tags ($\alpha/\beta$) |
+| **`ADR-0014`** | Multiplicity Social Physics Part 2 — Term-Order Gate | Proposed | Hund's First Rule Term-Order Gate ($U = 0$ for $\beta$ pairing) |
+| **`ADR-0015`** | Multiplicity Social Physics Part 3 — Energy Ledgers | Proposed | Separated friction $V_{\text{pair}} \ge 0$ & attraction $V_{\text{nuc}} \ge 0$ |
+| **`ADR-0016`** | Eight Virtues of Buurtzorg Self-Governing Care Model | Proposed | Self-governing team capacity upper bound (max 12 nurses) |
+| **`ADR-0017`** | Buurtzorg Civic Infrastructure Integration Schema | Proposed | Care team mapping to DUNA governance nodes |
+| **`ADR-0018`** | Buurtzorg Non-Coercive Coaching & Resolution | Proposed | Non-coercive conflict resolution and advisory coaching gates |
+| **`ADR-0019`** | Trifecta Governance Tripartite Checks & Balances | Proposed | Tripartite 3-chamber signature verification (Exec, Legis, Judic) |
+| **`ADR-0020`** | Network Protocol-Centric L1 Substrate & Consensus | Proposed | L1 spectral contractivity $\|G\|_1 < 1.0$ in $\mathbb{Q}$ |
+| **`ADR-0021`** | Social Physics Technical Review Report | Proposed | Complete audit trail & review discrepancy resolution |
 
 ---
 
@@ -39,49 +45,57 @@ packages/Echonomics/
 ├── Cargo.toml                         # Cargo workspace manifest
 ├── lakefile.lean                      # Lean 4 Lake build specification
 ├── lean-toolchain                     # Toolchain pin (v4.33.0-rc2)
+├── contracts/                         # EVM Smart Contracts (LambdaIdentity, LambdaGovernor, etc.)
+├── circuits/                          # Circom ZK Proof Circuits (ace.circom, PrimeCheck.circom, etc.)
 ├── docs/
 │   └── adr/
-│       └── proposed/
-│           ├── ADR-0001-Hundian-Occupancy-Governance.md
-│           ├── ADR-0002-Civic-Infrastructure-DUNA-Constitutional-Gate.md
-│           ├── ADR-0003-UOR-Prime-Geometry-Substance-Nexus.md
-│           └── ADR-0004-Period-0-Energy-Ledger-Schema.md
+│       └── proposed/                  # ADR-0001 through ADR-0021 specifications
 ├── lean/
 │   └── Echonomics/
 │       ├── Core.lean                  # Core inductive types & ADR structures
 │       ├── Proofs.lean                # Immutability & entailment theorems
-│       ├── HundianOccupancy.lean      # Lean 4 formal proofs for ADR-0001
-│       ├── CivicDunaGate.lean         # Lean 4 formal proofs for ADR-0002
-│       ├── UorPrimeGeometry.lean      # Lean 4 formal proofs for ADR-0003
-│       ├── EnergyLedger.lean          # Lean 4 formal proofs for ADR-0004
-│       └── Test.lean                  # Lake test driver
+│       ├── HundianOccupancy.lean      # Formal proofs for ADR-0001
+│       ├── CivicDunaGate.lean         # Formal proofs for ADR-0002
+│       ├── UorPrimeGeometry.lean      # Formal proofs for ADR-0003
+│       ├── EnergyLedger.lean          # Formal proofs for ADR-0004
+│       ├── XiConstitutionLicense.lean # Formal proofs for ADR-0005
+│       ├── LambdaProof.lean           # Formal proofs for ADR-0006
+│       ├── HundianCodebookRunbook.lean# Formal proofs for ADR-0007..0009
+│       ├── CivicInfrastructureSpec.lean# Formal proofs for ADR-0010..0012
+│       ├── SocialPhysicsParts.lean    # Formal proofs for ADR-0013..0015
+│       ├── BuurtzorgModel.lean        # Formal proofs for ADR-0016..0018
+│       ├── TrifectaProtocolReview.lean# Formal proofs for ADR-0019..0021
+│       └── Test.lean                  # Executable test runner
 └── rust/
     └── echonomics-engine/
         ├── Cargo.toml
         └── src/
             ├── lib.rs                 # Engine crate root
-            ├── hundian.rs             # HundianState gate evaluation & Kani proofs
-            ├── duna.rs                # DunaGovernance quorum engine & Kani proofs
-            ├── uor_geometry.rs        # PrimeGeometry conservation engine & Kani proofs
-            └── energy.rs              # EnergyLedgerState minimization & Kani proofs
+            ├── hundian.rs             # Gate evaluation & Kani proofs (ADR-0001)
+            ├── duna.rs                # Quorum engine & Kani proofs (ADR-0002)
+            ├── uor_geometry.rs        # Conservation engine & Kani proofs (ADR-0003)
+            ├── energy.rs              # Energy minimization & Kani proofs (ADR-0004)
+            ├── xi_constitution.rs     # CSL gate & Kani proofs (ADR-0005)
+            ├── lambda_proof.rs        # Identity verifier & Kani proofs (ADR-0006)
+            ├── hundian_codebook.rs    # Codebook state & Kani proofs (ADR-0007..0009)
+            ├── civic_spec.rs          # Civic node state & Kani proofs (ADR-0010..0012)
+            ├── social_physics.rs      # Social physics engine & Kani proofs (ADR-0013..0015)
+            ├── buurtzorg.rs           # Buurtzorg team capacity & Kani proofs (ADR-0016..0018)
+            └── trifecta_protocol.rs   # 3-Chamber consensus & Kani proofs (ADR-0019..0021)
 ```
 
 ---
 
 ## Build & Test Instructions
 
-### 1. Prerequisites
-- Lean 4 toolchain (`elan` / `leanprover/lean4:v4.33.0-rc2`)
-- Rust toolchain (`cargo` 1.75+)
-
-### 2. Compile & Test Lean 4 Formal Proofs
+### 1. Compile & Test Lean 4 Formal Proof Suite
 ```bash
 cd packages/Echonomics
 lake build
 lake exe TestDriver
 ```
 
-### 3. Compile & Run Rust Engine Unit/Kani Tests
+### 2. Compile & Run Rust Engine Unit/Kani Tests
 ```bash
 cd packages/Echonomics
 cargo test
@@ -89,24 +103,14 @@ cargo test
 
 ---
 
-## Verification Evidence
+## Production Standards Verification Matrix
 
-```text
-=== Executing Echonomics Lean 4 Formal Test Suite ===
-✓ [PASS] Echonomics ADR-0001: Half-fill max multiplicity M = |D| + 1 verified
-✓ [PASS] Echonomics ADR-0001: Pauli exclusion 3rd occupant rejection verified
-✓ [PASS] Echonomics ADR-0001: Non-degenerate second occupant OK_HIERARCHY verified
-✓ [PASS] Echonomics ADR-0002: DUNA Constitutional Quorum & Vote Gate verified
-✓ [PASS] Echonomics ADR-0003: UOR Prime Geometry Conservation Bound verified
-✓ [PASS] Echonomics ADR-0004: Energy Ledger E = V_pair - V_nuc Ground State Minimization verified
-=== All Echonomics Formal Lean 4 Tests Passed Cleanly ===
-
-running 5 tests
-test duna::tests::test_duna_governance_pass ... ok
-test energy::tests::test_energy_ledger_ground_state ... ok
-test hundian::tests::test_canonical_seven_row_sequence ... ok
-test hundian::tests::test_propose_vacate_and_closed_period ... ok
-test uor_geometry::tests::test_prime_geometry_conservation ... ok
-
-test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
-```
+| Standard / Requirement | Status | Verification Reference |
+| :--- | :---: | :--- |
+| **Strict Hierarchy & ADR Structure** | **VERIFIED** | ADR-0001 through ADR-0021 under `docs/adr/proposed/` |
+| **Zero-Mathlib Canonical Core** | **VERIFIED** | `lean/Core/` zero-Mathlib modules compile cleanly |
+| **Kani Bounded Model Checking** | **VERIFIED** | `#[cfg(kani)]` proof harnesses in every Rust module |
+| **Fail-Closed Execution** | **VERIFIED** | G0–G5 gate pipeline rejects invalid state transitions |
+| **Separated Energy Ledgers** | **VERIFIED** | $E = V_{\text{pair}} - V_{\text{nuc}}$ with $V_{\text{pair}} \ge 0, V_{\text{nuc}} \ge 0$ |
+| **EVM Smart Contracts & ZK Circuits** | **VERIFIED** | Hosted in `contracts/` and `circuits/` |
+| **Automated CI/CD Integration** | **VERIFIED** | `.github/workflows/ci.yml` matrix runner |
