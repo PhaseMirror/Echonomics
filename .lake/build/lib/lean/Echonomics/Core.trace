@@ -1,10 +1,10 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["c0b55acb35023e00.olean"],
+ {"o": ["0f25cc4ae758a6d3.olean"],
   "m": false,
-  "i": "a4b0395f98d84a80.ilean",
-  "c": "038d0c2f9e014f7e.c"},
+  "i": "587ed9da78149ab5.ilean",
+  "c": "ec4a19b63a96ba32.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/lean /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/Core.lean -o /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/Core.olean -i /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/Core.ilean -c /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/Core.c --setup /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/Core.setup.json --json",
@@ -22,10 +22,10 @@
   ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
    "3eca9d16ab6c877d"],
   ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/Core.lean",
-   "8bf74b23497ae0a0"],
+   "b4d802cbecc36da7"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: Echonomics.Core", "62bd980b319da411"],
   ["Package.id?: (some Echonomics)", "d80dab19a23b5a78"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "ed8876a41c108732"}
+ "depHash": "74d3fba942d8b219"}

@@ -17,17 +17,17 @@ uint8_t lean_nat_dec_le(lean_object*, lean_object*);
 lean_object* lean_nat_to_int(lean_object*);
 lean_object* l_String_quote(lean_object*);
 lean_object* lean_string_length(lean_object*);
-uint8_t lean_string_dec_eq(lean_object*, lean_object*);
+lean_object* l_Nat_reprFast(lean_object*);
 lean_object* l_Repr_addAppParen(lean_object*, lean_object*);
 uint8_t lean_nat_dec_le(lean_object*, lean_object*);
+lean_object* l_List_repr_x27___at___00Lean_Syntax_instReprPreresolved_repr_spec__0___redArg(lean_object*);
+lean_object* l_Option_repr___at___00Lean_Meta_instReprConfig__1_repr_spec__0(lean_object*, lean_object*);
+uint8_t lean_string_dec_eq(lean_object*, lean_object*);
 uint8_t lean_nat_dec_eq(lean_object*, lean_object*);
 lean_object* l_instDecidableEqString___boxed(lean_object*, lean_object*);
 uint8_t l_instDecidableEqList___redArg(lean_object*, lean_object*, lean_object*);
 lean_object* l_instDecidableEqNat___boxed(lean_object*, lean_object*);
 uint8_t l_Option_instDecidableEq___redArg(lean_object*, lean_object*, lean_object*);
-lean_object* l_Nat_reprFast(lean_object*);
-lean_object* l_List_repr_x27___at___00Lean_Syntax_instReprPreresolved_repr_spec__0___redArg(lean_object*);
-lean_object* l_Option_repr___at___00Lean_Meta_instReprConfig__1_repr_spec__0(lean_object*, lean_object*);
 LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_ADRStatus_ctorIdx(uint8_t);
 LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_ADRStatus_ctorIdx___boxed(lean_object*);
 LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_ADRStatus_toCtorIdx(uint8_t);
@@ -348,6 +348,54 @@ LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_Core_instDecidableEqGateResult_decE
 LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instDecidableEqGateResult_decEq___boxed(lean_object*, lean_object*);
 LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_Core_instDecidableEqGateResult(lean_object*, lean_object*);
 LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instDecidableEqGateResult___boxed(lean_object*, lean_object*);
+static const lean_string_object lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 6, .m_capacity = 6, .m_length = 5, .m_data = "adrId"};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__0 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__0_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__1_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*1 + 0, .m_other = 1, .m_tag = 3}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__0_value)}};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__1 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__1_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__2_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*2 + 0, .m_other = 2, .m_tag = 5}, .m_objs = {((lean_object*)(((size_t)(0) << 1) | 1)),((lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__1_value)}};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__2 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__2_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__3_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*2 + 0, .m_other = 2, .m_tag = 5}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__2_value),((lean_object*)&lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__5_value)}};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__3 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__3_value;
+static const lean_string_object lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__4_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 11, .m_capacity = 11, .m_length = 10, .m_data = "fromStatus"};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__4 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__4_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__5_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*1 + 0, .m_other = 1, .m_tag = 3}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__4_value)}};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__5 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__5_value;
+static const lean_string_object lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__6_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 9, .m_capacity = 9, .m_length = 8, .m_data = "toStatus"};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__6 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__6_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__7_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*1 + 0, .m_other = 1, .m_tag = 3}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__6_value)}};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__7 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__7_value;
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___boxed(lean_object*, lean_object*);
+static const lean_closure_object lp_Echonomics_Echonomics_Core_instReprADRTransition___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_closure_object) + sizeof(void*)*0, .m_other = 0, .m_tag = 245}, .m_fun = (void*)lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___boxed, .m_arity = 2, .m_num_fixed = 0, .m_objs = {} };
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition___closed__0 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition___closed__0_value;
+LEAN_EXPORT const lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADRTransition___closed__0_value;
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_Core_instDecidableEqADRTransition_decEq(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instDecidableEqADRTransition_decEq___boxed(lean_object*, lean_object*);
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_Core_instDecidableEqADRTransition(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instDecidableEqADRTransition___boxed(lean_object*, lean_object*);
+static const lean_string_object lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 4, .m_capacity = 4, .m_length = 3, .m_data = "adr"};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__0 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__0_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__1_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*1 + 0, .m_other = 1, .m_tag = 3}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__0_value)}};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__1 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__1_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__2_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*2 + 0, .m_other = 2, .m_tag = 5}, .m_objs = {((lean_object*)(((size_t)(0) << 1) | 1)),((lean_object*)&lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__1_value)}};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__2 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__2_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__3_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*2 + 0, .m_other = 2, .m_tag = 5}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__2_value),((lean_object*)&lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__5_value)}};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__3 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__3_value;
+static const lean_string_object lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__4_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 13, .m_capacity = 13, .m_length = 12, .m_data = "supersededBy"};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__4 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__4_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__5_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*1 + 0, .m_other = 1, .m_tag = 3}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__4_value)}};
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__5 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__5_value;
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry_repr(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry_repr___boxed(lean_object*, lean_object*);
+static const lean_closure_object lp_Echonomics_Echonomics_Core_instReprADREntry___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_closure_object) + sizeof(void*)*0, .m_other = 0, .m_tag = 245}, .m_fun = (void*)lp_Echonomics_Echonomics_Core_instReprADREntry_repr___boxed, .m_arity = 2, .m_num_fixed = 0, .m_objs = {} };
+static const lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry___closed__0 = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADREntry___closed__0_value;
+LEAN_EXPORT const lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry = (const lean_object*)&lp_Echonomics_Echonomics_Core_instReprADREntry___closed__0_value;
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_Core_instDecidableEqADREntry_decEq(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instDecidableEqADREntry_decEq___boxed(lean_object*, lean_object*);
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_Core_instDecidableEqADREntry(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instDecidableEqADREntry___boxed(lean_object*, lean_object*);
 LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_ADRStatus_ctorIdx(uint8_t v_x_1_){
 _start:
 {
@@ -3227,6 +3275,355 @@ uint8_t v_res_1037_; lean_object* v_r_1038_;
 v_res_1037_ = lp_Echonomics_Echonomics_Core_instDecidableEqGateResult(v_x_1035_, v_x_1036_);
 v_r_1038_ = lean_box(v_res_1037_);
 return v_r_1038_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg(lean_object* v_x_1054_){
+_start:
+{
+lean_object* v_adrId_1055_; uint8_t v_fromStatus_1056_; uint8_t v_toStatus_1057_; lean_object* v___x_1058_; lean_object* v___x_1059_; lean_object* v___x_1060_; lean_object* v___x_1061_; lean_object* v___x_1062_; lean_object* v___x_1063_; uint8_t v___x_1064_; lean_object* v___x_1065_; lean_object* v___x_1066_; lean_object* v___x_1067_; lean_object* v___x_1068_; lean_object* v___x_1069_; lean_object* v___x_1070_; lean_object* v___x_1071_; lean_object* v___x_1072_; lean_object* v___x_1073_; lean_object* v___x_1074_; lean_object* v___x_1075_; lean_object* v___x_1076_; lean_object* v___x_1077_; lean_object* v___x_1078_; lean_object* v___x_1079_; lean_object* v___x_1080_; lean_object* v___x_1081_; lean_object* v___x_1082_; lean_object* v___x_1083_; lean_object* v___x_1084_; lean_object* v___x_1085_; lean_object* v___x_1086_; lean_object* v___x_1087_; lean_object* v___x_1088_; lean_object* v___x_1089_; lean_object* v___x_1090_; lean_object* v___x_1091_; lean_object* v___x_1092_; lean_object* v___x_1093_; lean_object* v___x_1094_; lean_object* v___x_1095_; lean_object* v___x_1096_; 
+v_adrId_1055_ = lean_ctor_get(v_x_1054_, 0);
+lean_inc(v_adrId_1055_);
+v_fromStatus_1056_ = lean_ctor_get_uint8(v_x_1054_, sizeof(void*)*1);
+v_toStatus_1057_ = lean_ctor_get_uint8(v_x_1054_, sizeof(void*)*1 + 1);
+lean_dec_ref(v_x_1054_);
+v___x_1058_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__5));
+v___x_1059_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__3));
+v___x_1060_ = lean_obj_once(&lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__12, &lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__12_once, _init_lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__12);
+v___x_1061_ = l_Nat_reprFast(v_adrId_1055_);
+v___x_1062_ = lean_alloc_ctor(3, 1, 0);
+lean_ctor_set(v___x_1062_, 0, v___x_1061_);
+v___x_1063_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v___x_1063_, 0, v___x_1060_);
+lean_ctor_set(v___x_1063_, 1, v___x_1062_);
+v___x_1064_ = 0;
+v___x_1065_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_1065_, 0, v___x_1063_);
+lean_ctor_set_uint8(v___x_1065_, sizeof(void*)*1, v___x_1064_);
+v___x_1066_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1066_, 0, v___x_1059_);
+lean_ctor_set(v___x_1066_, 1, v___x_1065_);
+v___x_1067_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__9));
+v___x_1068_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1068_, 0, v___x_1066_);
+lean_ctor_set(v___x_1068_, 1, v___x_1067_);
+v___x_1069_ = lean_box(1);
+v___x_1070_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1070_, 0, v___x_1068_);
+lean_ctor_set(v___x_1070_, 1, v___x_1069_);
+v___x_1071_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__5));
+v___x_1072_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1072_, 0, v___x_1070_);
+lean_ctor_set(v___x_1072_, 1, v___x_1071_);
+v___x_1073_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1073_, 0, v___x_1072_);
+lean_ctor_set(v___x_1073_, 1, v___x_1058_);
+v___x_1074_ = lean_obj_once(&lp_Echonomics_Echonomics_Core_instReprADR_repr___redArg___closed__21, &lp_Echonomics_Echonomics_Core_instReprADR_repr___redArg___closed__21_once, _init_lp_Echonomics_Echonomics_Core_instReprADR_repr___redArg___closed__21);
+v___x_1075_ = lean_unsigned_to_nat(0u);
+v___x_1076_ = lp_Echonomics_Echonomics_Core_instReprADRStatus_repr(v_fromStatus_1056_, v___x_1075_);
+v___x_1077_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v___x_1077_, 0, v___x_1074_);
+lean_ctor_set(v___x_1077_, 1, v___x_1076_);
+v___x_1078_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_1078_, 0, v___x_1077_);
+lean_ctor_set_uint8(v___x_1078_, sizeof(void*)*1, v___x_1064_);
+v___x_1079_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1079_, 0, v___x_1073_);
+lean_ctor_set(v___x_1079_, 1, v___x_1078_);
+v___x_1080_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1080_, 0, v___x_1079_);
+lean_ctor_set(v___x_1080_, 1, v___x_1067_);
+v___x_1081_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1081_, 0, v___x_1080_);
+lean_ctor_set(v___x_1081_, 1, v___x_1069_);
+v___x_1082_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg___closed__7));
+v___x_1083_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1083_, 0, v___x_1081_);
+lean_ctor_set(v___x_1083_, 1, v___x_1082_);
+v___x_1084_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1084_, 0, v___x_1083_);
+lean_ctor_set(v___x_1084_, 1, v___x_1058_);
+v___x_1085_ = lean_obj_once(&lp_Echonomics_Echonomics_Core_instReprADR_repr___redArg___closed__15, &lp_Echonomics_Echonomics_Core_instReprADR_repr___redArg___closed__15_once, _init_lp_Echonomics_Echonomics_Core_instReprADR_repr___redArg___closed__15);
+v___x_1086_ = lp_Echonomics_Echonomics_Core_instReprADRStatus_repr(v_toStatus_1057_, v___x_1075_);
+v___x_1087_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v___x_1087_, 0, v___x_1085_);
+lean_ctor_set(v___x_1087_, 1, v___x_1086_);
+v___x_1088_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_1088_, 0, v___x_1087_);
+lean_ctor_set_uint8(v___x_1088_, sizeof(void*)*1, v___x_1064_);
+v___x_1089_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1089_, 0, v___x_1084_);
+lean_ctor_set(v___x_1089_, 1, v___x_1088_);
+v___x_1090_ = lean_obj_once(&lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__15, &lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__15_once, _init_lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__15);
+v___x_1091_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__16));
+v___x_1092_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1092_, 0, v___x_1091_);
+lean_ctor_set(v___x_1092_, 1, v___x_1089_);
+v___x_1093_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__17));
+v___x_1094_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1094_, 0, v___x_1092_);
+lean_ctor_set(v___x_1094_, 1, v___x_1093_);
+v___x_1095_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v___x_1095_, 0, v___x_1090_);
+lean_ctor_set(v___x_1095_, 1, v___x_1094_);
+v___x_1096_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_1096_, 0, v___x_1095_);
+lean_ctor_set_uint8(v___x_1096_, sizeof(void*)*1, v___x_1064_);
+return v___x_1096_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr(lean_object* v_x_1097_, lean_object* v_prec_1098_){
+_start:
+{
+lean_object* v___x_1099_; 
+v___x_1099_ = lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___redArg(v_x_1097_);
+return v___x_1099_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instReprADRTransition_repr___boxed(lean_object* v_x_1100_, lean_object* v_prec_1101_){
+_start:
+{
+lean_object* v_res_1102_; 
+v_res_1102_ = lp_Echonomics_Echonomics_Core_instReprADRTransition_repr(v_x_1100_, v_prec_1101_);
+lean_dec(v_prec_1101_);
+return v_res_1102_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_Core_instDecidableEqADRTransition_decEq(lean_object* v_x_1105_, lean_object* v_x_1106_){
+_start:
+{
+lean_object* v_adrId_1107_; uint8_t v_fromStatus_1108_; uint8_t v_toStatus_1109_; lean_object* v_adrId_1110_; uint8_t v_fromStatus_1111_; uint8_t v_toStatus_1112_; uint8_t v___x_1113_; 
+v_adrId_1107_ = lean_ctor_get(v_x_1105_, 0);
+v_fromStatus_1108_ = lean_ctor_get_uint8(v_x_1105_, sizeof(void*)*1);
+v_toStatus_1109_ = lean_ctor_get_uint8(v_x_1105_, sizeof(void*)*1 + 1);
+v_adrId_1110_ = lean_ctor_get(v_x_1106_, 0);
+v_fromStatus_1111_ = lean_ctor_get_uint8(v_x_1106_, sizeof(void*)*1);
+v_toStatus_1112_ = lean_ctor_get_uint8(v_x_1106_, sizeof(void*)*1 + 1);
+v___x_1113_ = lean_nat_dec_eq(v_adrId_1107_, v_adrId_1110_);
+if (v___x_1113_ == 0)
+{
+return v___x_1113_;
+}
+else
+{
+uint8_t v___x_1114_; 
+v___x_1114_ = lp_Echonomics_Echonomics_Core_instDecidableEqADRStatus(v_fromStatus_1108_, v_fromStatus_1111_);
+if (v___x_1114_ == 0)
+{
+return v___x_1114_;
+}
+else
+{
+uint8_t v___x_1115_; 
+v___x_1115_ = lp_Echonomics_Echonomics_Core_instDecidableEqADRStatus(v_toStatus_1109_, v_toStatus_1112_);
+return v___x_1115_;
+}
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instDecidableEqADRTransition_decEq___boxed(lean_object* v_x_1116_, lean_object* v_x_1117_){
+_start:
+{
+uint8_t v_res_1118_; lean_object* v_r_1119_; 
+v_res_1118_ = lp_Echonomics_Echonomics_Core_instDecidableEqADRTransition_decEq(v_x_1116_, v_x_1117_);
+lean_dec_ref(v_x_1117_);
+lean_dec_ref(v_x_1116_);
+v_r_1119_ = lean_box(v_res_1118_);
+return v_r_1119_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_Core_instDecidableEqADRTransition(lean_object* v_x_1120_, lean_object* v_x_1121_){
+_start:
+{
+uint8_t v___x_1122_; 
+v___x_1122_ = lp_Echonomics_Echonomics_Core_instDecidableEqADRTransition_decEq(v_x_1120_, v_x_1121_);
+return v___x_1122_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instDecidableEqADRTransition___boxed(lean_object* v_x_1123_, lean_object* v_x_1124_){
+_start:
+{
+uint8_t v_res_1125_; lean_object* v_r_1126_; 
+v_res_1125_ = lp_Echonomics_Echonomics_Core_instDecidableEqADRTransition(v_x_1123_, v_x_1124_);
+lean_dec_ref(v_x_1124_);
+lean_dec_ref(v_x_1123_);
+v_r_1126_ = lean_box(v_res_1125_);
+return v_r_1126_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg(lean_object* v_x_1139_){
+_start:
+{
+lean_object* v_adr_1140_; lean_object* v_supersededBy_1141_; lean_object* v___x_1143_; uint8_t v_isShared_1144_; uint8_t v_isSharedCheck_1175_; 
+v_adr_1140_ = lean_ctor_get(v_x_1139_, 0);
+v_supersededBy_1141_ = lean_ctor_get(v_x_1139_, 1);
+v_isSharedCheck_1175_ = !lean_is_exclusive(v_x_1139_);
+if (v_isSharedCheck_1175_ == 0)
+{
+v___x_1143_ = v_x_1139_;
+v_isShared_1144_ = v_isSharedCheck_1175_;
+goto v_resetjp_1142_;
+}
+else
+{
+lean_inc(v_supersededBy_1141_);
+lean_inc(v_adr_1140_);
+lean_dec(v_x_1139_);
+v___x_1143_ = lean_box(0);
+v_isShared_1144_ = v_isSharedCheck_1175_;
+goto v_resetjp_1142_;
+}
+v_resetjp_1142_:
+{
+lean_object* v___x_1145_; lean_object* v___x_1146_; lean_object* v___x_1147_; lean_object* v___x_1148_; lean_object* v___x_1149_; lean_object* v___x_1151_; 
+v___x_1145_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__5));
+v___x_1146_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__3));
+v___x_1147_ = lean_obj_once(&lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__7, &lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__7_once, _init_lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__7);
+v___x_1148_ = lean_unsigned_to_nat(0u);
+v___x_1149_ = lp_Echonomics_Echonomics_Core_instReprADR_repr___redArg(v_adr_1140_);
+if (v_isShared_1144_ == 0)
+{
+lean_ctor_set_tag(v___x_1143_, 4);
+lean_ctor_set(v___x_1143_, 1, v___x_1149_);
+lean_ctor_set(v___x_1143_, 0, v___x_1147_);
+v___x_1151_ = v___x_1143_;
+goto v_reusejp_1150_;
+}
+else
+{
+lean_object* v_reuseFailAlloc_1174_; 
+v_reuseFailAlloc_1174_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v_reuseFailAlloc_1174_, 0, v___x_1147_);
+lean_ctor_set(v_reuseFailAlloc_1174_, 1, v___x_1149_);
+v___x_1151_ = v_reuseFailAlloc_1174_;
+goto v_reusejp_1150_;
+}
+v_reusejp_1150_:
+{
+uint8_t v___x_1152_; lean_object* v___x_1153_; lean_object* v___x_1154_; lean_object* v___x_1155_; lean_object* v___x_1156_; lean_object* v___x_1157_; lean_object* v___x_1158_; lean_object* v___x_1159_; lean_object* v___x_1160_; lean_object* v___x_1161_; lean_object* v___x_1162_; lean_object* v___x_1163_; lean_object* v___x_1164_; lean_object* v___x_1165_; lean_object* v___x_1166_; lean_object* v___x_1167_; lean_object* v___x_1168_; lean_object* v___x_1169_; lean_object* v___x_1170_; lean_object* v___x_1171_; lean_object* v___x_1172_; lean_object* v___x_1173_; 
+v___x_1152_ = 0;
+v___x_1153_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_1153_, 0, v___x_1151_);
+lean_ctor_set_uint8(v___x_1153_, sizeof(void*)*1, v___x_1152_);
+v___x_1154_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1154_, 0, v___x_1146_);
+lean_ctor_set(v___x_1154_, 1, v___x_1153_);
+v___x_1155_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__9));
+v___x_1156_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1156_, 0, v___x_1154_);
+lean_ctor_set(v___x_1156_, 1, v___x_1155_);
+v___x_1157_ = lean_box(1);
+v___x_1158_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1158_, 0, v___x_1156_);
+lean_ctor_set(v___x_1158_, 1, v___x_1157_);
+v___x_1159_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg___closed__5));
+v___x_1160_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1160_, 0, v___x_1158_);
+lean_ctor_set(v___x_1160_, 1, v___x_1159_);
+v___x_1161_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1161_, 0, v___x_1160_);
+lean_ctor_set(v___x_1161_, 1, v___x_1145_);
+v___x_1162_ = lean_obj_once(&lp_Echonomics_Echonomics_Core_instReprADR_repr___redArg___closed__18, &lp_Echonomics_Echonomics_Core_instReprADR_repr___redArg___closed__18_once, _init_lp_Echonomics_Echonomics_Core_instReprADR_repr___redArg___closed__18);
+v___x_1163_ = l_Option_repr___at___00Lean_Meta_instReprConfig__1_repr_spec__0(v_supersededBy_1141_, v___x_1148_);
+v___x_1164_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v___x_1164_, 0, v___x_1162_);
+lean_ctor_set(v___x_1164_, 1, v___x_1163_);
+v___x_1165_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_1165_, 0, v___x_1164_);
+lean_ctor_set_uint8(v___x_1165_, sizeof(void*)*1, v___x_1152_);
+v___x_1166_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1166_, 0, v___x_1161_);
+lean_ctor_set(v___x_1166_, 1, v___x_1165_);
+v___x_1167_ = lean_obj_once(&lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__15, &lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__15_once, _init_lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__15);
+v___x_1168_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__16));
+v___x_1169_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1169_, 0, v___x_1168_);
+lean_ctor_set(v___x_1169_, 1, v___x_1166_);
+v___x_1170_ = ((lean_object*)(lp_Echonomics_Echonomics_Core_instReprArtifactLink_repr___redArg___closed__17));
+v___x_1171_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_1171_, 0, v___x_1169_);
+lean_ctor_set(v___x_1171_, 1, v___x_1170_);
+v___x_1172_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v___x_1172_, 0, v___x_1167_);
+lean_ctor_set(v___x_1172_, 1, v___x_1171_);
+v___x_1173_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_1173_, 0, v___x_1172_);
+lean_ctor_set_uint8(v___x_1173_, sizeof(void*)*1, v___x_1152_);
+return v___x_1173_;
+}
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry_repr(lean_object* v_x_1176_, lean_object* v_prec_1177_){
+_start:
+{
+lean_object* v___x_1178_; 
+v___x_1178_ = lp_Echonomics_Echonomics_Core_instReprADREntry_repr___redArg(v_x_1176_);
+return v___x_1178_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instReprADREntry_repr___boxed(lean_object* v_x_1179_, lean_object* v_prec_1180_){
+_start:
+{
+lean_object* v_res_1181_; 
+v_res_1181_ = lp_Echonomics_Echonomics_Core_instReprADREntry_repr(v_x_1179_, v_prec_1180_);
+lean_dec(v_prec_1180_);
+return v_res_1181_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_Core_instDecidableEqADREntry_decEq(lean_object* v_x_1184_, lean_object* v_x_1185_){
+_start:
+{
+lean_object* v_adr_1186_; lean_object* v_supersededBy_1187_; lean_object* v_adr_1188_; lean_object* v_supersededBy_1189_; uint8_t v___x_1190_; 
+v_adr_1186_ = lean_ctor_get(v_x_1184_, 0);
+lean_inc_ref(v_adr_1186_);
+v_supersededBy_1187_ = lean_ctor_get(v_x_1184_, 1);
+lean_inc(v_supersededBy_1187_);
+lean_dec_ref(v_x_1184_);
+v_adr_1188_ = lean_ctor_get(v_x_1185_, 0);
+lean_inc_ref(v_adr_1188_);
+v_supersededBy_1189_ = lean_ctor_get(v_x_1185_, 1);
+lean_inc(v_supersededBy_1189_);
+lean_dec_ref(v_x_1185_);
+v___x_1190_ = lp_Echonomics_Echonomics_Core_instDecidableEqADR_decEq(v_adr_1186_, v_adr_1188_);
+if (v___x_1190_ == 0)
+{
+lean_dec(v_supersededBy_1189_);
+lean_dec(v_supersededBy_1187_);
+return v___x_1190_;
+}
+else
+{
+lean_object* v___x_1191_; uint8_t v___x_1192_; 
+v___x_1191_ = lean_alloc_closure((void*)(l_instDecidableEqNat___boxed), 2, 0);
+v___x_1192_ = l_Option_instDecidableEq___redArg(v___x_1191_, v_supersededBy_1187_, v_supersededBy_1189_);
+return v___x_1192_;
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instDecidableEqADREntry_decEq___boxed(lean_object* v_x_1193_, lean_object* v_x_1194_){
+_start:
+{
+uint8_t v_res_1195_; lean_object* v_r_1196_; 
+v_res_1195_ = lp_Echonomics_Echonomics_Core_instDecidableEqADREntry_decEq(v_x_1193_, v_x_1194_);
+v_r_1196_ = lean_box(v_res_1195_);
+return v_r_1196_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_Core_instDecidableEqADREntry(lean_object* v_x_1197_, lean_object* v_x_1198_){
+_start:
+{
+uint8_t v___x_1199_; 
+v___x_1199_ = lp_Echonomics_Echonomics_Core_instDecidableEqADREntry_decEq(v_x_1197_, v_x_1198_);
+return v___x_1199_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_Core_instDecidableEqADREntry___boxed(lean_object* v_x_1200_, lean_object* v_x_1201_){
+_start:
+{
+uint8_t v_res_1202_; lean_object* v_r_1203_; 
+v_res_1202_ = lp_Echonomics_Echonomics_Core_instDecidableEqADREntry(v_x_1200_, v_x_1201_);
+v_r_1203_ = lean_box(v_res_1202_);
+return v_r_1203_;
 }
 }
 lean_object* initialize_Init(uint8_t builtin);

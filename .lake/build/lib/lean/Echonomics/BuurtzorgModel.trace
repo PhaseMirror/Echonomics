@@ -15,7 +15,7 @@
      [["@Echonomics:extraDep", "00000000000006bb"]]],
     ["imports",
      [["Echonomics.Core transitive imports (legacy)", "00000000000006bb"],
-      ["Echonomics.Core:importAllArts", "dae19cf511a44702"]]]]],
+      ["Echonomics.Core:importAllArts", "74c47d4f1dfe6424"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -30,4 +30,4 @@
   ["Module.name: Echonomics.BuurtzorgModel", "d563275ed737fc1f"],
   ["Package.id?: (some Echonomics)", "d80dab19a23b5a78"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "16080135d9d5a891"}
+ "depHash": "fb3de0560ba53dd8"}

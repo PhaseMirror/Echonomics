@@ -15,7 +15,7 @@
      [["@Echonomics:extraDep", "00000000000006bb"]]],
     ["imports",
      [["Echonomics.Core transitive imports (legacy)", "00000000000006bb"],
-      ["Echonomics.Core:importAllArts", "dae19cf511a44702"]]]]],
+      ["Echonomics.Core:importAllArts", "74c47d4f1dfe6424"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -30,4 +30,4 @@
   ["Module.name: Echonomics.EnergyLedger", "1e5808db13ebf682"],
   ["Package.id?: (some Echonomics)", "d80dab19a23b5a78"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "dbc75789050ab7e8"}
+ "depHash": "eda861611bfbd6f1"}

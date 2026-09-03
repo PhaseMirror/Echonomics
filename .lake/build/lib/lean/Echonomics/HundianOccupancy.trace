@@ -1,10 +1,10 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["33c74dde1d7fd971.olean"],
+ {"o": ["1426b2c76f968a80.olean"],
   "m": false,
-  "i": "94c9b958773c903b.ilean",
-  "c": "8739847d911683d7.c"},
+  "i": "bdb4b26668ed1adb.ilean",
+  "c": "260f7101982ec08c.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/lean /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/HundianOccupancy.lean -o /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/HundianOccupancy.olean -i /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/HundianOccupancy.ilean -c /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/HundianOccupancy.c --setup /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/HundianOccupancy.setup.json --json",
@@ -15,7 +15,7 @@
      [["@Echonomics:extraDep", "00000000000006bb"]]],
     ["imports",
      [["Echonomics.Core transitive imports (legacy)", "00000000000006bb"],
-      ["Echonomics.Core:importAllArts", "dae19cf511a44702"]]]]],
+      ["Echonomics.Core:importAllArts", "74c47d4f1dfe6424"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -24,10 +24,10 @@
   ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
    "3eca9d16ab6c877d"],
   ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/HundianOccupancy.lean",
-   "4a64c13042dbde9e"],
+   "c8c6b9d9a47671a0"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: Echonomics.HundianOccupancy", "4c2ee19ab400d165"],
   ["Package.id?: (some Echonomics)", "d80dab19a23b5a78"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "878e7558899e608a"}
+ "depHash": "355f14d5ed5fbcab"}
