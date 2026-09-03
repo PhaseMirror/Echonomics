@@ -1,6 +1,6 @@
 // Lean compiler output
 // Module: Echonomics.Test
-// Imports: public import Init public meta import Init public import Echonomics.Core public import Echonomics.Proofs public import Echonomics.HundianOccupancy public import Echonomics.CivicDunaGate public import Echonomics.UorPrimeGeometry public import Echonomics.EnergyLedger
+// Imports: public import Init public meta import Init public import Echonomics.Core public import Echonomics.Proofs public import Echonomics.HundianOccupancy public import Echonomics.CivicDunaGate public import Echonomics.UorPrimeGeometry public import Echonomics.EnergyLedger public import Echonomics.XiConstitutionLicense
 #include <lean/lean.h>
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunused-parameter"
@@ -13,15 +13,17 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+lean_object* lp_Echonomics_Echonomics_HundianOccupancy_calculateMultiplicity(lean_object*);
+uint8_t lean_nat_dec_eq(lean_object*, lean_object*);
+uint8_t lp_Echonomics_Echonomics_XiConstitutionLicense_evaluateCslGate(lean_object*);
 lean_object* lp_Echonomics_Echonomics_HundianOccupancy_evaluatePauliGate(lean_object*, lean_object*, uint8_t);
 uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isProposalPassed(lean_object*);
 lean_object* lean_string_push(lean_object*, uint32_t);
 lean_object* lean_get_stdout();
-lean_object* lp_Echonomics_Echonomics_HundianOccupancy_calculateMultiplicity(lean_object*);
-uint8_t lean_nat_dec_eq(lean_object*, lean_object*);
 uint8_t lp_Echonomics_Echonomics_Core_instDecidableEqGateResult_decEq(lean_object*, lean_object*);
 uint8_t lp_Echonomics_Echonomics_UorPrimeGeometry_isConserved(lean_object*);
 uint8_t lp_Echonomics_Echonomics_EnergyLedger_isGroundState(lean_object*, lean_object*);
+uint8_t lp_Echonomics_Echonomics_XiConstitutionLicense_isLawfulRecursion(lean_object*);
 LEAN_EXPORT lean_object* lp_Echonomics_IO_print___at___00IO_println___at___00main_spec__0_spec__0(lean_object*);
 LEAN_EXPORT lean_object* lp_Echonomics_IO_print___at___00IO_println___at___00main_spec__0_spec__0___boxed(lean_object*, lean_object*);
 LEAN_EXPORT lean_object* lp_Echonomics_IO_println___at___00main_spec__0(lean_object*);
@@ -90,8 +92,22 @@ static const lean_ctor_object lp_Echonomics_main___closed__30_value = {.m_header
 static const lean_object* lp_Echonomics_main___closed__30 = (const lean_object*)&lp_Echonomics_main___closed__30_value;
 static const lean_string_object lp_Echonomics_main___closed__31_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 100, .m_capacity = 100, .m_length = 97, .m_data = "✓ [PASS] Echonomics ADR-0004: Energy Ledger E = V_pair - V_nuc Ground State Minimization verified"};
 static const lean_object* lp_Echonomics_main___closed__31 = (const lean_object*)&lp_Echonomics_main___closed__31_value;
-static const lean_string_object lp_Echonomics_main___closed__32_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 58, .m_capacity = 58, .m_length = 57, .m_data = "=== All Echonomics Formal Lean 4 Tests Passed Cleanly ==="};
+static const lean_string_object lp_Echonomics_main___closed__32_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 48, .m_capacity = 48, .m_length = 44, .m_data = "✗ [FAIL] ADR-0005 Ξ-Constitution test failed"};
 static const lean_object* lp_Echonomics_main___closed__32 = (const lean_object*)&lp_Echonomics_main___closed__32_value;
+static const lean_ctor_object lp_Echonomics_main___closed__33_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*1 + 0, .m_other = 1, .m_tag = 18}, .m_objs = {((lean_object*)&lp_Echonomics_main___closed__32_value)}};
+static const lean_object* lp_Echonomics_main___closed__33 = (const lean_object*)&lp_Echonomics_main___closed__33_value;
+static lean_once_cell_t lp_Echonomics_main___closed__34_once = LEAN_ONCE_CELL_INITIALIZER;
+static lean_object* lp_Echonomics_main___closed__34;
+static lean_once_cell_t lp_Echonomics_main___closed__35_once = LEAN_ONCE_CELL_INITIALIZER;
+static uint8_t lp_Echonomics_main___closed__35;
+static const lean_ctor_object lp_Echonomics_main___closed__36_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*2 + 0, .m_other = 2, .m_tag = 0}, .m_objs = {((lean_object*)(((size_t)(2) << 1) | 1)),((lean_object*)(((size_t)(5) << 1) | 1))}};
+static const lean_object* lp_Echonomics_main___closed__36 = (const lean_object*)&lp_Echonomics_main___closed__36_value;
+static lean_once_cell_t lp_Echonomics_main___closed__37_once = LEAN_ONCE_CELL_INITIALIZER;
+static uint8_t lp_Echonomics_main___closed__37;
+static const lean_string_object lp_Echonomics_main___closed__38_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 95, .m_capacity = 95, .m_length = 91, .m_data = "✓ [PASS] Echonomics ADR-0005: Ξ-Constitution CSL Gate (N, B, S) & Lawful Recursion verified"};
+static const lean_object* lp_Echonomics_main___closed__38 = (const lean_object*)&lp_Echonomics_main___closed__38_value;
+static const lean_string_object lp_Echonomics_main___closed__39_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 58, .m_capacity = 58, .m_length = 57, .m_data = "=== All Echonomics Formal Lean 4 Tests Passed Cleanly ==="};
+static const lean_object* lp_Echonomics_main___closed__39 = (const lean_object*)&lp_Echonomics_main___closed__39_value;
 LEAN_EXPORT lean_object* _lean_main();
 LEAN_EXPORT lean_object* lp_Echonomics_main___boxed(lean_object*);
 LEAN_EXPORT lean_object* lp_Echonomics_IO_print___at___00IO_println___at___00main_spec__0_spec__0(lean_object* v_s_1_){
@@ -220,398 +236,502 @@ v___x_76_ = lp_Echonomics_Echonomics_EnergyLedger_isGroundState(v___x_75_, v___x
 return v___x_76_;
 }
 }
+static lean_object* _init_lp_Echonomics_main___closed__34(void){
+_start:
+{
+uint8_t v___x_84_; lean_object* v___x_85_; 
+v___x_84_ = lean_uint8_once(&lp_Echonomics_main___closed__2, &lp_Echonomics_main___closed__2_once, _init_lp_Echonomics_main___closed__2);
+v___x_85_ = lean_alloc_ctor(0, 0, 3);
+lean_ctor_set_uint8(v___x_85_, 0, v___x_84_);
+lean_ctor_set_uint8(v___x_85_, 1, v___x_84_);
+lean_ctor_set_uint8(v___x_85_, 2, v___x_84_);
+return v___x_85_;
+}
+}
+static uint8_t _init_lp_Echonomics_main___closed__35(void){
+_start:
+{
+lean_object* v___x_86_; uint8_t v___x_87_; 
+v___x_86_ = lean_obj_once(&lp_Echonomics_main___closed__34, &lp_Echonomics_main___closed__34_once, _init_lp_Echonomics_main___closed__34);
+v___x_87_ = lp_Echonomics_Echonomics_XiConstitutionLicense_evaluateCslGate(v___x_86_);
+return v___x_87_;
+}
+}
+static uint8_t _init_lp_Echonomics_main___closed__37(void){
+_start:
+{
+lean_object* v___x_91_; uint8_t v___x_92_; 
+v___x_91_ = ((lean_object*)(lp_Echonomics_main___closed__36));
+v___x_92_ = lp_Echonomics_Echonomics_XiConstitutionLicense_isLawfulRecursion(v___x_91_);
+return v___x_92_;
+}
+}
 LEAN_EXPORT lean_object* _lean_main(){
 _start:
 {
-lean_object* v___x_83_; lean_object* v___x_84_; 
-v___x_83_ = ((lean_object*)(lp_Echonomics_main___closed__0));
-v___x_84_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_83_);
-if (lean_obj_tag(v___x_84_) == 0)
+lean_object* v___x_96_; lean_object* v___x_97_; 
+v___x_96_ = ((lean_object*)(lp_Echonomics_main___closed__0));
+v___x_97_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_96_);
+if (lean_obj_tag(v___x_97_) == 0)
 {
-lean_object* v___x_86_; uint8_t v_isShared_87_; uint8_t v_isSharedCheck_157_; 
-v_isSharedCheck_157_ = !lean_is_exclusive(v___x_84_);
-if (v_isSharedCheck_157_ == 0)
+lean_object* v___x_99_; uint8_t v_isShared_100_; uint8_t v_isSharedCheck_184_; 
+v_isSharedCheck_184_ = !lean_is_exclusive(v___x_97_);
+if (v_isSharedCheck_184_ == 0)
 {
-lean_object* v_unused_158_; 
-v_unused_158_ = lean_ctor_get(v___x_84_, 0);
-lean_dec(v_unused_158_);
-v___x_86_ = v___x_84_;
-v_isShared_87_ = v_isSharedCheck_157_;
-goto v_resetjp_85_;
+lean_object* v_unused_185_; 
+v_unused_185_ = lean_ctor_get(v___x_97_, 0);
+lean_dec(v_unused_185_);
+v___x_99_ = v___x_97_;
+v_isShared_100_ = v_isSharedCheck_184_;
+goto v_resetjp_98_;
 }
 else
 {
-lean_dec(v___x_84_);
-v___x_86_ = lean_box(0);
-v_isShared_87_ = v_isSharedCheck_157_;
-goto v_resetjp_85_;
+lean_dec(v___x_97_);
+v___x_99_ = lean_box(0);
+v_isShared_100_ = v_isSharedCheck_184_;
+goto v_resetjp_98_;
 }
-v_resetjp_85_:
+v_resetjp_98_:
 {
-uint8_t v___x_88_; 
-v___x_88_ = lean_uint8_once(&lp_Echonomics_main___closed__2, &lp_Echonomics_main___closed__2_once, _init_lp_Echonomics_main___closed__2);
-if (v___x_88_ == 0)
+uint8_t v___x_101_; 
+v___x_101_ = lean_uint8_once(&lp_Echonomics_main___closed__2, &lp_Echonomics_main___closed__2_once, _init_lp_Echonomics_main___closed__2);
+if (v___x_101_ == 0)
 {
-lean_object* v___x_89_; lean_object* v___x_91_; 
-v___x_89_ = ((lean_object*)(lp_Echonomics_main___closed__4));
-if (v_isShared_87_ == 0)
+lean_object* v___x_102_; lean_object* v___x_104_; 
+v___x_102_ = ((lean_object*)(lp_Echonomics_main___closed__4));
+if (v_isShared_100_ == 0)
 {
-lean_ctor_set_tag(v___x_86_, 1);
-lean_ctor_set(v___x_86_, 0, v___x_89_);
-v___x_91_ = v___x_86_;
-goto v_reusejp_90_;
-}
-else
-{
-lean_object* v_reuseFailAlloc_92_; 
-v_reuseFailAlloc_92_ = lean_alloc_ctor(1, 1, 0);
-lean_ctor_set(v_reuseFailAlloc_92_, 0, v___x_89_);
-v___x_91_ = v_reuseFailAlloc_92_;
-goto v_reusejp_90_;
-}
-v_reusejp_90_:
-{
-return v___x_91_;
-}
+lean_ctor_set_tag(v___x_99_, 1);
+lean_ctor_set(v___x_99_, 0, v___x_102_);
+v___x_104_ = v___x_99_;
+goto v_reusejp_103_;
 }
 else
 {
-lean_object* v___x_93_; lean_object* v___x_94_; 
-lean_del_object(v___x_86_);
-v___x_93_ = ((lean_object*)(lp_Echonomics_main___closed__5));
-v___x_94_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_93_);
-if (lean_obj_tag(v___x_94_) == 0)
-{
-lean_object* v___x_96_; uint8_t v_isShared_97_; uint8_t v_isSharedCheck_155_; 
-v_isSharedCheck_155_ = !lean_is_exclusive(v___x_94_);
-if (v_isSharedCheck_155_ == 0)
-{
-lean_object* v_unused_156_; 
-v_unused_156_ = lean_ctor_get(v___x_94_, 0);
-lean_dec(v_unused_156_);
-v___x_96_ = v___x_94_;
-v_isShared_97_ = v_isSharedCheck_155_;
-goto v_resetjp_95_;
+lean_object* v_reuseFailAlloc_105_; 
+v_reuseFailAlloc_105_ = lean_alloc_ctor(1, 1, 0);
+lean_ctor_set(v_reuseFailAlloc_105_, 0, v___x_102_);
+v___x_104_ = v_reuseFailAlloc_105_;
+goto v_reusejp_103_;
 }
-else
-{
-lean_dec(v___x_94_);
-v___x_96_ = lean_box(0);
-v_isShared_97_ = v_isSharedCheck_155_;
-goto v_resetjp_95_;
-}
-v_resetjp_95_:
-{
-uint8_t v___x_98_; 
-v___x_98_ = lean_uint8_once(&lp_Echonomics_main___closed__7, &lp_Echonomics_main___closed__7_once, _init_lp_Echonomics_main___closed__7);
-if (v___x_98_ == 0)
-{
-lean_object* v___x_99_; lean_object* v___x_101_; 
-v___x_99_ = ((lean_object*)(lp_Echonomics_main___closed__9));
-if (v_isShared_97_ == 0)
-{
-lean_ctor_set_tag(v___x_96_, 1);
-lean_ctor_set(v___x_96_, 0, v___x_99_);
-v___x_101_ = v___x_96_;
-goto v_reusejp_100_;
-}
-else
-{
-lean_object* v_reuseFailAlloc_102_; 
-v_reuseFailAlloc_102_ = lean_alloc_ctor(1, 1, 0);
-lean_ctor_set(v_reuseFailAlloc_102_, 0, v___x_99_);
-v___x_101_ = v_reuseFailAlloc_102_;
-goto v_reusejp_100_;
-}
-v_reusejp_100_:
-{
-return v___x_101_;
-}
-}
-else
-{
-lean_object* v___x_103_; lean_object* v___x_104_; 
-lean_del_object(v___x_96_);
-v___x_103_ = ((lean_object*)(lp_Echonomics_main___closed__10));
-v___x_104_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_103_);
-if (lean_obj_tag(v___x_104_) == 0)
-{
-lean_object* v___x_106_; uint8_t v_isShared_107_; uint8_t v_isSharedCheck_153_; 
-v_isSharedCheck_153_ = !lean_is_exclusive(v___x_104_);
-if (v_isSharedCheck_153_ == 0)
-{
-lean_object* v_unused_154_; 
-v_unused_154_ = lean_ctor_get(v___x_104_, 0);
-lean_dec(v_unused_154_);
-v___x_106_ = v___x_104_;
-v_isShared_107_ = v_isSharedCheck_153_;
-goto v_resetjp_105_;
-}
-else
-{
-lean_dec(v___x_104_);
-v___x_106_ = lean_box(0);
-v_isShared_107_ = v_isSharedCheck_153_;
-goto v_resetjp_105_;
-}
-v_resetjp_105_:
-{
-uint8_t v___x_108_; 
-v___x_108_ = lean_uint8_once(&lp_Echonomics_main___closed__12, &lp_Echonomics_main___closed__12_once, _init_lp_Echonomics_main___closed__12);
-if (v___x_108_ == 0)
-{
-lean_object* v___x_109_; lean_object* v___x_111_; 
-v___x_109_ = ((lean_object*)(lp_Echonomics_main___closed__14));
-if (v_isShared_107_ == 0)
-{
-lean_ctor_set_tag(v___x_106_, 1);
-lean_ctor_set(v___x_106_, 0, v___x_109_);
-v___x_111_ = v___x_106_;
-goto v_reusejp_110_;
-}
-else
-{
-lean_object* v_reuseFailAlloc_112_; 
-v_reuseFailAlloc_112_ = lean_alloc_ctor(1, 1, 0);
-lean_ctor_set(v_reuseFailAlloc_112_, 0, v___x_109_);
-v___x_111_ = v_reuseFailAlloc_112_;
-goto v_reusejp_110_;
-}
-v_reusejp_110_:
-{
-return v___x_111_;
-}
-}
-else
-{
-lean_object* v___x_113_; lean_object* v___x_114_; 
-lean_del_object(v___x_106_);
-v___x_113_ = ((lean_object*)(lp_Echonomics_main___closed__15));
-v___x_114_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_113_);
-if (lean_obj_tag(v___x_114_) == 0)
-{
-lean_object* v___x_116_; uint8_t v_isShared_117_; uint8_t v_isSharedCheck_151_; 
-v_isSharedCheck_151_ = !lean_is_exclusive(v___x_114_);
-if (v_isSharedCheck_151_ == 0)
-{
-lean_object* v_unused_152_; 
-v_unused_152_ = lean_ctor_get(v___x_114_, 0);
-lean_dec(v_unused_152_);
-v___x_116_ = v___x_114_;
-v_isShared_117_ = v_isSharedCheck_151_;
-goto v_resetjp_115_;
-}
-else
-{
-lean_dec(v___x_114_);
-v___x_116_ = lean_box(0);
-v_isShared_117_ = v_isSharedCheck_151_;
-goto v_resetjp_115_;
-}
-v_resetjp_115_:
-{
-uint8_t v___x_118_; 
-v___x_118_ = lean_uint8_once(&lp_Echonomics_main___closed__17, &lp_Echonomics_main___closed__17_once, _init_lp_Echonomics_main___closed__17);
-if (v___x_118_ == 0)
-{
-lean_object* v___x_119_; lean_object* v___x_121_; 
-v___x_119_ = ((lean_object*)(lp_Echonomics_main___closed__19));
-if (v_isShared_117_ == 0)
-{
-lean_ctor_set_tag(v___x_116_, 1);
-lean_ctor_set(v___x_116_, 0, v___x_119_);
-v___x_121_ = v___x_116_;
-goto v_reusejp_120_;
-}
-else
-{
-lean_object* v_reuseFailAlloc_122_; 
-v_reuseFailAlloc_122_ = lean_alloc_ctor(1, 1, 0);
-lean_ctor_set(v_reuseFailAlloc_122_, 0, v___x_119_);
-v___x_121_ = v_reuseFailAlloc_122_;
-goto v_reusejp_120_;
-}
-v_reusejp_120_:
-{
-return v___x_121_;
-}
-}
-else
-{
-lean_object* v___x_123_; lean_object* v___x_124_; 
-lean_del_object(v___x_116_);
-v___x_123_ = ((lean_object*)(lp_Echonomics_main___closed__20));
-v___x_124_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_123_);
-if (lean_obj_tag(v___x_124_) == 0)
-{
-lean_object* v___x_126_; uint8_t v_isShared_127_; uint8_t v_isSharedCheck_149_; 
-v_isSharedCheck_149_ = !lean_is_exclusive(v___x_124_);
-if (v_isSharedCheck_149_ == 0)
-{
-lean_object* v_unused_150_; 
-v_unused_150_ = lean_ctor_get(v___x_124_, 0);
-lean_dec(v_unused_150_);
-v___x_126_ = v___x_124_;
-v_isShared_127_ = v_isSharedCheck_149_;
-goto v_resetjp_125_;
-}
-else
-{
-lean_dec(v___x_124_);
-v___x_126_ = lean_box(0);
-v_isShared_127_ = v_isSharedCheck_149_;
-goto v_resetjp_125_;
-}
-v_resetjp_125_:
-{
-uint8_t v___x_128_; 
-v___x_128_ = lean_uint8_once(&lp_Echonomics_main___closed__22, &lp_Echonomics_main___closed__22_once, _init_lp_Echonomics_main___closed__22);
-if (v___x_128_ == 0)
-{
-lean_object* v___x_129_; lean_object* v___x_131_; 
-v___x_129_ = ((lean_object*)(lp_Echonomics_main___closed__24));
-if (v_isShared_127_ == 0)
-{
-lean_ctor_set_tag(v___x_126_, 1);
-lean_ctor_set(v___x_126_, 0, v___x_129_);
-v___x_131_ = v___x_126_;
-goto v_reusejp_130_;
-}
-else
-{
-lean_object* v_reuseFailAlloc_132_; 
-v_reuseFailAlloc_132_ = lean_alloc_ctor(1, 1, 0);
-lean_ctor_set(v_reuseFailAlloc_132_, 0, v___x_129_);
-v___x_131_ = v_reuseFailAlloc_132_;
-goto v_reusejp_130_;
-}
-v_reusejp_130_:
-{
-return v___x_131_;
-}
-}
-else
-{
-lean_object* v___x_133_; lean_object* v___x_134_; 
-lean_del_object(v___x_126_);
-v___x_133_ = ((lean_object*)(lp_Echonomics_main___closed__25));
-v___x_134_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_133_);
-if (lean_obj_tag(v___x_134_) == 0)
-{
-lean_object* v___x_136_; uint8_t v_isShared_137_; uint8_t v_isSharedCheck_147_; 
-v_isSharedCheck_147_ = !lean_is_exclusive(v___x_134_);
-if (v_isSharedCheck_147_ == 0)
-{
-lean_object* v_unused_148_; 
-v_unused_148_ = lean_ctor_get(v___x_134_, 0);
-lean_dec(v_unused_148_);
-v___x_136_ = v___x_134_;
-v_isShared_137_ = v_isSharedCheck_147_;
-goto v_resetjp_135_;
-}
-else
-{
-lean_dec(v___x_134_);
-v___x_136_ = lean_box(0);
-v_isShared_137_ = v_isSharedCheck_147_;
-goto v_resetjp_135_;
-}
-v_resetjp_135_:
-{
-uint8_t v___x_138_; 
-v___x_138_ = lean_uint8_once(&lp_Echonomics_main___closed__28, &lp_Echonomics_main___closed__28_once, _init_lp_Echonomics_main___closed__28);
-if (v___x_138_ == 0)
-{
-lean_object* v___x_139_; lean_object* v___x_141_; 
-v___x_139_ = ((lean_object*)(lp_Echonomics_main___closed__30));
-if (v_isShared_137_ == 0)
-{
-lean_ctor_set_tag(v___x_136_, 1);
-lean_ctor_set(v___x_136_, 0, v___x_139_);
-v___x_141_ = v___x_136_;
-goto v_reusejp_140_;
-}
-else
-{
-lean_object* v_reuseFailAlloc_142_; 
-v_reuseFailAlloc_142_ = lean_alloc_ctor(1, 1, 0);
-lean_ctor_set(v_reuseFailAlloc_142_, 0, v___x_139_);
-v___x_141_ = v_reuseFailAlloc_142_;
-goto v_reusejp_140_;
-}
-v_reusejp_140_:
-{
-return v___x_141_;
-}
-}
-else
-{
-lean_object* v___x_143_; lean_object* v___x_144_; 
-lean_del_object(v___x_136_);
-v___x_143_ = ((lean_object*)(lp_Echonomics_main___closed__31));
-v___x_144_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_143_);
-if (lean_obj_tag(v___x_144_) == 0)
-{
-lean_object* v___x_145_; lean_object* v___x_146_; 
-lean_dec_ref_known(v___x_144_, 1);
-v___x_145_ = ((lean_object*)(lp_Echonomics_main___closed__32));
-v___x_146_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_145_);
-return v___x_146_;
-}
-else
-{
-return v___x_144_;
-}
-}
-}
-}
-else
-{
-return v___x_134_;
-}
-}
-}
-}
-else
-{
-return v___x_124_;
-}
-}
-}
-}
-else
-{
-return v___x_114_;
-}
-}
-}
-}
-else
+v_reusejp_103_:
 {
 return v___x_104_;
 }
 }
+else
+{
+lean_object* v___x_106_; lean_object* v___x_107_; 
+lean_del_object(v___x_99_);
+v___x_106_ = ((lean_object*)(lp_Echonomics_main___closed__5));
+v___x_107_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_106_);
+if (lean_obj_tag(v___x_107_) == 0)
+{
+lean_object* v___x_109_; uint8_t v_isShared_110_; uint8_t v_isSharedCheck_182_; 
+v_isSharedCheck_182_ = !lean_is_exclusive(v___x_107_);
+if (v_isSharedCheck_182_ == 0)
+{
+lean_object* v_unused_183_; 
+v_unused_183_ = lean_ctor_get(v___x_107_, 0);
+lean_dec(v_unused_183_);
+v___x_109_ = v___x_107_;
+v_isShared_110_ = v_isSharedCheck_182_;
+goto v_resetjp_108_;
+}
+else
+{
+lean_dec(v___x_107_);
+v___x_109_ = lean_box(0);
+v_isShared_110_ = v_isSharedCheck_182_;
+goto v_resetjp_108_;
+}
+v_resetjp_108_:
+{
+uint8_t v___x_111_; 
+v___x_111_ = lean_uint8_once(&lp_Echonomics_main___closed__7, &lp_Echonomics_main___closed__7_once, _init_lp_Echonomics_main___closed__7);
+if (v___x_111_ == 0)
+{
+lean_object* v___x_112_; lean_object* v___x_114_; 
+v___x_112_ = ((lean_object*)(lp_Echonomics_main___closed__9));
+if (v_isShared_110_ == 0)
+{
+lean_ctor_set_tag(v___x_109_, 1);
+lean_ctor_set(v___x_109_, 0, v___x_112_);
+v___x_114_ = v___x_109_;
+goto v_reusejp_113_;
+}
+else
+{
+lean_object* v_reuseFailAlloc_115_; 
+v_reuseFailAlloc_115_ = lean_alloc_ctor(1, 1, 0);
+lean_ctor_set(v_reuseFailAlloc_115_, 0, v___x_112_);
+v___x_114_ = v_reuseFailAlloc_115_;
+goto v_reusejp_113_;
+}
+v_reusejp_113_:
+{
+return v___x_114_;
 }
 }
 else
 {
-return v___x_94_;
+lean_object* v___x_116_; lean_object* v___x_117_; 
+lean_del_object(v___x_109_);
+v___x_116_ = ((lean_object*)(lp_Echonomics_main___closed__10));
+v___x_117_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_116_);
+if (lean_obj_tag(v___x_117_) == 0)
+{
+lean_object* v___x_119_; uint8_t v_isShared_120_; uint8_t v_isSharedCheck_180_; 
+v_isSharedCheck_180_ = !lean_is_exclusive(v___x_117_);
+if (v_isSharedCheck_180_ == 0)
+{
+lean_object* v_unused_181_; 
+v_unused_181_ = lean_ctor_get(v___x_117_, 0);
+lean_dec(v_unused_181_);
+v___x_119_ = v___x_117_;
+v_isShared_120_ = v_isSharedCheck_180_;
+goto v_resetjp_118_;
+}
+else
+{
+lean_dec(v___x_117_);
+v___x_119_ = lean_box(0);
+v_isShared_120_ = v_isSharedCheck_180_;
+goto v_resetjp_118_;
+}
+v_resetjp_118_:
+{
+uint8_t v___x_121_; 
+v___x_121_ = lean_uint8_once(&lp_Echonomics_main___closed__12, &lp_Echonomics_main___closed__12_once, _init_lp_Echonomics_main___closed__12);
+if (v___x_121_ == 0)
+{
+lean_object* v___x_122_; lean_object* v___x_124_; 
+v___x_122_ = ((lean_object*)(lp_Echonomics_main___closed__14));
+if (v_isShared_120_ == 0)
+{
+lean_ctor_set_tag(v___x_119_, 1);
+lean_ctor_set(v___x_119_, 0, v___x_122_);
+v___x_124_ = v___x_119_;
+goto v_reusejp_123_;
+}
+else
+{
+lean_object* v_reuseFailAlloc_125_; 
+v_reuseFailAlloc_125_ = lean_alloc_ctor(1, 1, 0);
+lean_ctor_set(v_reuseFailAlloc_125_, 0, v___x_122_);
+v___x_124_ = v_reuseFailAlloc_125_;
+goto v_reusejp_123_;
+}
+v_reusejp_123_:
+{
+return v___x_124_;
+}
+}
+else
+{
+lean_object* v___x_126_; lean_object* v___x_127_; 
+lean_del_object(v___x_119_);
+v___x_126_ = ((lean_object*)(lp_Echonomics_main___closed__15));
+v___x_127_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_126_);
+if (lean_obj_tag(v___x_127_) == 0)
+{
+lean_object* v___x_129_; uint8_t v_isShared_130_; uint8_t v_isSharedCheck_178_; 
+v_isSharedCheck_178_ = !lean_is_exclusive(v___x_127_);
+if (v_isSharedCheck_178_ == 0)
+{
+lean_object* v_unused_179_; 
+v_unused_179_ = lean_ctor_get(v___x_127_, 0);
+lean_dec(v_unused_179_);
+v___x_129_ = v___x_127_;
+v_isShared_130_ = v_isSharedCheck_178_;
+goto v_resetjp_128_;
+}
+else
+{
+lean_dec(v___x_127_);
+v___x_129_ = lean_box(0);
+v_isShared_130_ = v_isSharedCheck_178_;
+goto v_resetjp_128_;
+}
+v_resetjp_128_:
+{
+uint8_t v___x_131_; 
+v___x_131_ = lean_uint8_once(&lp_Echonomics_main___closed__17, &lp_Echonomics_main___closed__17_once, _init_lp_Echonomics_main___closed__17);
+if (v___x_131_ == 0)
+{
+lean_object* v___x_132_; lean_object* v___x_134_; 
+v___x_132_ = ((lean_object*)(lp_Echonomics_main___closed__19));
+if (v_isShared_130_ == 0)
+{
+lean_ctor_set_tag(v___x_129_, 1);
+lean_ctor_set(v___x_129_, 0, v___x_132_);
+v___x_134_ = v___x_129_;
+goto v_reusejp_133_;
+}
+else
+{
+lean_object* v_reuseFailAlloc_135_; 
+v_reuseFailAlloc_135_ = lean_alloc_ctor(1, 1, 0);
+lean_ctor_set(v_reuseFailAlloc_135_, 0, v___x_132_);
+v___x_134_ = v_reuseFailAlloc_135_;
+goto v_reusejp_133_;
+}
+v_reusejp_133_:
+{
+return v___x_134_;
+}
+}
+else
+{
+lean_object* v___x_136_; lean_object* v___x_137_; 
+lean_del_object(v___x_129_);
+v___x_136_ = ((lean_object*)(lp_Echonomics_main___closed__20));
+v___x_137_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_136_);
+if (lean_obj_tag(v___x_137_) == 0)
+{
+lean_object* v___x_139_; uint8_t v_isShared_140_; uint8_t v_isSharedCheck_176_; 
+v_isSharedCheck_176_ = !lean_is_exclusive(v___x_137_);
+if (v_isSharedCheck_176_ == 0)
+{
+lean_object* v_unused_177_; 
+v_unused_177_ = lean_ctor_get(v___x_137_, 0);
+lean_dec(v_unused_177_);
+v___x_139_ = v___x_137_;
+v_isShared_140_ = v_isSharedCheck_176_;
+goto v_resetjp_138_;
+}
+else
+{
+lean_dec(v___x_137_);
+v___x_139_ = lean_box(0);
+v_isShared_140_ = v_isSharedCheck_176_;
+goto v_resetjp_138_;
+}
+v_resetjp_138_:
+{
+uint8_t v___x_141_; 
+v___x_141_ = lean_uint8_once(&lp_Echonomics_main___closed__22, &lp_Echonomics_main___closed__22_once, _init_lp_Echonomics_main___closed__22);
+if (v___x_141_ == 0)
+{
+lean_object* v___x_142_; lean_object* v___x_144_; 
+v___x_142_ = ((lean_object*)(lp_Echonomics_main___closed__24));
+if (v_isShared_140_ == 0)
+{
+lean_ctor_set_tag(v___x_139_, 1);
+lean_ctor_set(v___x_139_, 0, v___x_142_);
+v___x_144_ = v___x_139_;
+goto v_reusejp_143_;
+}
+else
+{
+lean_object* v_reuseFailAlloc_145_; 
+v_reuseFailAlloc_145_ = lean_alloc_ctor(1, 1, 0);
+lean_ctor_set(v_reuseFailAlloc_145_, 0, v___x_142_);
+v___x_144_ = v_reuseFailAlloc_145_;
+goto v_reusejp_143_;
+}
+v_reusejp_143_:
+{
+return v___x_144_;
+}
+}
+else
+{
+lean_object* v___x_146_; lean_object* v___x_147_; 
+lean_del_object(v___x_139_);
+v___x_146_ = ((lean_object*)(lp_Echonomics_main___closed__25));
+v___x_147_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_146_);
+if (lean_obj_tag(v___x_147_) == 0)
+{
+lean_object* v___x_149_; uint8_t v_isShared_150_; uint8_t v_isSharedCheck_174_; 
+v_isSharedCheck_174_ = !lean_is_exclusive(v___x_147_);
+if (v_isSharedCheck_174_ == 0)
+{
+lean_object* v_unused_175_; 
+v_unused_175_ = lean_ctor_get(v___x_147_, 0);
+lean_dec(v_unused_175_);
+v___x_149_ = v___x_147_;
+v_isShared_150_ = v_isSharedCheck_174_;
+goto v_resetjp_148_;
+}
+else
+{
+lean_dec(v___x_147_);
+v___x_149_ = lean_box(0);
+v_isShared_150_ = v_isSharedCheck_174_;
+goto v_resetjp_148_;
+}
+v_resetjp_148_:
+{
+uint8_t v___x_151_; 
+v___x_151_ = lean_uint8_once(&lp_Echonomics_main___closed__28, &lp_Echonomics_main___closed__28_once, _init_lp_Echonomics_main___closed__28);
+if (v___x_151_ == 0)
+{
+lean_object* v___x_152_; lean_object* v___x_154_; 
+v___x_152_ = ((lean_object*)(lp_Echonomics_main___closed__30));
+if (v_isShared_150_ == 0)
+{
+lean_ctor_set_tag(v___x_149_, 1);
+lean_ctor_set(v___x_149_, 0, v___x_152_);
+v___x_154_ = v___x_149_;
+goto v_reusejp_153_;
+}
+else
+{
+lean_object* v_reuseFailAlloc_155_; 
+v_reuseFailAlloc_155_ = lean_alloc_ctor(1, 1, 0);
+lean_ctor_set(v_reuseFailAlloc_155_, 0, v___x_152_);
+v___x_154_ = v_reuseFailAlloc_155_;
+goto v_reusejp_153_;
+}
+v_reusejp_153_:
+{
+return v___x_154_;
+}
+}
+else
+{
+lean_object* v___x_156_; lean_object* v___x_157_; 
+lean_del_object(v___x_149_);
+v___x_156_ = ((lean_object*)(lp_Echonomics_main___closed__31));
+v___x_157_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_156_);
+if (lean_obj_tag(v___x_157_) == 0)
+{
+lean_object* v___x_159_; uint8_t v_isShared_160_; uint8_t v_isSharedCheck_172_; 
+v_isSharedCheck_172_ = !lean_is_exclusive(v___x_157_);
+if (v_isSharedCheck_172_ == 0)
+{
+lean_object* v_unused_173_; 
+v_unused_173_ = lean_ctor_get(v___x_157_, 0);
+lean_dec(v_unused_173_);
+v___x_159_ = v___x_157_;
+v_isShared_160_ = v_isSharedCheck_172_;
+goto v_resetjp_158_;
+}
+else
+{
+lean_dec(v___x_157_);
+v___x_159_ = lean_box(0);
+v_isShared_160_ = v_isSharedCheck_172_;
+goto v_resetjp_158_;
+}
+v_resetjp_158_:
+{
+uint8_t v___x_166_; 
+v___x_166_ = lean_uint8_once(&lp_Echonomics_main___closed__35, &lp_Echonomics_main___closed__35_once, _init_lp_Echonomics_main___closed__35);
+if (v___x_166_ == 0)
+{
+goto v___jp_161_;
+}
+else
+{
+uint8_t v___x_167_; 
+v___x_167_ = lean_uint8_once(&lp_Echonomics_main___closed__37, &lp_Echonomics_main___closed__37_once, _init_lp_Echonomics_main___closed__37);
+if (v___x_167_ == 0)
+{
+goto v___jp_161_;
+}
+else
+{
+lean_object* v___x_168_; lean_object* v___x_169_; 
+lean_del_object(v___x_159_);
+v___x_168_ = ((lean_object*)(lp_Echonomics_main___closed__38));
+v___x_169_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_168_);
+if (lean_obj_tag(v___x_169_) == 0)
+{
+lean_object* v___x_170_; lean_object* v___x_171_; 
+lean_dec_ref_known(v___x_169_, 1);
+v___x_170_ = ((lean_object*)(lp_Echonomics_main___closed__39));
+v___x_171_ = lp_Echonomics_IO_println___at___00main_spec__0(v___x_170_);
+return v___x_171_;
+}
+else
+{
+return v___x_169_;
+}
+}
+}
+v___jp_161_:
+{
+lean_object* v___x_162_; lean_object* v___x_164_; 
+v___x_162_ = ((lean_object*)(lp_Echonomics_main___closed__33));
+if (v_isShared_160_ == 0)
+{
+lean_ctor_set_tag(v___x_159_, 1);
+lean_ctor_set(v___x_159_, 0, v___x_162_);
+v___x_164_ = v___x_159_;
+goto v_reusejp_163_;
+}
+else
+{
+lean_object* v_reuseFailAlloc_165_; 
+v_reuseFailAlloc_165_ = lean_alloc_ctor(1, 1, 0);
+lean_ctor_set(v_reuseFailAlloc_165_, 0, v___x_162_);
+v___x_164_ = v_reuseFailAlloc_165_;
+goto v_reusejp_163_;
+}
+v_reusejp_163_:
+{
+return v___x_164_;
 }
 }
 }
 }
 else
 {
-return v___x_84_;
+return v___x_157_;
 }
 }
 }
-LEAN_EXPORT lean_object* lp_Echonomics_main___boxed(lean_object* v_a_159_){
+}
+else
+{
+return v___x_147_;
+}
+}
+}
+}
+else
+{
+return v___x_137_;
+}
+}
+}
+}
+else
+{
+return v___x_127_;
+}
+}
+}
+}
+else
+{
+return v___x_117_;
+}
+}
+}
+}
+else
+{
+return v___x_107_;
+}
+}
+}
+}
+else
+{
+return v___x_97_;
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_main___boxed(lean_object* v_a_186_){
 _start:
 {
-lean_object* v_res_160_; 
-v_res_160_ = _lean_main();
-return v_res_160_;
+lean_object* v_res_187_; 
+v_res_187_ = _lean_main();
+return v_res_187_;
 }
 }
 lean_object* initialize_Init(uint8_t builtin);
@@ -622,6 +742,7 @@ lean_object* initialize_Echonomics_Echonomics_HundianOccupancy(uint8_t builtin);
 lean_object* initialize_Echonomics_Echonomics_CivicDunaGate(uint8_t builtin);
 lean_object* initialize_Echonomics_Echonomics_UorPrimeGeometry(uint8_t builtin);
 lean_object* initialize_Echonomics_Echonomics_EnergyLedger(uint8_t builtin);
+lean_object* initialize_Echonomics_Echonomics_XiConstitutionLicense(uint8_t builtin);
 static bool _G_initialized = false;
 LEAN_EXPORT lean_object* initialize_Echonomics_Echonomics_Test(uint8_t builtin) {
 lean_object * res;
@@ -649,6 +770,9 @@ res = initialize_Echonomics_Echonomics_UorPrimeGeometry(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
 res = initialize_Echonomics_Echonomics_EnergyLedger(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_Echonomics_Echonomics_XiConstitutionLicense(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
 return lean_io_result_mk_ok(lean_box(0));

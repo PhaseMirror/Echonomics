@@ -4,6 +4,7 @@ import Echonomics.HundianOccupancy
 import Echonomics.CivicDunaGate
 import Echonomics.UorPrimeGeometry
 import Echonomics.EnergyLedger
+import Echonomics.XiConstitutionLicense
 
 def main : IO Unit := do
   IO.println "=== Executing Echonomics Lean 4 Formal Test Suite ==="
@@ -47,5 +48,13 @@ def main : IO Unit := do
     IO.println "✓ [PASS] Echonomics ADR-0004: Energy Ledger E = V_pair - V_nuc Ground State Minimization verified"
   else
     throw $ IO.userError "✗ [FAIL] ADR-0004 Energy Ledger test failed"
+
+  -- Test 5: Ξ-Constitution & Ξ-License
+  let cslOps : Echonomics.XiConstitutionLicense.CslOperators := { isNeutral := true, isBeneficent := true, isSilent := true }
+  let lawRec : Echonomics.XiConstitutionLicense.LawfulRecursionState := { driftDelta := 2, boundEpsilon := 5 }
+  if Echonomics.XiConstitutionLicense.evaluateCslGate cslOps && Echonomics.XiConstitutionLicense.isLawfulRecursion lawRec then
+    IO.println "✓ [PASS] Echonomics ADR-0005: Ξ-Constitution CSL Gate (N, B, S) & Lawful Recursion verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0005 Ξ-Constitution test failed"
 
   IO.println "=== All Echonomics Formal Lean 4 Tests Passed Cleanly ==="

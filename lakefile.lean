@@ -7,7 +7,7 @@ package Echonomics where
 @[default_target]
 lean_lib Echonomics where
   srcDir := "lean"
-  roots := #[`Echonomics.Core, `Echonomics.Proofs, `Echonomics.HundianOccupancy, `Echonomics.CivicDunaGate, `Echonomics.UorPrimeGeometry, `Echonomics.EnergyLedger]
+  roots := #[`Echonomics.Core, `Echonomics.Proofs, `Echonomics.HundianOccupancy, `Echonomics.CivicDunaGate, `Echonomics.UorPrimeGeometry, `Echonomics.EnergyLedger, `Echonomics.XiConstitutionLicense]
 
 lean_exe TestDriver where
   srcDir := "lean"
