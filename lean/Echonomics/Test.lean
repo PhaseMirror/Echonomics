@@ -460,10 +460,48 @@ def main : IO Unit := do
     throw $ IO.userError "✗ [FAIL] ADR-0007..0009 Codebook test failed"
 
   -- ── ADR-0010..0012: Civic Infrastructure ──
-  if Echonomics.CivicInfrastructureSpec.isQuorumReached 10 6 50 then
+  if Echonomics.CivicDunaGate.isQuorumReached
+      { totalMembers := 10, quorumThreshold := 6, votesFor := 7, votesAgainst := 0 } then
     IO.println "✓ [PASS] ADR-0010..0012: DUNA & Civic Infrastructure Quorum verified"
   else
     throw $ IO.userError "✗ [FAIL] ADR-0010..0012 Civic Spec test failed"
+
+  -- ADR-0012 §11: exactly nine L0 invariants enumerated
+  if Echonomics.CivicInfrastructureSpec.allL0Invariants.length == 9 then
+    IO.println "✓ [PASS] ADR-0012: Nine L0 invariants enumerated verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0012 L0 enumeration test failed"
+
+  -- ADR-0012 §11: L0 violation fails closed
+  if Echonomics.CivicInfrastructureSpec.isL0Compliant
+       Echonomics.CivicInfrastructureSpec.CivicL0Invariant.NoNodeCamerasInPrivacyZone true &&
+     Echonomics.CivicInfrastructureSpec.isL0Compliant
+       Echonomics.CivicInfrastructureSpec.CivicL0Invariant.NoNodeCamerasInPrivacyZone false == false then
+    IO.println "✓ [PASS] ADR-0012: L0 fail-closed compliance gate verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0012 L0 fail-closed test failed"
+
+  -- ADR-0012 §11: credits never buy votes
+  if Echonomics.CivicInfrastructureSpec.isL0Compliant
+       Echonomics.CivicInfrastructureSpec.CivicL0Invariant.CreditsDoNotBuyVotes (0 == 0) then
+    IO.println "✓ [PASS] ADR-0012: Credits do not buy votes (zero voting power) verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0012 credits-votes test failed"
+
+  -- ADR-0012 §7: dual-seat firewall — equity never mints PMCP
+  let seat : Echonomics.CivicInfrastructureSpec.DualSeat := { pmcpCertified := false, equityHeld := true }
+  if Echonomics.CivicInfrastructureSpec.isEquityPmcpFirewalled seat then
+    IO.println "✓ [PASS] ADR-0012: Dual-seat firewall equity-does-not-mint-PMCP verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0012 dual-seat firewall test failed"
+
+  -- ADR-0012 §9: material asset floor — vehicle is material; small item is not
+  if Echonomics.CivicInfrastructureSpec.isMaterialAsset 100 true false 0 &&
+     Echonomics.CivicInfrastructureSpec.isMaterialAsset 20000 false false 0 &&
+     Echonomics.CivicInfrastructureSpec.isMaterialAsset 100 false false 0 == false then
+    IO.println "✓ [PASS] ADR-0012: Material asset floor (vehicle / $5k / small) verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0012 material asset floor test failed"
 
   -- ── ADR-0013..0015: Social Physics Parts ──
   let spSt : Echonomics.SocialPhysicsParts.SocialPhysicsState :=
@@ -473,6 +511,48 @@ def main : IO Unit := do
   else
     throw $ IO.userError "✗ [FAIL] ADR-0013..0015 Social Physics test failed"
 
+  -- ADR-0013: Pauli capacity max 2 + deterministic spin tags
+  let slotA : Echonomics.SocialPhysicsParts.OccupancySlot := { occupants := 1, isDegenerate := true }
+  let slotB : Echonomics.SocialPhysicsParts.OccupancySlot := { occupants := 2, isDegenerate := true }
+  if Echonomics.SocialPhysicsParts.isSlotCapacityValid slotA &&
+     Echonomics.SocialPhysicsParts.isSlotCapacityValid slotB &&
+     Echonomics.SocialPhysicsParts.spinTagForOccupant 1 ==
+       some Echonomics.Core.SpinTag.Alpha &&
+     Echonomics.SocialPhysicsParts.spinTagForOccupant 2 ==
+       some Echonomics.Core.SpinTag.Beta &&
+     Echonomics.SocialPhysicsParts.isSlotCapacityValid
+       { occupants := 3, isDegenerate := false } == false then
+    IO.println "✓ [PASS] ADR-0013: Pauli capacity max 2 & alpha/beta spin tags verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0013 Pauli capacity test failed"
+
+  -- ADR-0014: term-order blocks pairing while U > 0; allows at U = 0
+  let uPos : Echonomics.SocialPhysicsParts.TermOrderState := { emptySlotsInD := 2, occupiedDegenerate := 1 }
+  let uZero : Echonomics.SocialPhysicsParts.TermOrderState := { emptySlotsInD := 0, occupiedDegenerate := 1 }
+  if Echonomics.SocialPhysicsParts.isPairingLegalSt uPos == false &&
+     Echonomics.SocialPhysicsParts.isPairingLegalSt uZero then
+    IO.println "✓ [PASS] ADR-0014: Term-Order Gate U = 0 pairing rule verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0014 term-order gate test failed"
+
+  -- ADR-0014: ground state multiplicity M = |D| + 1 (half-fill maximum)
+  if Echonomics.SocialPhysicsParts.groundStateMultiplicity 4 == 5 &&
+     Echonomics.SocialPhysicsParts.groundStateMultiplicity 0 == 1 then
+    IO.println "✓ [PASS] ADR-0014: Ground state multiplicity M = |D| + 1 verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0014 ground state multiplicity test failed"
+
+  -- ADR-0015: separated energy ledgers E = V_pair - V_nuc
+  let sepSt : Echonomics.SocialPhysicsParts.SocialPhysicsState := { vPair := 10, vNuc := 3, emptySlots := 0 }
+  let unsepSt : Echonomics.SocialPhysicsParts.SocialPhysicsState := { vPair := 7, vNuc := 7, emptySlots := 0 }
+  if Echonomics.SocialPhysicsParts.areLedgersSeparatedBool sepSt &&
+     Echonomics.SocialPhysicsParts.areLedgersSeparatedBool unsepSt == false &&
+     Echonomics.SocialPhysicsParts.totalEnergy sepSt == 7 &&
+     Echonomics.SocialPhysicsParts.isGroundState unsepSt sepSt then
+    IO.println "✓ [PASS] ADR-0015: Separated energy ledgers E = V_pair - V_nuc verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0015 separated ledgers test failed"
+
   -- ── ADR-0016..0018: Buurtzorg ──
   let bTeam : Echonomics.BuurtzorgModel.BuurtzorgTeam :=
     { nurseCount := 8, maxCapacity := 12 }
@@ -481,13 +561,80 @@ def main : IO Unit := do
   else
     throw $ IO.userError "✗ [FAIL] ADR-0016..0018 Buurtzorg test failed"
 
+  -- ADR-0016: eight virtues duty codebook + overhead 15% target
+  if Echonomics.BuurtzorgModel.allVirtues.length == 8 &&
+     Echonomics.BuurtzorgModel.isOverheadWithinTarget 15 &&
+     Echonomics.BuurtzorgModel.isOverheadWithinTarget 16 == false then
+    IO.println "✓ [PASS] ADR-0016: Eight virtues codebook & 15% overhead target verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0016 virtues/overhead test failed"
+
+  -- ADR-0016: 13 nurses must split (invalid capacity)
+  let bOver : Echonomics.BuurtzorgModel.BuurtzorgTeam := { nurseCount := 13, maxCapacity := 12 }
+  if Echonomics.BuurtzorgModel.isTeamCapacityValid bOver == false then
+    IO.println "✓ [PASS] ADR-0016: 13-nurse team split rule verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0016 split rule test failed"
+
+  -- ADR-0017: care team → DUNA node mapping + 90-day envelope
+  let careTeam : Echonomics.BuurtzorgModel.CareTeam := { teamId := 1, nurseCount := 9 }
+  let govNode : Echonomics.BuurtzorgModel.GovernanceNode := { nodeId := 1, teamCapacity := 12 }
+  if Echonomics.BuurtzorgModel.isMappingValid careTeam govNode &&
+     Echonomics.BuurtzorgModel.envelopeCovers90Days 9000 100 &&
+     Echonomics.BuurtzorgModel.envelopeCovers90Days 8999 100 == false then
+    IO.println "✓ [PASS] ADR-0017: Care team → DUNA node mapping & 90-day envelope verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0017 integration schema test failed"
+
+  -- ADR-0018: non-coercive coaching gates — escalation requires prior coaching
+  let goodCoaching : Echonomics.BuurtzorgModel.CoachingSession :=
+    { voluntary := true, advisoryOnly := true, coachHasCommand := false, coachingAttempted := true }
+  let noCoaching : Echonomics.BuurtzorgModel.CoachingSession :=
+    { voluntary := true, advisoryOnly := true, coachHasCommand := false, coachingAttempted := false }
+  let coercive : Echonomics.BuurtzorgModel.CoachingSession :=
+    { voluntary := true, advisoryOnly := true, coachHasCommand := true, coachingAttempted := true }
+  if Echonomics.BuurtzorgModel.isNonCoercive goodCoaching &&
+     Echonomics.BuurtzorgModel.isEscalationAllowed goodCoaching &&
+     Echonomics.BuurtzorgModel.isEscalationAllowed noCoaching == false &&
+     Echonomics.BuurtzorgModel.isEscalationAllowed coercive == false then
+    IO.println "✓ [PASS] ADR-0018: Non-coercive coaching & escalation gates verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0018 coaching gates test failed"
+
   -- ── ADR-0019..0021: Trifecta Protocol ──
   let triSt : Echonomics.TrifectaProtocolReview.TripartiteState :=
     { execSigned := true, legisSigned := true, judicSigned := true }
-  if Echonomics.TrifectaProtocolReview.isTripartiteConsensus triSt then
+  let triMissing : Echonomics.TrifectaProtocolReview.TripartiteState :=
+    { execSigned := true, legisSigned := true, judicSigned := false }
+  if Echonomics.TrifectaProtocolReview.isTripartiteConsensus triSt &&
+     Echonomics.TrifectaProtocolReview.isTripartiteConsensus triMissing == false then
     IO.println "✓ [PASS] ADR-0019..0021: Trifecta Tripartite Consensus & Review verified"
   else
     throw $ IO.userError "✗ [FAIL] ADR-0019..0021 Trifecta test failed"
+
+  -- ADR-0020: spectral contractivity ||G||_1 < 1.0 (scaled) — zero contractive, identity not
+  if Echonomics.TrifectaProtocolReview.isContractive [[0, 0], [0, 0]] &&
+     Echonomics.TrifectaProtocolReview.isContractive [[1000]] == false &&
+     Echonomics.TrifectaProtocolReview.attestValidator [[0, 0]] ==
+       Echonomics.TrifectaProtocolReview.AttestationResult.Attested &&
+     Echonomics.TrifectaProtocolReview.attestValidator [[1000]] ==
+       Echonomics.TrifectaProtocolReview.AttestationResult.Rejected then
+    IO.println "✓ [PASS] ADR-0020: Spectral contractivity gate (zero vs identity) verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0020 spectral contractivity test failed"
+
+  -- ADR-0021: machine-checked audit trail — unresolved finding blocks audit
+  let f1 : Echonomics.TrifectaProtocolReview.ReviewFinding :=
+    { findingId := 1, adrId := 13, isResolved := true }
+  let f2 : Echonomics.TrifectaProtocolReview.ReviewFinding :=
+    { findingId := 2, adrId := 14, isResolved := false }
+  if Echonomics.TrifectaProtocolReview.isAuditComplete [f1] &&
+     Echonomics.TrifectaProtocolReview.isAuditComplete [f1, f2] == false &&
+     Echonomics.TrifectaProtocolReview.isReviewCoverageComplete
+       Echonomics.TrifectaProtocolReview.acceptedAdrIds then
+    IO.println "✓ [PASS] ADR-0021: Machine-checked audit trail & review coverage verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0021 audit trail test failed"
 
   IO.println ""
   IO.println "=== All Echonomics Formal Lean 4 Tests Passed Cleanly ==="

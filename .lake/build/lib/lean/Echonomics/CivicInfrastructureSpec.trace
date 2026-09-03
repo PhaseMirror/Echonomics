@@ -1,14 +1,23 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["fd8ae3d52afd8038.olean"],
+ {"o": ["f0cd7c4ef39d3cb0.olean"],
   "m": false,
-  "i": "b1ee4490a62a2019.ilean",
-  "c": "365f599af5f90827.c"},
+  "i": "f496b9ebccaae0d0.ilean",
+  "c": "5fcce9b7a240072b.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/lean /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/CivicInfrastructureSpec.lean -o /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/CivicInfrastructureSpec.olean -i /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/CivicInfrastructureSpec.ilean -c /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/CivicInfrastructureSpec.c --setup /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/CivicInfrastructureSpec.setup.json --json",
-   "level": "trace"}],
+   "level": "trace"},
+  {"message":
+   "lean/Echonomics/CivicInfrastructureSpec.lean:205:19: Variable name `inv` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _inv\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "level": "warning"},
+  {"message":
+   "lean/Echonomics/CivicInfrastructureSpec.lean:224:54: Variable name `credits` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _credits\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "level": "warning"},
+  {"message":
+   "lean/Echonomics/CivicInfrastructureSpec.lean:270:45: This simp argument is unused:\n  hc\n\nHint: Omit it from the simp argument list.\n  [apply] simp [h]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"}],
  "inputs":
  [["deps",
    [["Echonomics/Echonomics:extraDep",
@@ -24,10 +33,10 @@
   ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
    "3eca9d16ab6c877d"],
   ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/CivicInfrastructureSpec.lean",
-   "13fe8be3bfb7d911"],
+   "200f2de3b10da470"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: Echonomics.CivicInfrastructureSpec", "e7dab57c1839b44a"],
   ["Package.id?: (some Echonomics)", "d80dab19a23b5a78"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "9011607fdce42dda"}
+ "depHash": "f0c2040cd6819d8e"}

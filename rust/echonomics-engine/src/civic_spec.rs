@@ -236,6 +236,41 @@ impl SovereigntyNodeState {
 }
 
 // ============================================================================
+// ADR-0012: UNIFIED CIVIC INFRASTRUCTURE BLUEPRINT ENGINE
+// ============================================================================
+
+/// Dual seat (§7 ADR-0012): a counterparty may both practice (PMCP) and own
+/// the hosted oracle — two papers, one firewall.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+pub struct DualSeat {
+    pub pmcp_certified: bool,
+    pub equity_held: bool,
+}
+
+impl DualSeat {
+    /// Firewall predicate (§7 ADR-0012): equity close never mints PMCP
+    /// certification, and a certificate never mints equity.
+    pub const fn is_equity_pmcp_firewalled(&self) -> bool {
+        !(self.equity_held && self.pmcp_certified)
+    }
+}
+
+/// Material-asset floor (§9 ADR-0012): USD 5,000.
+pub const MATERIAL_ASSET_FLOOR_USD: u64 = 5000;
+
+/// A proposed acquisition is material when it crosses the USD floor, or is a
+/// vehicle, any interest in land, or a lease longer than 12 months (§9
+/// ADR-0012). Material assets require member approval after 14-day notice.
+pub const fn is_material_asset(
+    value_usd: u64,
+    is_vehicle: bool,
+    is_land: bool,
+    lease_months: u64,
+) -> bool {
+    value_usd >= MATERIAL_ASSET_FLOOR_USD || is_vehicle || is_land || lease_months > 12
+}
+
+// ============================================================================
 // ADR-0011: MODEL SPECIFICATION V1.0 ENGINE
 // ============================================================================
 
@@ -435,6 +470,33 @@ mod tests {
         assert!(OracleTier::L1Rule.validate_latency(500_000));
         assert!(OracleTier::L2Semantic.validate_latency(50_000_000));
     }
+
+    #[test]
+    fn test_adr0012_dual_seat_firewall() {
+        let practitioner = DualSeat { pmcp_certified: true, equity_held: false };
+        let equity_holder = DualSeat { pmcp_certified: false, equity_held: true };
+        let both = DualSeat { pmcp_certified: true, equity_held: true };
+
+        assert!(practitioner.is_equity_pmcp_firewalled());
+        assert!(equity_holder.is_equity_pmcp_firewalled());
+        assert!(!both.is_equity_pmcp_firewalled(), "equity close never mints PMCP");
+    }
+
+    #[test]
+    fn test_adr0012_material_asset_floor() {
+        // Vehicle is material regardless of value.
+        assert!(is_material_asset(100, true, false, 0));
+        // Value at/above the $5,000 floor is material.
+        assert!(is_material_asset(20_000, false, false, 0));
+        assert!(is_material_asset(5_000, false, false, 0));
+        // Land is material regardless of value.
+        assert!(is_material_asset(0, false, true, 0));
+        // Lease longer than 12 months is material.
+        assert!(is_material_asset(0, false, false, 13));
+        // Small, non-special acquisition is NOT material.
+        assert!(!is_material_asset(100, false, false, 0));
+        assert!(!is_material_asset(4_999, false, false, 12));
+    }
 }
 
 #[cfg(kani)]
@@ -503,6 +565,29 @@ mod kani_proofs {
             kani::assert(valid, "Latency <= 100ns must pass L0");
         } else {
             kani::assert(!valid, "Latency > 100ns must fail L0");
+        }
+    }
+
+    #[kani::proof]
+    fn verify_dual_seat_firewall_equity_never_mints_pmcp() {
+        let pmcp_certified: bool = kani::any();
+        let equity_held: bool = kani::any();
+        let seat = DualSeat { pmcp_certified, equity_held };
+        if equity_held && pmcp_certified {
+            kani::assert(!seat.is_equity_pmcp_firewalled(), "Equity close must never mint PMCP");
+        } else {
+            kani::assert(seat.is_equity_pmcp_firewalled(), "Firewall admits non-overlapping seats");
+        }
+    }
+
+    #[kani::proof]
+    fn verify_material_asset_floor_threshold() {
+        let value_usd: u64 = kani::any();
+        let material = is_material_asset(value_usd, false, false, 0);
+        if value_usd >= MATERIAL_ASSET_FLOOR_USD {
+            kani::assert(material, "Value >= $5,000 must be material");
+        } else {
+            kani::assert(!material, "Small non-special value must not be material");
         }
     }
 }

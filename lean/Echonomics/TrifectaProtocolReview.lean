@@ -82,15 +82,16 @@ def isTripartiteConsensus (st : TripartiteState) : Bool :=
 theorem amendment_requires_all_three_signatures (st : TripartiteState) :
     isTripartiteConsensus st = true ↔
       st.execSigned = true ∧ st.legisSigned = true ∧ st.judicSigned = true := by
-  cases st.execSigned <;> cases st.legisSigned <;> cases st.judicSigned <;>
-    simp [isTripartiteConsensus]
+  unfold isTripartiteConsensus
+  cases st.execSigned <;> cases st.legisSigned <;> cases st.judicSigned <;> simp
 
 /-- Fail-closed: an amendment with any missing chamber signature is rejected. -/
 theorem amendment_rejected_without_chamber (st : TripartiteState)
     (h : st.execSigned = false ∨ st.legisSigned = false ∨ st.judicSigned = false) :
     isTripartiteConsensus st = false := by
-  cases st.execSigned <;> cases st.legisSigned <;> cases st.judicSigned <;>
-    simp [isTripartiteConsensus] at h ⊢
+  unfold isTripartiteConsensus
+  cases hc1 : st.execSigned <;> cases hc2 : st.legisSigned <;> cases hc3 : st.judicSigned <;>
+    simp [hc1, hc2, hc3] at h ⊢
 
 /-- Consensus implies the executive chamber signed. -/
 theorem consensus_implies_exec_signed (st : TripartiteState) (h : isTripartiteConsensus st = true) :
@@ -150,9 +151,9 @@ theorem l1_norm_empty : l1Norm [] = 0 := rfl
 /-- The 1-norm is non-negative. -/
 theorem l1_norm_nonneg (g : List (List Nat)) : 0 ≤ l1Norm g := by
   induction g with
-  | nil => rfl
+  | nil => simp
   | cons r rs ih =>
-      exact le_trans ih (Nat.le_max_right (rowSum r) (l1Norm rs))
+      exact Nat.le_trans ih (Nat.le_max_right (rowSum r) (l1Norm rs))
 
 /-- Every row sum is bounded by the matrix 1-norm. -/
 theorem row_sum_le_l1_norm {row : List Nat} {g : List (List Nat)} (h : row ∈ g) :
@@ -163,10 +164,10 @@ theorem row_sum_le_l1_norm {row : List Nat} {g : List (List Nat)} (h : row ∈ g
       rw [List.mem_cons] at h
       cases h with
       | inl hr =>
-          subst hr
+          rw [hr]
           exact Nat.le_max_left (rowSum r) (l1Norm rs)
       | inr hrs =>
-          exact le_trans (ih hrs) (Nat.le_max_right (rowSum r) (l1Norm rs))
+          exact Nat.le_trans (ih hrs) (Nat.le_max_right (rowSum r) (l1Norm rs))
 
 /-- The empty validator matrix is contractive. -/
 theorem empty_matrix_contractive : isContractive [] = true := by
@@ -196,7 +197,7 @@ theorem contractive_implies_row_bounds (g : List (List Nat)) (h : isContractive 
   intro row hrow
   have hlt : l1Norm g < CONTRACTIVITY_SCALE := by
     simpa [isContractive] using h
-  exact lt_of_le_of_lt (row_sum_le_l1_norm hrow) hlt
+  exact Nat.lt_of_le_of_lt (row_sum_le_l1_norm hrow) hlt
 
 /-- Validator attestation result: attested only when contractive. -/
 inductive AttestationResult where
@@ -253,16 +254,18 @@ theorem unresolved_finding_blocks_audit (findings : List ReviewFinding) (f : Rev
       rw [List.mem_cons] at hf
       cases hf with
       | inl hfg =>
-          subst hfg
+          rw [hfg] at hu
           cases hc : g.isResolved with
           | false => simp [isAuditComplete, hc]
           | true => simp [hc] at hu
       | inr hfgs =>
           by_cases hg : g.isResolved = true
-          · have hrest : isAuditComplete gs = false := ih hfgs hu
+          · have hrest : isAuditComplete gs = false := ih hfgs
             simp [isAuditComplete, hg, hrest]
           · have hg' : g.isResolved = false := by
-              cases g.isResolved <;> simp at hg
+              cases hc : g.isResolved with
+              | false => rfl
+              | true => simp [hc] at hg
             simp [isAuditComplete, hg']
 
 /-- Audit completeness implies every finding is resolved. -/
@@ -276,18 +279,20 @@ theorem audit_complete_implies_all_resolved (findings : List ReviewFinding)
       rw [List.mem_cons] at hf
       cases hf with
       | inl hfg =>
-          subst hfg
+          rw [hfg]
           cases hc : g.isResolved with
-          | false => simp [hc] at h
+          | false => simp [isAuditComplete, hc] at h
           | true => rfl
       | inr hfgs =>
           by_cases hg : g.isResolved = true
           · have hrest : isAuditComplete gs = true := by
               simp [isAuditComplete, hg] at h
               exact h
-            exact ih hrest hfgs
+            exact ih hrest f hfgs
           · have hg' : g.isResolved = false := by
-              cases g.isResolved <;> simp at hg
+              cases hc : g.isResolved with
+              | false => rfl
+              | true => simp [hc] at hg
             simp [isAuditComplete, hg'] at h
 
 /-- The accepted ADR set under technical review: ADR-0012 through ADR-0021. -/

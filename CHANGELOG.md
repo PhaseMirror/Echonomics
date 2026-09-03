@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **Accepted ADR Production Implementation (ADR-0012 through ADR-0021)**: production-grade Lean 4 formal models and Rust/Kani verification engines in `packages/Echonomics`:
+  - `Echonomics.SocialPhysicsParts` (ADR-0013..0015): Pauli exclusion capacity bound (max 2 occupants), deterministic spin tags (Alpha/Beta), Hund's First Rule term-order gate (`U = 0`), ground-state multiplicity `M = |D| + 1`, and separated energy ledgers (`E = V_pair - V_nuc`) with monotonicity and ground-state proofs.
+  - `Echonomics.BuurtzorgModel` (ADR-0016..0018): eight-virtue duty codebook, team capacity bound (≤ 12 nurses) and split rule, overhead ≤ 15% target, care-team → DUNA node mapping validity, 90-day envelope coverage, and non-coercive coaching escalation gates.
+  - `Echonomics.TrifectaProtocolReview` (ADR-0019..0021): tripartite three-chamber consensus (unanimity and fail-closed rejection), L1 spectral contractivity gate `||G||_1 < 1.0` in ℚ (scaled integer arithmetic; zero matrix contractive, identity rejected), and machine-checked audit-trail completeness over the accepted ADR set.
+  - `Echonomics.CivicInfrastructureSpec` (ADR-0012): nine L0 civic invariants, dual-seat equity/PMCP firewall, and the material-asset floor ($5,000 / vehicle / land / lease > 12 months).
+  - All ADRs 0012–0021 promoted to **Accepted** status in Lean records, ADR front matter, and the README index.
+  - Rust engine modules `social_physics.rs`, `buurtzorg.rs`, `trifecta_protocol.rs`, `civic_spec.rs` extended with unit tests and Kani model-checking harnesses (74 tests passing).
+
 ### Planned (v2.0.0 Roadmap)
 - Real-time collaborative CRDT editing engine in `pirtmd` via Yrs / Loro integration (ADR-056)
 - Model-checked formal TUI state machine proofs (`Foundations.ADR.TUIStateMachine` - ADR-057)

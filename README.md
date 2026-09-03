@@ -26,15 +26,15 @@
 | **`ADR-0010`** | Citizen Gardens DUNA Governing Principles | Completed | Non-coercive participation & constitutional voting bounds |
 | **`ADR-0011`** | Citizen Gardens System Model Specification v1.0 | Completed | Domain entity bindings & prime-decomposable identity |
 | **`ADR-0012`** | Unified Civic Infrastructure Blueprint | Accepted | Healthcare care team ledgers & zero-knowledge attestation |
-| **`ADR-0013`** | Multiplicity Social Physics Part 1 — Pauli Exclusion | Proposed | Slot capacity limit max 2 occupants and spin tags ($\alpha/\beta$) |
-| **`ADR-0014`** | Multiplicity Social Physics Part 2 — Term-Order Gate | Proposed | Hund's First Rule Term-Order Gate ($U = 0$ for $\beta$ pairing) |
-| **`ADR-0015`** | Multiplicity Social Physics Part 3 — Energy Ledgers | Proposed | Separated friction $V_{\text{pair}} \ge 0$ & attraction $V_{\text{nuc}} \ge 0$ |
-| **`ADR-0016`** | Eight Virtues of Buurtzorg Self-Governing Care Model | Proposed | Self-governing team capacity upper bound (max 12 nurses) |
-| **`ADR-0017`** | Buurtzorg Civic Infrastructure Integration Schema | Proposed | Care team mapping to DUNA governance nodes |
-| **`ADR-0018`** | Buurtzorg Non-Coercive Coaching & Resolution | Proposed | Non-coercive conflict resolution and advisory coaching gates |
-| **`ADR-0019`** | Trifecta Governance Tripartite Checks & Balances | Proposed | Tripartite 3-chamber signature verification (Exec, Legis, Judic) |
-| **`ADR-0020`** | Network Protocol-Centric L1 Substrate & Consensus | Proposed | L1 spectral contractivity $\|G\|_1 < 1.0$ in $\mathbb{Q}$ |
-| **`ADR-0021`** | Social Physics Technical Review Report | Proposed | Complete audit trail & review discrepancy resolution |
+| **`ADR-0013`** | Multiplicity Social Physics Part 1 — Pauli Exclusion | Accepted | Slot capacity limit max 2 occupants and spin tags ($\alpha/\beta$) |
+| **`ADR-0014`** | Multiplicity Social Physics Part 2 — Term-Order Gate | Accepted | Hund's First Rule Term-Order Gate ($U = 0$ for $\beta$ pairing) |
+| **`ADR-0015`** | Multiplicity Social Physics Part 3 — Energy Ledgers | Accepted | Separated friction $V_{\text{pair}} \ge 0$ & attraction $V_{\text{nuc}} \ge 0$ |
+| **`ADR-0016`** | Eight Virtues of Buurtzorg Self-Governing Care Model | Accepted | Self-governing team capacity upper bound (max 12 nurses) |
+| **`ADR-0017`** | Buurtzorg Civic Infrastructure Integration Schema | Accepted | Care team mapping to DUNA governance nodes |
+| **`ADR-0018`** | Buurtzorg Non-Coercive Coaching & Resolution | Accepted | Non-coercive conflict resolution and advisory coaching gates |
+| **`ADR-0019`** | Trifecta Governance Tripartite Checks & Balances | Accepted | Tripartite 3-chamber signature verification (Exec, Legis, Judic) |
+| **`ADR-0020`** | Network Protocol-Centric L1 Substrate & Consensus | Accepted | L1 spectral contractivity $\|G\|_1 < 1.0$ in $\mathbb{Q}$ |
+| **`ADR-0021`** | Social Physics Technical Review Report | Accepted | Complete audit trail & review discrepancy resolution |
 
 ---
 
@@ -107,7 +107,7 @@ cargo test
 
 | Standard / Requirement | Status | Verification Reference |
 | :--- | :---: | :--- |
-| **Strict Hierarchy & ADR Structure** | **VERIFIED** | ADR-0001 through ADR-0021 under `docs/adr/proposed/` |
+| **Strict Hierarchy & ADR Structure** | **VERIFIED** | ADR-0001 through ADR-0021 under `docs/adr/accepted/` |
 | **Zero-Mathlib Canonical Core** | **VERIFIED** | `lean/Core/` zero-Mathlib modules compile cleanly |
 | **Kani Bounded Model Checking** | **VERIFIED** | `#[cfg(kani)]` proof harnesses in every Rust module |
 | **Fail-Closed Execution** | **VERIFIED** | G0–G5 gate pipeline rejects invalid state transitions |
