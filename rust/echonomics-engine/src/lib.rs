@@ -10,7 +10,7 @@ pub mod social_physics;
 pub mod buurtzorg;
 pub mod trifecta_protocol;
 
-pub use hundian::HundianState;
+pub use hundian::{HundianState, PauliKey, GateResult, SpinTag, PeriodStatus};
 pub use duna::DunaGovernance;
 pub use uor_geometry::PrimeGeometry;
 pub use energy::EnergyLedgerState;
