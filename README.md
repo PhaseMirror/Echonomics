@@ -1,4 +1,4 @@
-# Echonomics: Social Physics, Governance & Financial Geometry Platform
+# Ξchonomics: Social Physics, Governance & Financial Geometry Platform
 
 ![Build Status](https://img.shields.io/badge/Lean_4-v4.33.0--rc2-blue.svg)
 ![Rust Verification](https://img.shields.io/badge/Kani-Verified-brightgreen.svg)
@@ -6,7 +6,7 @@
 
 ## Overview
 
-**Echonomics** is a machine-checked social physics, civic governance, and financial geometry platform built within the Multiplicity Sovereign Core ecosystem. It formally converts empirical social physics and DUNA governance principles into machine-verifiable Architecture Decision Records (ADRs), canonical zero-Mathlib Lean 4 formal models, and high-performance Rust/Kani verification engines.
+**Ξchonomics** is a machine-checked social physics, civic governance, and financial geometry platform built within the Multiplicity Sovereign Core ecosystem. It formally converts empirical social physics and DUNA governance principles into machine-verifiable Architecture Decision Records (ADRs), canonical zero-Mathlib Lean 4 formal models, and high-performance Rust/Kani verification engines.
 
 ---
 
