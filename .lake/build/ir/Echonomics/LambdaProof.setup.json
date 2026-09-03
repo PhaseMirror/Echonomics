@@ -1,0 +1,9 @@
+{"plugins": [],
+ "package": "Echonomics",
+ "options": {},
+ "name": "Echonomics.LambdaProof",
+ "isModule": false,
+ "importArts":
+ {"Echonomics.Core":
+  [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/Core.olean"]]},
+ "dynlibs": []}

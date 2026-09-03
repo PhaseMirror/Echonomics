@@ -1,10 +1,10 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["58d41c02c58c2dac.olean"],
+ {"o": ["cde598b555104ac9.olean"],
   "m": false,
-  "i": "dcd01dc00b4f169a.ilean",
-  "c": "00e784ce7917f11e.c"},
+  "i": "d73cad2fdf8798aa.ilean",
+  "c": "32ebdfed1165a266.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/lean /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/Test.lean -o /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/Test.olean -i /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/Test.ilean -c /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/Test.c --setup /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/Test.setup.json --json",
@@ -32,8 +32,10 @@
       ["Echonomics.EnergyLedger:importAllArts", "a8f9724c24a8e7fa"],
       ["Echonomics.XiConstitutionLicense transitive imports (legacy)",
        "5641e13ef3f0dadb"],
-      ["Echonomics.XiConstitutionLicense:importAllArts",
-       "d254f75215e491ea"]]]]],
+      ["Echonomics.XiConstitutionLicense:importAllArts", "d254f75215e491ea"],
+      ["Echonomics.LambdaProof transitive imports (legacy)",
+       "5641e13ef3f0dadb"],
+      ["Echonomics.LambdaProof:importAllArts", "21a34190c33b17bc"]]]]],
   ["libs",
    [["import dynlibs", "00000000000006bb"],
     ["package external libraries", "00000000000006bb"],
@@ -42,10 +44,10 @@
   ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
    "3eca9d16ab6c877d"],
   ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/Test.lean",
-   "a799a5b9563f3aeb"],
+   "8ad216031d5d840f"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: Echonomics.Test", "fe5b00fd1b141fd7"],
   ["Package.id?: (some Echonomics)", "d80dab19a23b5a78"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "c07bfefbc0ff88c3"}
+ "depHash": "ea356436105db32c"}

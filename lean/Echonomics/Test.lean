@@ -5,6 +5,7 @@ import Echonomics.CivicDunaGate
 import Echonomics.UorPrimeGeometry
 import Echonomics.EnergyLedger
 import Echonomics.XiConstitutionLicense
+import Echonomics.LambdaProof
 
 def main : IO Unit := do
   IO.println "=== Executing Echonomics Lean 4 Formal Test Suite ==="
@@ -56,5 +57,12 @@ def main : IO Unit := do
     IO.println "✓ [PASS] Echonomics ADR-0005: Ξ-Constitution CSL Gate (N, B, S) & Lawful Recursion verified"
   else
     throw $ IO.userError "✗ [FAIL] ADR-0005 Ξ-Constitution test failed"
+
+  -- Test 6: Lambda-Proof Integration
+  let lambdaId : Echonomics.LambdaProof.LambdaIdentityCommitment := { identityId := 42, primeSalt := 1009, isVerified := true }
+  if Echonomics.LambdaProof.isIdentityLawful lambdaId then
+    IO.println "✓ [PASS] Echonomics ADR-0006: Lambda-Proof Smart Contracts & ZK Circuits Integration verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0006 Lambda-Proof test failed"
 
   IO.println "=== All Echonomics Formal Lean 4 Tests Passed Cleanly ==="

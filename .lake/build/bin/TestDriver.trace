@@ -1,6 +1,6 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
- "outputs": "ccafdb88eb337205",
+ "outputs": "e65db36e9b20109d",
  "log":
  [{"message":
    ".> /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/clang -o /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/bin/TestDriver @/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/bin/TestDriver.rsp",
@@ -9,7 +9,7 @@
  [["Echonomics.Test:linkInfo",
    [["Module.moreLinkObjs",
      [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/Test.c.o.export",
-       "c381292967b73e38"],
+       "7cf8d7af4c62267f"],
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/Core.c.o.export",
        "67c541590500aa01"],
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/Proofs.c.o.export",
@@ -23,11 +23,13 @@
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/EnergyLedger.c.o.export",
        "b0d745bcac3285b8"],
       ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/XiConstitutionLicense.c.o.export",
-       "51462da7cda6943a"]]],
+       "51462da7cda6943a"],
+      ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/LambdaProof.c.o.export",
+       "05eeabda421d140f"]]],
     ["Module.moreLinkLibs", "00000000000006bb"],
     ["Module.moreLinkArgs: #[]", "00000000000006bb"]]],
   ["LeanExe.exeOnlyLinkArgs: #[]", "00000000000006bb"],
   ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
    "3eca9d16ab6c877d"],
   ["x86_64-unknown-linux-gnu", "53a0e8937c307c28"]],
- "depHash": "a57ec46be5c9e99a"}
+ "depHash": "9280fda0d46caa34"}
