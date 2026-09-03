@@ -6,6 +6,11 @@ import Echonomics.UorPrimeGeometry
 import Echonomics.EnergyLedger
 import Echonomics.XiConstitutionLicense
 import Echonomics.LambdaProof
+import Echonomics.HundianCodebookRunbook
+import Echonomics.CivicInfrastructureSpec
+import Echonomics.SocialPhysicsParts
+import Echonomics.BuurtzorgModel
+import Echonomics.TrifectaProtocolReview
 
 def main : IO Unit := do
   IO.println "=== Executing Echonomics Lean 4 Formal Test Suite ==="
@@ -64,5 +69,39 @@ def main : IO Unit := do
     IO.println "✓ [PASS] Echonomics ADR-0006: Lambda-Proof Smart Contracts & ZK Circuits Integration verified"
   else
     throw $ IO.userError "✗ [FAIL] ADR-0006 Lambda-Proof test failed"
+
+  -- Test 7: Hundian Codebook & Runbook (ADR-0007 - ADR-0009)
+  let cbSt : Echonomics.HundianCodebookRunbook.CodebookState := { unpairedCount := 3, degenerateSetSize := 3 }
+  if Echonomics.HundianCodebookRunbook.calculateMultiplicity cbSt == 4 then
+    IO.println "✓ [PASS] Echonomics ADR-0007..0009: Codebook & Runbook Multiplicity M = |D| + 1 verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0007..0009 Codebook test failed"
+
+  -- Test 8: Civic Infrastructure Spec (ADR-0010 - ADR-0012)
+  if Echonomics.CivicInfrastructureSpec.isQuorumReached 10 6 50 then
+    IO.println "✓ [PASS] Echonomics ADR-0010..0012: DUNA & Civic Infrastructure Quorum verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0010..0012 Civic Spec test failed"
+
+  -- Test 9: Social Physics Parts (ADR-0013 - ADR-0015)
+  let spSt : Echonomics.SocialPhysicsParts.SocialPhysicsState := { vPair := 5, vNuc := 10, emptySlots := 0 }
+  if Echonomics.SocialPhysicsParts.isPairingLegal spSt then
+    IO.println "✓ [PASS] Echonomics ADR-0013..0015: Term-Order Gate pairing condition (U = 0) verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0013..0015 Social Physics test failed"
+
+  -- Test 10: Buurtzorg Model (ADR-0016 - ADR-0018)
+  let bTeam : Echonomics.BuurtzorgModel.BuurtzorgTeam := { nurseCount := 8, maxCapacity := 12 }
+  if Echonomics.BuurtzorgModel.isTeamCapacityValid bTeam then
+    IO.println "✓ [PASS] Echonomics ADR-0016..0018: Buurtzorg Self-Governing Team Capacity Bound verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0016..0018 Buurtzorg test failed"
+
+  -- Test 11: Trifecta Protocol Review (ADR-0019 - ADR-0021)
+  let triSt : Echonomics.TrifectaProtocolReview.TripartiteState := { execSigned := true, legisSigned := true, judicSigned := true }
+  if Echonomics.TrifectaProtocolReview.isTripartiteConsensus triSt then
+    IO.println "✓ [PASS] Echonomics ADR-0019..0021: Trifecta Tripartite Consensus & Review verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0019..0021 Trifecta test failed"
 
   IO.println "=== All Echonomics Formal Lean 4 Tests Passed Cleanly ==="
