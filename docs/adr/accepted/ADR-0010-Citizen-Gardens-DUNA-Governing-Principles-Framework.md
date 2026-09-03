@@ -1,7 +1,7 @@
 ---
 id: ADR-0010
 title: "ADR-0010: Citizen Gardens DUNA Governing Principles Framework"
-status: Proposed
+status: Accepted
 date: 2026-09-03
 author: Phase Mirror Formal Methods Engineering & Echonomics Group
 decider: Echonomics Architectural Review Board
@@ -15,7 +15,7 @@ tags:
 
 # ADR-0010: Citizen Gardens DUNA Governing Principles Framework
 
-- **Status**: Proposed
+- **Status**: Accepted
 - **Date**: 2026-09-03
 - **Author**: Phase Mirror Formal Methods Engineering & Echonomics Group
 - **Decider**: Echonomics Architectural Review Board
@@ -31,7 +31,7 @@ This Architecture Decision Record formally incorporates the domain specification
 ## Core Formal Model & Invariants
 
 ```text
-Status: Proposed
+Status: Accepted
 ID: ADR-0010
 Title: Citizen Gardens DUNA Governing Principles Framework
 Verifiable Invariants:
@@ -46,7 +46,7 @@ CITIZEN GARDENS
 Decentralized Unincorporated Nonprofit Association
 Governing Principles
 Phase Mirror  ·  Bushidō  ·  Buurtzorg  ·  Multiplicity Social Physics
-Version 1.0  ·  Status: Proposed for member adoption  ·  LawfulRecursionVersion 1.0
+Version 1.0  ·  Status: Accepted for member adoption  ·  LawfulRecursionVersion 1.0
 Wyoming DUNA under W.S. Title 17, Chapter 32  ·  Literary charity  ·  Social investment credit union mission
 This instrument is the governing principles of Citizen Gardens. Under the Wyoming Decentralized Unincorporated Nonprofit Association Act, these principles—not articles of organization filed for a fee—are the source of membership, treasury, and consensus. Phase Mirror is how decisions bind. Bushidō is how members hold themselves. Buurtzorg is how work scales without a middle. Multiplicity Social Physics is how reciprocity is counted as real social energy.
 # 0. Stance

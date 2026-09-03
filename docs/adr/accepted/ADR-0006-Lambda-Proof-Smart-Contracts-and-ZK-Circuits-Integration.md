@@ -1,7 +1,7 @@
 ---
 id: ADR-0006
 title: "ADR-0006: Integration of Lambda-Proof Smart Contracts and ZK Circuits"
-status: Proposed
+status: Accepted
 date: 2026-09-03
 author: Phase Mirror Formal Methods Engineering & Echonomics Group
 decider: Echonomics Architectural Review Board
@@ -15,7 +15,7 @@ tags:
 
 # ADR-0006: Integration of Lambda-Proof Smart Contracts and ZK Circuits
 
-- **Status**: Proposed
+- **Status**: Accepted
 - **Date**: 2026-09-03
 - **Author**: Phase Mirror Formal Methods Engineering & Echonomics Group
 - **Decider**: Echonomics Architectural Review Board

@@ -1,7 +1,7 @@
 ---
 id: ADR-0007
 title: "ADR-0007: Hundian Occupancy Codebook v1 Specification"
-status: Proposed
+status: Accepted
 date: 2026-09-03
 author: Phase Mirror Formal Methods Engineering & Echonomics Group
 decider: Echonomics Architectural Review Board
@@ -15,7 +15,7 @@ tags:
 
 # ADR-0007: Hundian Occupancy Codebook v1 Specification
 
-- **Status**: Proposed
+- **Status**: Accepted
 - **Date**: 2026-09-03
 - **Author**: Phase Mirror Formal Methods Engineering & Echonomics Group
 - **Decider**: Echonomics Architectural Review Board
@@ -31,7 +31,7 @@ This Architecture Decision Record formally incorporates the domain specification
 ## Core Formal Model & Invariants
 
 ```text
-Status: Proposed
+Status: Accepted
 ID: ADR-0007
 Title: Hundian Occupancy Codebook v1 Specification
 Verifiable Invariants:
