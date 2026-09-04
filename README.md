@@ -43,6 +43,20 @@
 | **`ADR-0027`** | DUNA Agreement Deployment Artifact Cryptographic Binding | Completed | Fail-closed deployment hash binding & $E_{\text{triad}} \ge -0.7$ statutory floor |
 | **`ADR-0028`** | HLIX Compute Infrastructure Clearinghouse & UOR Reference Model | Completed | Deterministic UOR root $r = p^e$, bid ≥ ask clearing gate, 10% exchange fee |
 | **`ADR-0029`** | WardMonitor Universal Thresholds & Interlock Duty Cycle | Completed | Composite `SIG_GOV_KILL` interlock & fail-closed chain duty cycle |
+| **`ADR-0030`** | 2026-08 Physicists Feynman Path Specification | Completed | Action scalar normalization & path amplitude bounds |
+| **`ADR-0031`** | Canopies: Parameterized Persistence Vines & Vineyards | Completed | Monotone canopy lifetimes & stability bounds |
+| **`ADR-0032`** | Exact & Fast Subset Selection for Bi-objective Integral R2 | Completed | Non-dominated integral R2 indicator subset selection |
+| **`ADR-0033`** | Fisher-Geometric Sharpness & Implicit Bias of SGD | Completed | Non-negative Hessian trace & gradient norm sharpness |
+| **`ADR-0034`** | GK-Mapper Gustafson-Kessel Fuzzy Mapper Graphs | Completed | Fuzzy cluster covariance determinant & overlap ratio check |
+| **`ADR-0035`** | Hodge Spectral Surrogates for Topology Optimization | Completed | Hodge Laplacian harmonic eigenvalue cutoff projection |
+| **`ADR-0036`** | Geo-Free Neural Policy for Vertex-Guard Art Gallery | Completed | Fail-closed complete vertex coverage gate |
+| **`ADR-0037`** | Quadratic Forms for Measuring 3D Geometric Trees | Completed | Positive-definite 3D metric $Q(dx, dy, dz) = 2dx^2 + 3dy^2 + 5dz^2$ |
+| **`ADR-0038`** | Spiralcore v13 Specification | Completed | 32-bit state vector & action scalar non-negativity |
+| **`ADR-0039`** | Spiralcore v13 Full System Test Python Suite | Completed | Full system test integration & harness verification |
+| **`ADR-0040`** | Spiralcore v14.1 System Specification | Completed | v14.1 state vector & Fisher-geometric sharpness limits |
+| **`ADR-0041`** | Morse Transform for Discrete Shape Analysis | Completed | Critical cell classification (Min, Saddle1, Saddle2, Max, Regular) |
+| **`ADR-0042`** | V4P-VSAM Vector-State Addressing Model v0.2 | Completed | 32-bit IPv4-shaped 8-nibble coordinate decomposition & CIDR matching |
+| **`ADR-0043`** | WADA-LADA Distributed Agent Topology v0.1 | Completed | LADA/WADA domain classification, HLCA/HWCA root election & fail-closed demarcation |
 
 ---
 

@@ -15,6 +15,9 @@ pub mod crmf_governor;
 pub mod duna_binding;
 pub mod hlix_clearing;
 pub mod ward_monitor;
+pub mod spiralcore_engine;
+pub mod v4p_wada;
+pub mod bushido_mcp;
 
 pub use hundian::{HundianState, PauliKey, GateResult, SpinTag, PeriodStatus};
 pub use duna::DunaGovernance;
@@ -32,3 +35,6 @@ pub use crmf_governor::{CrmfSeal, GovernancePhase, POSEIDON_T, POSEIDON_R, POSEI
 pub use duna_binding::{DeploymentBinding, E_TRIAD_FLOOR};
 pub use hlix_clearing::{UorReference, ClearingState, EXCHANGE_FEE_BASIS};
 pub use ward_monitor::{WardState, MonitorEntry, ENERGY_RED_BOUND, TDI_AMBER_BOUND, HRV_AMBER_BOUND};
+pub use spiralcore_engine::{SpiralcoreStateVector, SpiralcoreVersion};
+pub use v4p_wada::{V4pAddress, AgentDomainType, AgentRole, RootElectionState, RouteDemarcationResult};
+pub use bushido_mcp::{Witness, WitnessStore, CCommitment, CError};
