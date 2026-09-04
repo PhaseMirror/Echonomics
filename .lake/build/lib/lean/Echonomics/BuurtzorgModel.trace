@@ -1,16 +1,16 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["8b66f2b12a73fbd6.olean"],
+ {"o": ["01663c8f1600e416.olean"],
   "m": false,
-  "i": "c6fa7e032343db7c.ilean",
-  "c": "4f157d50156cdd78.c"},
+  "i": "4ea9c0545c1c7f79.ilean",
+  "c": "dae9bd7f06781e7f.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/lean /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/BuurtzorgModel.lean -o /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/BuurtzorgModel.olean -i /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/BuurtzorgModel.ilean -c /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/BuurtzorgModel.c --setup /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/BuurtzorgModel.setup.json --json",
    "level": "trace"},
   {"message":
-   "lean/Echonomics/BuurtzorgModel.lean:94:18: Variable name `v` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _v\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "lean/Echonomics/BuurtzorgModel.lean:133:18: Variable name `v` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _v\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
    "level": "warning"}],
  "inputs":
  [["deps",
@@ -27,10 +27,10 @@
   ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
    "3eca9d16ab6c877d"],
   ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/BuurtzorgModel.lean",
-   "9c2b67005dbb8ef2"],
+   "cfcf22f56c275920"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: Echonomics.BuurtzorgModel", "d563275ed737fc1f"],
   ["Package.id?: (some Echonomics)", "d80dab19a23b5a78"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "22785292653290e6"}
+ "depHash": "78705e9f791a063a"}

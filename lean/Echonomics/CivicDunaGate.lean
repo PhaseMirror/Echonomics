@@ -222,4 +222,151 @@ theorem voting_against_can_lose_majority (st : DunaState)
     not (st.votesFor > st.votesAgainst + 1) := by
   simp [h]
 
+/-!
+# ADR-0027: DUNA Agreement Deployment Artifact Cryptographic Binding
+
+Formal implementation and proofs for cryptographically binding the ratified
+Citizen Gardens DUNA Operating Agreement hash to the deployment artifact:
+
+- Fail-closed deployment gate: the deployed bytecode must embed the exact
+  agreement hash, otherwise deployment is rejected.
+- The weekly Poseidon2 ZK circuit asserts that every aggregate `E_triad`
+  stays above the Article III statutory floor `-0.7`; a single violation
+  fails the weekly proof closed.
+-/
+
+/-! ## ADR-0027 Record -/
+
+/-- ADR-0027 declaration: DUNA Agreement Deployment Artifact Cryptographic Binding. -/
+def adr0027 : ADR := {
+  id := 27,
+  title := "DUNA Agreement Deployment Artifact Cryptographic Binding",
+  status := ADRStatus.Accepted,
+  context := "Bind the ratified Citizen Gardens DUNA Operating Agreement hash to the PhaseMirrorReputation deployment script and bytecode, and enforce the Article III E_triad statutory floor in the weekly transparency proof.",
+  decision := "Fail-closed deployment binding on the agreement hash, and a statutory E_triad floor of -0.7 enforced by the weekly Poseidon2 proof.",
+  consequences := ["Self-validating legal-crypto artifact", "Thermodynamic statutory floor"],
+  supersedes := none,
+  links := []
+}
+
+/-! ## Deployment Binding (Fail-Closed Gate) -/
+
+/-- Deployment binding: the hash embedded in the deployed artifact versus the
+    ratified DUNA Operating Agreement hash. -/
+structure DeploymentBinding where
+  agreementHash : Nat -- SHA3-256 hash of the ratified legal text
+  deployedHash : Nat  -- SHA3-256 hash embedded in the deployed bytecode
+  deriving Repr, DecidableEq
+
+/-- The deployment is bound exactly when the deployed hash matches the
+    ratified agreement hash. -/
+def isDeploymentBound (b : DeploymentBinding) : Bool :=
+  b.deployedHash = b.agreementHash
+
+/-- The deployment gate accepts an artifact exactly when it is bound. -/
+def isDeploymentAccepted (b : DeploymentBinding) : Bool :=
+  isDeploymentBound b
+
+/-- Binding requires the exact agreement hash: no drift between the legal
+    text and the deployed bytecode. -/
+theorem binding_requires_equal_hash (b : DeploymentBinding)
+    (h : isDeploymentBound b = true) :
+    b.deployedHash = b.agreementHash := by
+  unfold isDeploymentBound at h
+  exact of_decide_eq_true h
+
+/-- Fail-closed: a mismatched deployment hash is rejected regardless of any
+    other property of the artifact. -/
+theorem mismatched_hash_rejects_deployment (b : DeploymentBinding)
+    (h : b.deployedHash ≠ b.agreementHash) :
+    isDeploymentAccepted b = false := by
+  unfold isDeploymentAccepted isDeploymentBound
+  exact decide_eq_false h
+
+/-- A deployment whose bytecode embeds the exact agreement hash is accepted. -/
+theorem matching_hash_accepts_deployment (b : DeploymentBinding)
+    (h : b.deployedHash = b.agreementHash) :
+    isDeploymentAccepted b = true := by
+  unfold isDeploymentAccepted isDeploymentBound
+  exact decide_eq_true h
+
+/-- The deployment verdict is deterministic: identical artifact hashes yield
+    identical acceptance outcomes. -/
+theorem deployment_verdict_deterministic (b1 b2 : DeploymentBinding)
+    (hd : b1.deployedHash = b2.deployedHash) (ha : b1.agreementHash = b2.agreementHash) :
+    isDeploymentAccepted b1 = isDeploymentAccepted b2 := by
+  unfold isDeploymentAccepted isDeploymentBound
+  rw [hd, ha]
+
+/-! ## Statutory Floor (Article III E_triad) -/
+
+/-- The Article III statutory floor: aggregate weekly `E_triad ≥ -0.7`
+    (scaled ×10 for integer arithmetic). -/
+def E_TRIAD_FLOOR : Int := -7
+
+/-- A weekly aggregate is above the statutory floor. -/
+def isAboveStatutoryFloor (e : Int) : Bool :=
+  e ≥ E_TRIAD_FLOOR
+
+/-- The weekly trace is valid exactly when every aggregate stays above the
+    floor (the Poseidon2 proof constraint). -/
+def allTriadsAboveFloor : List Int → Bool
+  | [] => true
+  | e :: rest => isAboveStatutoryFloor e && allTriadsAboveFloor rest
+
+/-- The weekly transparency proof is valid exactly when the whole trace is
+    above the floor. -/
+def isWeeklyProofValid (es : List Int) : Bool :=
+  allTriadsAboveFloor es
+
+/-- The statutory floor is exactly -0.7 on the scaled ledger. -/
+theorem statutory_floor_is_minus07 : E_TRIAD_FLOOR = -7 := by
+  rfl
+
+/-- A triad at exactly the floor is valid (the bound is inclusive). -/
+theorem at_floor_is_valid : isAboveStatutoryFloor (-7) = true := by
+  decide
+
+/-- Fail-closed: an aggregate strictly below the floor violates Article III. -/
+theorem below_floor_fails : isAboveStatutoryFloor (-8) = false := by
+  decide
+
+/-- An empty trace is vacuously valid. -/
+theorem empty_trace_valid : allTriadsAboveFloor [] = true := by
+  rfl
+
+/-- A single violation anywhere in the trace fails the weekly proof closed:
+    `∃ e ∈ es, e < -0.7 ⇒ proof invalid`. -/
+theorem violation_in_trace_fails_closed (es : List Int) (e : Int)
+    (hlt : e < E_TRIAD_FLOOR) (hmem : e ∈ es) :
+    allTriadsAboveFloor es = false := by
+  induction es with
+  | nil => simp at hmem
+  | cons x rest ih =>
+      simp at hmem
+      rcases hmem with rfl | hrest
+      · unfold allTriadsAboveFloor
+        have hnot : isAboveStatutoryFloor e = false := by
+          unfold isAboveStatutoryFloor
+          apply decide_eq_false
+          omega
+        rw [hnot]
+        simp
+      · have hrestfalse : allTriadsAboveFloor rest = false := ih hrest
+        unfold allTriadsAboveFloor
+        rw [hrestfalse]
+        simp
+
+/-- One sub-floor aggregate alone breaks the weekly proof (concrete witness). -/
+theorem single_violation_breaks_weekly_proof : allTriadsAboveFloor [-8] = false := by
+  decide
+
+/-- A fully compliant trace passes the weekly proof (concrete witness). -/
+theorem all_above_weekly_proof_valid : allTriadsAboveFloor [-5, 0, 3] = true := by
+  decide
+
+/-- A trace sitting exactly at the floor boundary remains valid. -/
+theorem at_floor_weekly_proof_valid : allTriadsAboveFloor [-7, -5, 0] = true := by
+  decide
+
 end Echonomics.CivicDunaGate

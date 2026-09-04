@@ -1,7 +1,7 @@
 ---
 id: ADR-0013
-title: "ADR-0013: Multiplicity Social Physics Part 1 - Pauli Exclusion & Spin Tags"
-status: Accepted
+title: "ADR-0013: Multiplicity Social Physics Part 1 — Pauli Exclusion & Spin Tags"
+status: Completed
 date: 2026-09-03
 author: Phase Mirror Formal Methods Engineering & Echonomics Group
 decider: Echonomics Architectural Review Board
@@ -13,9 +13,9 @@ tags:
   - formal-verification
 ---
 
-# ADR-0013: Multiplicity Social Physics Part 1 - Pauli Exclusion & Spin Tags
+# ADR-0013: Multiplicity Social Physics Part 1 — Pauli Exclusion & Spin Tags
 
-- **Status**: Proposed
+- **Status**: Completed
 - **Date**: 2026-09-03
 - **Author**: Phase Mirror Formal Methods Engineering & Echonomics Group
 - **Decider**: Echonomics Architectural Review Board

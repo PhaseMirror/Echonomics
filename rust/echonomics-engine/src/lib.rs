@@ -10,6 +10,11 @@ pub mod civic_spec;
 pub mod social_physics;
 pub mod buurtzorg;
 pub mod trifecta_protocol;
+pub mod amy_mccae;
+pub mod crmf_governor;
+pub mod duna_binding;
+pub mod hlix_clearing;
+pub mod ward_monitor;
 
 pub use hundian::{HundianState, PauliKey, GateResult, SpinTag, PeriodStatus};
 pub use duna::DunaGovernance;
@@ -22,3 +27,8 @@ pub use civic_spec::{CivicNodeState, SovereigntyNodeState, DunaOperatingWrapper,
 pub use social_physics::{SocialPhysicsEngine, OccupancySlot, TermOrderGate};
 pub use buurtzorg::{BuurtzorgTeamEngine, Virtue};
 pub use trifecta_protocol::{TrifectaGovernanceEngine, AttestationResult, ReviewFinding};
+pub use amy_mccae::{EmbodiedState, BURNOUT_THRESHOLD, STRESS_INDEX_MAX};
+pub use crmf_governor::{CrmfSeal, GovernancePhase, POSEIDON_T, POSEIDON_R, POSEIDON_CONSTRAINTS};
+pub use duna_binding::{DeploymentBinding, E_TRIAD_FLOOR};
+pub use hlix_clearing::{UorReference, ClearingState, EXCHANGE_FEE_BASIS};
+pub use ward_monitor::{WardState, MonitorEntry, ENERGY_RED_BOUND, TDI_AMBER_BOUND, HRV_AMBER_BOUND};

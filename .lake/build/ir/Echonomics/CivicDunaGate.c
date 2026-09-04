@@ -13,14 +13,16 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+uint8_t lean_nat_dec_eq(lean_object*, lean_object*);
 uint8_t lean_nat_dec_lt(lean_object*, lean_object*);
 lean_object* lean_nat_to_int(lean_object*);
-uint8_t lean_nat_dec_eq(lean_object*, lean_object*);
-lean_object* lean_nat_add(lean_object*, lean_object*);
-uint8_t lean_nat_dec_le(lean_object*, lean_object*);
-lean_object* l_Repr_addAppParen(lean_object*, lean_object*);
 lean_object* l_Nat_reprFast(lean_object*);
 lean_object* lean_string_length(lean_object*);
+lean_object* lean_nat_add(lean_object*, lean_object*);
+uint8_t lean_nat_dec_le(lean_object*, lean_object*);
+lean_object* lean_int_neg(lean_object*);
+uint8_t lean_int_dec_le(lean_object*, lean_object*);
+lean_object* l_Repr_addAppParen(lean_object*, lean_object*);
 uint8_t lean_nat_dec_le(lean_object*, lean_object*);
 static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 64, .m_capacity = 64, .m_length = 63, .m_data = "Citizen Gardens DUNA Governing Principles & Constitutional Gate"};
 static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__0 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0002___closed__0_value;
@@ -158,6 +160,64 @@ LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqConsti
 LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqConstitutionalDecision___boxed(lean_object*, lean_object*);
 LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_evaluateConstitutionalGate(lean_object*);
 LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_evaluateConstitutionalGate___boxed(lean_object*);
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 57, .m_capacity = 57, .m_length = 56, .m_data = "DUNA Agreement Deployment Artifact Cryptographic Binding"};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__0 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__0_value;
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__1_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 211, .m_capacity = 211, .m_length = 210, .m_data = "Bind the ratified Citizen Gardens DUNA Operating Agreement hash to the PhaseMirrorReputation deployment script and bytecode, and enforce the Article III E_triad statutory floor in the weekly transparency proof."};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__1 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__1_value;
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__2_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 132, .m_capacity = 132, .m_length = 131, .m_data = "Fail-closed deployment binding on the agreement hash, and a statutory E_triad floor of -0.7 enforced by the weekly Poseidon2 proof."};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__2 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__2_value;
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__3_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 38, .m_capacity = 38, .m_length = 37, .m_data = "Self-validating legal-crypto artifact"};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__3 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__3_value;
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__4_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 30, .m_capacity = 30, .m_length = 29, .m_data = "Thermodynamic statutory floor"};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__4 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__4_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__5_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*2 + 0, .m_other = 2, .m_tag = 1}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__4_value),((lean_object*)(((size_t)(0) << 1) | 1))}};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__5 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__5_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__6_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*2 + 0, .m_other = 2, .m_tag = 1}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__3_value),((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__5_value)}};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__6 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__6_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__7_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*7 + 8, .m_other = 7, .m_tag = 0}, .m_objs = {((lean_object*)(((size_t)(27) << 1) | 1)),((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__0_value),((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__1_value),((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__2_value),((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__6_value),((lean_object*)(((size_t)(0) << 1) | 1)),((lean_object*)(((size_t)(0) << 1) | 1)),LEAN_SCALAR_PTR_LITERAL(1, 0, 0, 0, 0, 0, 0, 0)}};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__7 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__7_value;
+LEAN_EXPORT const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_adr0027 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_adr0027___closed__7_value;
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 14, .m_capacity = 14, .m_length = 13, .m_data = "agreementHash"};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__0 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__0_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__1_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*1 + 0, .m_other = 1, .m_tag = 3}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__0_value)}};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__1 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__1_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__2_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*2 + 0, .m_other = 2, .m_tag = 5}, .m_objs = {((lean_object*)(((size_t)(0) << 1) | 1)),((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__1_value)}};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__2 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__2_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__3_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*2 + 0, .m_other = 2, .m_tag = 5}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__2_value),((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__5_value)}};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__3 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__3_value;
+static lean_once_cell_t lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__4_once = LEAN_ONCE_CELL_INITIALIZER;
+static lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__4;
+static const lean_string_object lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__5_value = {.m_header = {.m_rc = 0, .m_cs_sz = 0, .m_other = 0, .m_tag = 249}, .m_size = 13, .m_capacity = 13, .m_length = 12, .m_data = "deployedHash"};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__5 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__5_value;
+static const lean_ctor_object lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__6_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*1 + 0, .m_other = 1, .m_tag = 3}, .m_objs = {((lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__5_value)}};
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__6 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__6_value;
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___boxed(lean_object*, lean_object*);
+static const lean_closure_object lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_closure_object) + sizeof(void*)*0, .m_other = 0, .m_tag = 245}, .m_fun = (void*)lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___boxed, .m_arity = 2, .m_num_fixed = 0, .m_objs = {} };
+static const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding___closed__0 = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding___closed__0_value;
+LEAN_EXPORT const lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding = (const lean_object*)&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding___closed__0_value;
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDeploymentBinding_decEq(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDeploymentBinding_decEq___boxed(lean_object*, lean_object*);
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDeploymentBinding(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDeploymentBinding___boxed(lean_object*, lean_object*);
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isDeploymentBound(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isDeploymentBound___boxed(lean_object*);
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isDeploymentAccepted(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isDeploymentAccepted___boxed(lean_object*);
+static lean_once_cell_t lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR___closed__0_once = LEAN_ONCE_CELL_INITIALIZER;
+static lean_object* lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR___closed__0;
+static lean_once_cell_t lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR___closed__1_once = LEAN_ONCE_CELL_INITIALIZER;
+static lean_object* lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR___closed__1;
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR;
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isAboveStatutoryFloor(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isAboveStatutoryFloor___boxed(lean_object*);
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_allTriadsAboveFloor(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_allTriadsAboveFloor___boxed(lean_object*);
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isWeeklyProofValid(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isWeeklyProofValid___boxed(lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics___private_Echonomics_CivicDunaGate_0__Echonomics_CivicDunaGate_allTriadsAboveFloor_match__1_splitter___redArg(lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* lp_Echonomics___private_Echonomics_CivicDunaGate_0__Echonomics_CivicDunaGate_allTriadsAboveFloor_match__1_splitter(lean_object*, lean_object*, lean_object*, lean_object*);
 static lean_object* _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__7(void){
 _start:
 {
@@ -1051,6 +1111,377 @@ v_r_366_ = lean_box(v_res_365_);
 return v_r_366_;
 }
 }
+static lean_object* _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__4(void){
+_start:
+{
+lean_object* v___x_397_; lean_object* v___x_398_; 
+v___x_397_ = lean_unsigned_to_nat(17u);
+v___x_398_ = lean_nat_to_int(v___x_397_);
+return v___x_398_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg(lean_object* v_x_402_){
+_start:
+{
+lean_object* v_agreementHash_403_; lean_object* v_deployedHash_404_; lean_object* v___x_406_; uint8_t v_isShared_407_; uint8_t v_isSharedCheck_439_; 
+v_agreementHash_403_ = lean_ctor_get(v_x_402_, 0);
+v_deployedHash_404_ = lean_ctor_get(v_x_402_, 1);
+v_isSharedCheck_439_ = !lean_is_exclusive(v_x_402_);
+if (v_isSharedCheck_439_ == 0)
+{
+v___x_406_ = v_x_402_;
+v_isShared_407_ = v_isSharedCheck_439_;
+goto v_resetjp_405_;
+}
+else
+{
+lean_inc(v_deployedHash_404_);
+lean_inc(v_agreementHash_403_);
+lean_dec(v_x_402_);
+v___x_406_ = lean_box(0);
+v_isShared_407_ = v_isSharedCheck_439_;
+goto v_resetjp_405_;
+}
+v_resetjp_405_:
+{
+lean_object* v___x_408_; lean_object* v___x_409_; lean_object* v___x_410_; lean_object* v___x_411_; lean_object* v___x_412_; lean_object* v___x_414_; 
+v___x_408_ = ((lean_object*)(lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__5));
+v___x_409_ = ((lean_object*)(lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__3));
+v___x_410_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__4, &lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__4_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__4);
+v___x_411_ = l_Nat_reprFast(v_agreementHash_403_);
+v___x_412_ = lean_alloc_ctor(3, 1, 0);
+lean_ctor_set(v___x_412_, 0, v___x_411_);
+if (v_isShared_407_ == 0)
+{
+lean_ctor_set_tag(v___x_406_, 4);
+lean_ctor_set(v___x_406_, 1, v___x_412_);
+lean_ctor_set(v___x_406_, 0, v___x_410_);
+v___x_414_ = v___x_406_;
+goto v_reusejp_413_;
+}
+else
+{
+lean_object* v_reuseFailAlloc_438_; 
+v_reuseFailAlloc_438_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v_reuseFailAlloc_438_, 0, v___x_410_);
+lean_ctor_set(v_reuseFailAlloc_438_, 1, v___x_412_);
+v___x_414_ = v_reuseFailAlloc_438_;
+goto v_reusejp_413_;
+}
+v_reusejp_413_:
+{
+uint8_t v___x_415_; lean_object* v___x_416_; lean_object* v___x_417_; lean_object* v___x_418_; lean_object* v___x_419_; lean_object* v___x_420_; lean_object* v___x_421_; lean_object* v___x_422_; lean_object* v___x_423_; lean_object* v___x_424_; lean_object* v___x_425_; lean_object* v___x_426_; lean_object* v___x_427_; lean_object* v___x_428_; lean_object* v___x_429_; lean_object* v___x_430_; lean_object* v___x_431_; lean_object* v___x_432_; lean_object* v___x_433_; lean_object* v___x_434_; lean_object* v___x_435_; lean_object* v___x_436_; lean_object* v___x_437_; 
+v___x_415_ = 0;
+v___x_416_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_416_, 0, v___x_414_);
+lean_ctor_set_uint8(v___x_416_, sizeof(void*)*1, v___x_415_);
+v___x_417_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_417_, 0, v___x_409_);
+lean_ctor_set(v___x_417_, 1, v___x_416_);
+v___x_418_ = ((lean_object*)(lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__9));
+v___x_419_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_419_, 0, v___x_417_);
+lean_ctor_set(v___x_419_, 1, v___x_418_);
+v___x_420_ = lean_box(1);
+v___x_421_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_421_, 0, v___x_419_);
+lean_ctor_set(v___x_421_, 1, v___x_420_);
+v___x_422_ = ((lean_object*)(lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg___closed__6));
+v___x_423_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_423_, 0, v___x_421_);
+lean_ctor_set(v___x_423_, 1, v___x_422_);
+v___x_424_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_424_, 0, v___x_423_);
+lean_ctor_set(v___x_424_, 1, v___x_408_);
+v___x_425_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__7, &lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__7_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__7);
+v___x_426_ = l_Nat_reprFast(v_deployedHash_404_);
+v___x_427_ = lean_alloc_ctor(3, 1, 0);
+lean_ctor_set(v___x_427_, 0, v___x_426_);
+v___x_428_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v___x_428_, 0, v___x_425_);
+lean_ctor_set(v___x_428_, 1, v___x_427_);
+v___x_429_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_429_, 0, v___x_428_);
+lean_ctor_set_uint8(v___x_429_, sizeof(void*)*1, v___x_415_);
+v___x_430_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_430_, 0, v___x_424_);
+lean_ctor_set(v___x_430_, 1, v___x_429_);
+v___x_431_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__20, &lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__20_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__20);
+v___x_432_ = ((lean_object*)(lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__21));
+v___x_433_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_433_, 0, v___x_432_);
+lean_ctor_set(v___x_433_, 1, v___x_430_);
+v___x_434_ = ((lean_object*)(lp_Echonomics_Echonomics_CivicDunaGate_instReprDunaState_repr___redArg___closed__22));
+v___x_435_ = lean_alloc_ctor(5, 2, 0);
+lean_ctor_set(v___x_435_, 0, v___x_433_);
+lean_ctor_set(v___x_435_, 1, v___x_434_);
+v___x_436_ = lean_alloc_ctor(4, 2, 0);
+lean_ctor_set(v___x_436_, 0, v___x_431_);
+lean_ctor_set(v___x_436_, 1, v___x_435_);
+v___x_437_ = lean_alloc_ctor(6, 1, 1);
+lean_ctor_set(v___x_437_, 0, v___x_436_);
+lean_ctor_set_uint8(v___x_437_, sizeof(void*)*1, v___x_415_);
+return v___x_437_;
+}
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr(lean_object* v_x_440_, lean_object* v_prec_441_){
+_start:
+{
+lean_object* v___x_442_; 
+v___x_442_ = lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___redArg(v_x_440_);
+return v___x_442_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr___boxed(lean_object* v_x_443_, lean_object* v_prec_444_){
+_start:
+{
+lean_object* v_res_445_; 
+v_res_445_ = lp_Echonomics_Echonomics_CivicDunaGate_instReprDeploymentBinding_repr(v_x_443_, v_prec_444_);
+lean_dec(v_prec_444_);
+return v_res_445_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDeploymentBinding_decEq(lean_object* v_x_448_, lean_object* v_x_449_){
+_start:
+{
+lean_object* v_agreementHash_450_; lean_object* v_deployedHash_451_; lean_object* v_agreementHash_452_; lean_object* v_deployedHash_453_; uint8_t v___x_454_; 
+v_agreementHash_450_ = lean_ctor_get(v_x_448_, 0);
+v_deployedHash_451_ = lean_ctor_get(v_x_448_, 1);
+v_agreementHash_452_ = lean_ctor_get(v_x_449_, 0);
+v_deployedHash_453_ = lean_ctor_get(v_x_449_, 1);
+v___x_454_ = lean_nat_dec_eq(v_agreementHash_450_, v_agreementHash_452_);
+if (v___x_454_ == 0)
+{
+return v___x_454_;
+}
+else
+{
+uint8_t v___x_455_; 
+v___x_455_ = lean_nat_dec_eq(v_deployedHash_451_, v_deployedHash_453_);
+return v___x_455_;
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDeploymentBinding_decEq___boxed(lean_object* v_x_456_, lean_object* v_x_457_){
+_start:
+{
+uint8_t v_res_458_; lean_object* v_r_459_; 
+v_res_458_ = lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDeploymentBinding_decEq(v_x_456_, v_x_457_);
+lean_dec_ref(v_x_457_);
+lean_dec_ref(v_x_456_);
+v_r_459_ = lean_box(v_res_458_);
+return v_r_459_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDeploymentBinding(lean_object* v_x_460_, lean_object* v_x_461_){
+_start:
+{
+uint8_t v___x_462_; 
+v___x_462_ = lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDeploymentBinding_decEq(v_x_460_, v_x_461_);
+return v___x_462_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDeploymentBinding___boxed(lean_object* v_x_463_, lean_object* v_x_464_){
+_start:
+{
+uint8_t v_res_465_; lean_object* v_r_466_; 
+v_res_465_ = lp_Echonomics_Echonomics_CivicDunaGate_instDecidableEqDeploymentBinding(v_x_463_, v_x_464_);
+lean_dec_ref(v_x_464_);
+lean_dec_ref(v_x_463_);
+v_r_466_ = lean_box(v_res_465_);
+return v_r_466_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isDeploymentBound(lean_object* v_b_467_){
+_start:
+{
+lean_object* v_agreementHash_468_; lean_object* v_deployedHash_469_; uint8_t v___x_470_; 
+v_agreementHash_468_ = lean_ctor_get(v_b_467_, 0);
+v_deployedHash_469_ = lean_ctor_get(v_b_467_, 1);
+v___x_470_ = lean_nat_dec_eq(v_deployedHash_469_, v_agreementHash_468_);
+return v___x_470_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isDeploymentBound___boxed(lean_object* v_b_471_){
+_start:
+{
+uint8_t v_res_472_; lean_object* v_r_473_; 
+v_res_472_ = lp_Echonomics_Echonomics_CivicDunaGate_isDeploymentBound(v_b_471_);
+lean_dec_ref(v_b_471_);
+v_r_473_ = lean_box(v_res_472_);
+return v_r_473_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isDeploymentAccepted(lean_object* v_b_474_){
+_start:
+{
+uint8_t v___x_475_; 
+v___x_475_ = lp_Echonomics_Echonomics_CivicDunaGate_isDeploymentBound(v_b_474_);
+return v___x_475_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isDeploymentAccepted___boxed(lean_object* v_b_476_){
+_start:
+{
+uint8_t v_res_477_; lean_object* v_r_478_; 
+v_res_477_ = lp_Echonomics_Echonomics_CivicDunaGate_isDeploymentAccepted(v_b_476_);
+lean_dec_ref(v_b_476_);
+v_r_478_ = lean_box(v_res_477_);
+return v_r_478_;
+}
+}
+static lean_object* _init_lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR___closed__0(void){
+_start:
+{
+lean_object* v___x_479_; lean_object* v___x_480_; 
+v___x_479_ = lean_unsigned_to_nat(7u);
+v___x_480_ = lean_nat_to_int(v___x_479_);
+return v___x_480_;
+}
+}
+static lean_object* _init_lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR___closed__1(void){
+_start:
+{
+lean_object* v___x_481_; lean_object* v___x_482_; 
+v___x_481_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR___closed__0, &lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR___closed__0_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR___closed__0);
+v___x_482_ = lean_int_neg(v___x_481_);
+return v___x_482_;
+}
+}
+static lean_object* _init_lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR(void){
+_start:
+{
+lean_object* v___x_483_; 
+v___x_483_ = lean_obj_once(&lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR___closed__1, &lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR___closed__1_once, _init_lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR___closed__1);
+return v___x_483_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isAboveStatutoryFloor(lean_object* v_e_484_){
+_start:
+{
+lean_object* v___x_485_; uint8_t v___x_486_; 
+v___x_485_ = lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR;
+v___x_486_ = lean_int_dec_le(v___x_485_, v_e_484_);
+return v___x_486_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isAboveStatutoryFloor___boxed(lean_object* v_e_487_){
+_start:
+{
+uint8_t v_res_488_; lean_object* v_r_489_; 
+v_res_488_ = lp_Echonomics_Echonomics_CivicDunaGate_isAboveStatutoryFloor(v_e_487_);
+lean_dec(v_e_487_);
+v_r_489_ = lean_box(v_res_488_);
+return v_r_489_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_allTriadsAboveFloor(lean_object* v_x_490_){
+_start:
+{
+if (lean_obj_tag(v_x_490_) == 0)
+{
+uint8_t v___x_491_; 
+v___x_491_ = 1;
+return v___x_491_;
+}
+else
+{
+lean_object* v_head_492_; lean_object* v_tail_493_; uint8_t v___x_494_; 
+v_head_492_ = lean_ctor_get(v_x_490_, 0);
+v_tail_493_ = lean_ctor_get(v_x_490_, 1);
+v___x_494_ = lp_Echonomics_Echonomics_CivicDunaGate_isAboveStatutoryFloor(v_head_492_);
+if (v___x_494_ == 0)
+{
+return v___x_494_;
+}
+else
+{
+v_x_490_ = v_tail_493_;
+goto _start;
+}
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_allTriadsAboveFloor___boxed(lean_object* v_x_496_){
+_start:
+{
+uint8_t v_res_497_; lean_object* v_r_498_; 
+v_res_497_ = lp_Echonomics_Echonomics_CivicDunaGate_allTriadsAboveFloor(v_x_496_);
+lean_dec(v_x_496_);
+v_r_498_ = lean_box(v_res_497_);
+return v_r_498_;
+}
+}
+LEAN_EXPORT uint8_t lp_Echonomics_Echonomics_CivicDunaGate_isWeeklyProofValid(lean_object* v_es_499_){
+_start:
+{
+uint8_t v___x_500_; 
+v___x_500_ = lp_Echonomics_Echonomics_CivicDunaGate_allTriadsAboveFloor(v_es_499_);
+return v___x_500_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics_Echonomics_CivicDunaGate_isWeeklyProofValid___boxed(lean_object* v_es_501_){
+_start:
+{
+uint8_t v_res_502_; lean_object* v_r_503_; 
+v_res_502_ = lp_Echonomics_Echonomics_CivicDunaGate_isWeeklyProofValid(v_es_501_);
+lean_dec(v_es_501_);
+v_r_503_ = lean_box(v_res_502_);
+return v_r_503_;
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics___private_Echonomics_CivicDunaGate_0__Echonomics_CivicDunaGate_allTriadsAboveFloor_match__1_splitter___redArg(lean_object* v_x_504_, lean_object* v_h__1_505_, lean_object* v_h__2_506_){
+_start:
+{
+if (lean_obj_tag(v_x_504_) == 0)
+{
+lean_object* v___x_507_; lean_object* v___x_508_; 
+lean_dec(v_h__2_506_);
+v___x_507_ = lean_box(0);
+v___x_508_ = lean_apply_1(v_h__1_505_, v___x_507_);
+return v___x_508_;
+}
+else
+{
+lean_object* v_head_509_; lean_object* v_tail_510_; lean_object* v___x_511_; 
+lean_dec(v_h__1_505_);
+v_head_509_ = lean_ctor_get(v_x_504_, 0);
+lean_inc(v_head_509_);
+v_tail_510_ = lean_ctor_get(v_x_504_, 1);
+lean_inc(v_tail_510_);
+lean_dec_ref_known(v_x_504_, 2);
+v___x_511_ = lean_apply_2(v_h__2_506_, v_head_509_, v_tail_510_);
+return v___x_511_;
+}
+}
+}
+LEAN_EXPORT lean_object* lp_Echonomics___private_Echonomics_CivicDunaGate_0__Echonomics_CivicDunaGate_allTriadsAboveFloor_match__1_splitter(lean_object* v_motive_512_, lean_object* v_x_513_, lean_object* v_h__1_514_, lean_object* v_h__2_515_){
+_start:
+{
+if (lean_obj_tag(v_x_513_) == 0)
+{
+lean_object* v___x_516_; lean_object* v___x_517_; 
+lean_dec(v_h__2_515_);
+v___x_516_ = lean_box(0);
+v___x_517_ = lean_apply_1(v_h__1_514_, v___x_516_);
+return v___x_517_;
+}
+else
+{
+lean_object* v_head_518_; lean_object* v_tail_519_; lean_object* v___x_520_; 
+lean_dec(v_h__1_514_);
+v_head_518_ = lean_ctor_get(v_x_513_, 0);
+lean_inc(v_head_518_);
+v_tail_519_ = lean_ctor_get(v_x_513_, 1);
+lean_inc(v_tail_519_);
+lean_dec_ref_known(v_x_513_, 2);
+v___x_520_ = lean_apply_2(v_h__2_515_, v_head_518_, v_tail_519_);
+return v___x_520_;
+}
+}
+}
 lean_object* initialize_Init(uint8_t builtin);
 lean_object* initialize_Init(uint8_t builtin);
 lean_object* initialize_Echonomics_Echonomics_Core(uint8_t builtin);
@@ -1068,6 +1499,8 @@ lean_dec_ref(res);
 res = initialize_Echonomics_Echonomics_Core(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
+lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR = _init_lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR();
+lean_mark_persistent(lp_Echonomics_Echonomics_CivicDunaGate_E__TRIAD__FLOOR);
 return lean_io_result_mk_ok(lean_box(0));
 }
 #ifdef __cplusplus

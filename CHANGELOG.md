@@ -15,6 +15,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `Echonomics.CivicInfrastructureSpec` (ADR-0012): nine L0 civic invariants, dual-seat equity/PMCP firewall, and the material-asset floor ($5,000 / vehicle / land / lease > 12 months).
   - All ADRs 0012–0021 promoted to **Accepted** status in Lean records, ADR front matter, and the README index.
   - Rust engine modules `social_physics.rs`, `buurtzorg.rs`, `trifecta_protocol.rs`, `civic_spec.rs` extended with unit tests and Kani model-checking harnesses (74 tests passing).
+- **Accepted ADR Production Implementation (ADR-0022 through ADR-0029)**: the accepted ADR set advanced to the new specifications; production-grade Lean 4 formal models and Rust/Kani verification engines added in `packages/Echonomics`:
+  - `Echonomics.AmyMcCaeFramework` (ADR-0023): embodied capacity `E = C_avail - S_load` on a normalized 0–100 ledger, α-calibrated capacity estimation (`α ≤ 1` never amplifies), Stress Load Index bound (≤ 10), fail-closed burnout gate, and fractional-engagement bound (never exceeds 1).
+  - `Echonomics.DualPhaseLogic` (ADR-0026): dual-phase governance (Biological/Constitutional), CRMF seal pipeline (BCS + Poseidon2 t=9/r=8/5,087 constraints + dual-anchor signature, fail-closed), and RWQ voting-power constitutional cap (5× token balance, reputation ≤ 100).
+  - `Echonomics.CivicDunaGate` extended (ADR-0027): fail-closed deployment binding between the ratified DUNA agreement hash and the deployed artifact, plus the Article III statutory floor `E_triad ≥ -0.7` enforced by the weekly transparency proof (a single violation fails the proof closed).
+  - `Echonomics.HlixInfrastructure` (ADR-0028): deterministic UOR identity `root = primeIndex ^ exponent` (prime base ≥ 2, positive exponent, overflow fails closed), Holotrade clearing gate (bid ≥ ask, settle at ask), bounded 10% exchange fee, and allocation capacity gate.
+  - `Echonomics.WardMonitor` (ADR-0029): locked universal thresholds (E < -0.7, TDI ≤ 0.8/1.8, masking ≥ 2/3, HRV drift ≥ -1.5σ, all ×10 scaled), the composite `SIG_GOV_KILL` interlock (no single-metric false positives except extreme E collapse), and the fail-closed cryptographic chain duty cycle.
+  - Buurtzorg renumbered records ADR-0022/0024/0025 registered in `Echonomics.BuurtzorgModel`.
+  - All ADRs 0022–0029 promoted to **Accepted** status in Lean records, ADR front matter (ids/titles aligned to filenames), and the README index/tree.
+  - Rust engine modules `amy_mccae.rs`, `crmf_governor.rs`, `duna_binding.rs`, `hlix_clearing.rs`, `ward_monitor.rs` added with unit tests and Kani model-checking harnesses (91 unit + 1 property test passing).
 
 ### Planned (v2.0.0 Roadmap)
 - Real-time collaborative CRDT editing engine in `pirtmd` via Yrs / Loro integration (ADR-056)

@@ -11,6 +11,10 @@ import Echonomics.CivicInfrastructureSpec
 import Echonomics.SocialPhysicsParts
 import Echonomics.BuurtzorgModel
 import Echonomics.TrifectaProtocolReview
+import Echonomics.AmyMcCaeFramework
+import Echonomics.DualPhaseLogic
+import Echonomics.HlixInfrastructure
+import Echonomics.WardMonitor
 
 /-!
 # Echonomics.Test — Formal Test Suite for ADR-0001 & All Echonomics ADRs
@@ -20,6 +24,7 @@ Self-contained test driver exercising:
 2. ADR-0001: Lifecycle invariants (self-supersession, transition validity)
 3. ADR-0001: Property-based tests (multiplicity monotonicity, positivity, gate classification)
 4. ADR-0002–0021: All downstream ADR test cases
+5. ADR-0022–0029: New accepted ADR set (Buurtzorg renumber, Amy McCae, Dual Phase, DUNA binding, HLIX, WardMonitor)
 -/
 
 
@@ -635,6 +640,97 @@ def main : IO Unit := do
     IO.println "✓ [PASS] ADR-0021: Machine-checked audit trail & review coverage verified"
   else
     throw $ IO.userError "✗ [FAIL] ADR-0021 audit trail test failed"
+
+  -- ── ADR-0022..0029: New accepted ADR set ──
+
+  -- ADR-0022/0024/0025: renumbered Buurtzorg records promoted to Accepted
+  if Echonomics.BuurtzorgModel.adr0022.status == Echonomics.Core.ADRStatus.Accepted &&
+     Echonomics.BuurtzorgModel.adr0024.status == Echonomics.Core.ADRStatus.Accepted &&
+     Echonomics.BuurtzorgModel.adr0025.status == Echonomics.Core.ADRStatus.Accepted then
+    IO.println "✓ [PASS] ADR-0022/0024/0025: Renumbered Buurtzorg records promoted to Accepted"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0022/0024/0025 Buurtzorg record status test failed"
+
+  -- ADR-0023: Amy McCae fractional wellness — E = C - S, burnout gate, fractional engagement
+  let healthy : Echonomics.AmyMcCaeFramework.EmbodiedState := { capacity := 80, stress := 30 }
+  let burnt : Echonomics.AmyMcCaeFramework.EmbodiedState := { capacity := 10, stress := 95 }
+  if Echonomics.AmyMcCaeFramework.requiresIntervention burnt &&
+     Echonomics.AmyMcCaeFramework.isBurnoutRisk burnt &&
+     Echonomics.AmyMcCaeFramework.isBurnoutRisk healthy == false &&
+     Echonomics.AmyMcCaeFramework.isStressIndexValid 7 &&
+     Echonomics.AmyMcCaeFramework.isStressIndexValid 12 == false &&
+     Echonomics.AmyMcCaeFramework.isFractionalEngagementValid 3 4 then
+    IO.println "✓ [PASS] ADR-0023: Amy McCae embodied capacity & burnout gate verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0023 Amy McCae framework test failed"
+
+  -- ADR-0026: dual-phase governance — CRMF seal pipeline & RWQ power caps
+  let sealed : Echonomics.DualPhaseLogic.CrmfSeal :=
+    { bcsCanonical := true, poseidonSealValid := true, dualSigned := true }
+  let partialSeal : Echonomics.DualPhaseLogic.CrmfSeal :=
+    { bcsCanonical := true, poseidonSealValid := true, dualSigned := false }
+  if Echonomics.DualPhaseLogic.isSealComplete sealed &&
+     Echonomics.DualPhaseLogic.isConstitutionalActionLawful sealed &&
+     Echonomics.DualPhaseLogic.isConstitutionalActionLawful partialSeal == false &&
+     Echonomics.DualPhaseLogic.isPowerWithinCap 40 2 &&
+     Echonomics.DualPhaseLogic.isPowerWithinCap 40 200 == false &&
+     Echonomics.DualPhaseLogic.isReputationScoreValid 100 &&
+     Echonomics.DualPhaseLogic.POSEIDON_T == 9 then
+    IO.println "✓ [PASS] ADR-0026: Dual-phase CRMF seal pipeline & RWQ power caps verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0026 dual-phase logic test failed"
+
+  -- ADR-0027: DUNA deployment binding & Article III E_triad statutory floor
+  let bound : Echonomics.CivicDunaGate.DeploymentBinding := { agreementHash := 42, deployedHash := 42 }
+  let tampered : Echonomics.CivicDunaGate.DeploymentBinding := { agreementHash := 42, deployedHash := 7 }
+  if Echonomics.CivicDunaGate.isDeploymentAccepted bound &&
+     Echonomics.CivicDunaGate.isDeploymentAccepted tampered == false &&
+     Echonomics.CivicDunaGate.isAboveStatutoryFloor (-7) &&
+     Echonomics.CivicDunaGate.isAboveStatutoryFloor (-8) == false &&
+     Echonomics.CivicDunaGate.isWeeklyProofValid [-5, 0, 3] &&
+     Echonomics.CivicDunaGate.isWeeklyProofValid [-8] == false then
+    IO.println "✓ [PASS] ADR-0027: DUNA deployment binding & E_triad statutory floor verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0027 DUNA binding test failed"
+
+  -- ADR-0028: HLIX UOR prime-indexed identity, clearing gate & 10% exchange fee
+  let uorRef : Echonomics.HlixInfrastructure.UorReference := { primeIndex := 3, exponent := 2 }
+  let badRef : Echonomics.HlixInfrastructure.UorReference := { primeIndex := 1, exponent := 0 }
+  let clearing : Echonomics.HlixInfrastructure.ClearingState := { bidPrice := 120, askPrice := 100 }
+  let noClearing : Echonomics.HlixInfrastructure.ClearingState := { bidPrice := 90, askPrice := 100 }
+  if Echonomics.HlixInfrastructure.isValidUorReference uorRef &&
+     Echonomics.HlixInfrastructure.isValidUorReference badRef == false &&
+     Echonomics.HlixInfrastructure.uorRoot uorRef == 9 &&
+     Echonomics.HlixInfrastructure.clears clearing &&
+     Echonomics.HlixInfrastructure.clears noClearing == false &&
+     Echonomics.HlixInfrastructure.exchangeFee 100 == 10 then
+    IO.println "✓ [PASS] ADR-0028: HLIX UOR identity & fail-closed clearing verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0028 HLIX infrastructure test failed"
+
+  -- ADR-0029: WardMonitor composite interlock & duty-cycle chain verification
+  let redState : Echonomics.WardMonitor.WardState :=
+    { energyScaled := -8, tdiScaled := 0, hrvDriftScaled := 0, maskingLastN := 0 }
+  let composite : Echonomics.WardMonitor.WardState :=
+    { energyScaled := 0, tdiScaled := 19, hrvDriftScaled := -16, maskingLastN := 0 }
+  let masked : Echonomics.WardMonitor.WardState :=
+    { energyScaled := 0, tdiScaled := 0, hrvDriftScaled := 0, maskingLastN := 2 }
+  let green : Echonomics.WardMonitor.WardState :=
+    { energyScaled := 3, tdiScaled := 5, hrvDriftScaled := 0, maskingLastN := 0 }
+  let entry1 : Echonomics.WardMonitor.MonitorEntry := { entryHash := 42, prevHash := 0 }
+  let entry2 : Echonomics.WardMonitor.MonitorEntry := { entryHash := 99, prevHash := 42 }
+  let entry2t : Echonomics.WardMonitor.MonitorEntry := { entryHash := 99, prevHash := 7 }
+  if Echonomics.WardMonitor.sigGovKill redState &&
+     Echonomics.WardMonitor.sigGovKill composite &&
+     Echonomics.WardMonitor.sigGovKill masked &&
+     Echonomics.WardMonitor.sigGovKill green == false &&
+     Echonomics.WardMonitor.isChainValid [entry1, entry2] &&
+     Echonomics.WardMonitor.isChainValid [entry1, entry2t] == false &&
+     Echonomics.WardMonitor.monitorInterlock [entry1, entry2t] green &&
+     Echonomics.WardMonitor.monitorInterlock [entry1, entry2] green == false then
+    IO.println "✓ [PASS] ADR-0029: WardMonitor composite interlock & duty cycle verified"
+  else
+    throw $ IO.userError "✗ [FAIL] ADR-0029 WardMonitor test failed"
 
   IO.println ""
   IO.println "=== All Echonomics Formal Lean 4 Tests Passed Cleanly ==="

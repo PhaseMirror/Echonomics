@@ -6,7 +6,7 @@
 
 ## Overview
 
-**Echonomics** is a machine-checked social physics, civic governance, and financial geometry platform built within the Multiplicity Sovereign Core ecosystem. It formally converts empirical social physics and DUNA governance principles into machine-verifiable Architecture Decision Records (ADRs ADR-0001 through ADR-0021), canonical zero-Mathlib Lean 4 formal models, and high-performance Rust/Kani verification engines.
+**Echonomics** is a machine-checked social physics, civic governance, and financial geometry platform built within the Multiplicity Sovereign Core ecosystem. It formally converts empirical social physics and DUNA governance principles into machine-verifiable Architecture Decision Records (ADRs ADR-0001 through ADR-0029), canonical zero-Mathlib Lean 4 formal models, and high-performance Rust/Kani verification engines.
 
 ---
 
@@ -25,16 +25,24 @@
 | **`ADR-0009`** | Hundian Revision and Forbidden Terms Deprecation | Completed | Strike retired terms (`MSC`, `1+2R`, reciprocity) from ledgers |
 | **`ADR-0010`** | Citizen Gardens DUNA Governing Principles | Completed | Non-coercive participation & constitutional voting bounds |
 | **`ADR-0011`** | Citizen Gardens System Model Specification v1.0 | Completed | Domain entity bindings & prime-decomposable identity |
-| **`ADR-0012`** | Unified Civic Infrastructure Blueprint | Accepted | Healthcare care team ledgers & zero-knowledge attestation |
-| **`ADR-0013`** | Multiplicity Social Physics Part 1 — Pauli Exclusion | Accepted | Slot capacity limit max 2 occupants and spin tags ($\alpha/\beta$) |
-| **`ADR-0014`** | Multiplicity Social Physics Part 2 — Term-Order Gate | Accepted | Hund's First Rule Term-Order Gate ($U = 0$ for $\beta$ pairing) |
-| **`ADR-0015`** | Multiplicity Social Physics Part 3 — Energy Ledgers | Accepted | Separated friction $V_{\text{pair}} \ge 0$ & attraction $V_{\text{nuc}} \ge 0$ |
-| **`ADR-0016`** | Eight Virtues of Buurtzorg Self-Governing Care Model | Accepted | Self-governing team capacity upper bound (max 12 nurses) |
-| **`ADR-0017`** | Buurtzorg Civic Infrastructure Integration Schema | Accepted | Care team mapping to DUNA governance nodes |
-| **`ADR-0018`** | Buurtzorg Non-Coercive Coaching & Resolution | Accepted | Non-coercive conflict resolution and advisory coaching gates |
-| **`ADR-0019`** | Trifecta Governance Tripartite Checks & Balances | Accepted | Tripartite 3-chamber signature verification (Exec, Legis, Judic) |
-| **`ADR-0020`** | Network Protocol-Centric L1 Substrate & Consensus | Accepted | L1 spectral contractivity $\|G\|_1 < 1.0$ in $\mathbb{Q}$ |
-| **`ADR-0021`** | Social Physics Technical Review Report | Accepted | Complete audit trail & review discrepancy resolution |
+| **`ADR-0012`** | Unified Civic Infrastructure Blueprint | Completed | Healthcare care team ledgers & zero-knowledge attestation |
+| **`ADR-0013`** | Multiplicity Social Physics Part 1 — Pauli Exclusion | Completed | Slot capacity limit max 2 occupants and spin tags ($\alpha/\beta$) |
+| **`ADR-0014`** | Multiplicity Social Physics Part 2 — Term-Order Gate | Completed | Hund's First Rule Term-Order Gate ($U = 0$ for $\beta$ pairing) |
+| **`ADR-0015`** | Multiplicity Social Physics Part 3 — Energy Ledgers | Completed | Separated friction $V_{\text{pair}} \ge 0$ & attraction $V_{\text{nuc}} \ge 0$ |
+| **`ADR-0016`** | Eight Virtues of Buurtzorg Self-Governing Care Model | Completed | Self-governing team capacity upper bound (max 12 nurses) |
+| **`ADR-0017`** | Buurtzorg Civic Infrastructure Integration Schema | Completed | Care team mapping to DUNA governance nodes |
+| **`ADR-0018`** | Buurtzorg Non-Coercive Coaching & Resolution | Completed | Non-coercive conflict resolution and advisory coaching gates |
+| **`ADR-0019`** | Trifecta Governance Tripartite Checks & Balances | Completed | Tripartite 3-chamber signature verification (Exec, Legis, Judic) |
+| **`ADR-0020`** | Network Protocol-Centric L1 Substrate & Consensus | Completed | L1 spectral contractivity $\|G\|_1 < 1.0$ in $\mathbb{Q}$ |
+| **`ADR-0021`** | Social Physics Technical Review Report | Completed | Complete audit trail & review discrepancy resolution |
+| **`ADR-0022`** | Eight Virtues of Buurtzorg Self-Governing Care Model | Completed | Self-governing team capacity upper bound (max 12 nurses) |
+| **`ADR-0023`** | Amy McCae Fractional Wellness & Leadership Framework | Completed | Embodied capacity $E = C_{\text{avail}} - S_{\text{load}}$ & fail-closed burnout gate |
+| **`ADR-0024`** | Buurtzorg Civic Infrastructure Integration Schema | Completed | Care team mapping to DUNA governance nodes |
+| **`ADR-0025`** | Buurtzorg Non-Coercive Coaching & Resolution Model | Completed | Non-coercive conflict resolution and advisory coaching gates |
+| **`ADR-0026`** | Dual Phase Logic & CRMF Governor Daemon | Completed | CRMF seal pipeline (BCS + Poseidon2 t=9/r=8 + dual-sign) & RWQ power cap 5× |
+| **`ADR-0027`** | DUNA Agreement Deployment Artifact Cryptographic Binding | Completed | Fail-closed deployment hash binding & $E_{\text{triad}} \ge -0.7$ statutory floor |
+| **`ADR-0028`** | HLIX Compute Infrastructure Clearinghouse & UOR Reference Model | Completed | Deterministic UOR root $r = p^e$, bid ≥ ask clearing gate, 10% exchange fee |
+| **`ADR-0029`** | WardMonitor Universal Thresholds & Interlock Duty Cycle | Completed | Composite `SIG_GOV_KILL` interlock & fail-closed chain duty cycle |
 
 ---
 
@@ -49,13 +57,15 @@ packages/Echonomics/
 ├── circuits/                          # Circom ZK Proof Circuits (ace.circom, PrimeCheck.circom, etc.)
 ├── docs/
 │   └── adr/
-│       └── proposed/                  # ADR-0001 through ADR-0021 specifications
+│       ├── accepted/                 # ADR-0022..0029 accepted specifications
+│       ├── completed/                # ADR-0001..0021 completed specifications
+│       └── proposed/                 # Proposed specifications
 ├── lean/
 │   └── Echonomics/
 │       ├── Core.lean                  # Core inductive types & ADR structures
 │       ├── Proofs.lean                # Immutability & entailment theorems
 │       ├── HundianOccupancy.lean      # Formal proofs for ADR-0001
-│       ├── CivicDunaGate.lean         # Formal proofs for ADR-0002
+│       ├── CivicDunaGate.lean         # Formal proofs for ADR-0002, 0027
 │       ├── UorPrimeGeometry.lean      # Formal proofs for ADR-0003
 │       ├── EnergyLedger.lean          # Formal proofs for ADR-0004
 │       ├── XiConstitutionLicense.lean # Formal proofs for ADR-0005
@@ -63,8 +73,12 @@ packages/Echonomics/
 │       ├── HundianCodebookRunbook.lean# Formal proofs for ADR-0007..0009
 │       ├── CivicInfrastructureSpec.lean# Formal proofs for ADR-0010..0012
 │       ├── SocialPhysicsParts.lean    # Formal proofs for ADR-0013..0015
-│       ├── BuurtzorgModel.lean        # Formal proofs for ADR-0016..0018
+│       ├── BuurtzorgModel.lean        # Formal proofs for ADR-0016..0018, 0022..0025
 │       ├── TrifectaProtocolReview.lean# Formal proofs for ADR-0019..0021
+│       ├── AmyMcCaeFramework.lean     # Formal proofs for ADR-0023
+│       ├── DualPhaseLogic.lean        # Formal proofs for ADR-0026
+│       ├── HlixInfrastructure.lean    # Formal proofs for ADR-0028
+│       ├── WardMonitor.lean           # Formal proofs for ADR-0029
 │       └── Test.lean                  # Executable test runner
 └── rust/
     └── echonomics-engine/
@@ -81,7 +95,12 @@ packages/Echonomics/
             ├── civic_spec.rs          # Civic node state & Kani proofs (ADR-0010..0012)
             ├── social_physics.rs      # Social physics engine & Kani proofs (ADR-0013..0015)
             ├── buurtzorg.rs           # Buurtzorg team capacity & Kani proofs (ADR-0016..0018)
-            └── trifecta_protocol.rs   # 3-Chamber consensus & Kani proofs (ADR-0019..0021)
+            ├── trifecta_protocol.rs   # 3-Chamber consensus & Kani proofs (ADR-0019..0021)
+            ├── amy_mccae.rs           # Embodied capacity engine & Kani proofs (ADR-0023)
+            ├── crmf_governor.rs       # CRMF seal & RWQ power engine (ADR-0026)
+            ├── duna_binding.rs        # Deployment binding & E_triad floor (ADR-0027)
+            ├── hlix_clearing.rs       # UOR identity & clearing engine (ADR-0028)
+            └── ward_monitor.rs        # Interlock duty cycle & Kani proofs (ADR-0029)
 ```
 
 ---
@@ -107,7 +126,7 @@ cargo test
 
 | Standard / Requirement | Status | Verification Reference |
 | :--- | :---: | :--- |
-| **Strict Hierarchy & ADR Structure** | **VERIFIED** | ADR-0001 through ADR-0021 under `docs/adr/accepted/` |
+| **Strict Hierarchy & ADR Structure** | **VERIFIED** | ADR-0022..0029 under `docs/adr/accepted/`; ADR-0001..0021 under `docs/adr/completed/` |
 | **Zero-Mathlib Canonical Core** | **VERIFIED** | `lean/Core/` zero-Mathlib modules compile cleanly |
 | **Kani Bounded Model Checking** | **VERIFIED** | `#[cfg(kani)]` proof harnesses in every Rust module |
 | **Fail-Closed Execution** | **VERIFIED** | G0–G5 gate pipeline rejects invalid state transitions |

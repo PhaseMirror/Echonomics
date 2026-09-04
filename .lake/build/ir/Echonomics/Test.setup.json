@@ -6,6 +6,8 @@
  "importArts":
  {"Echonomics.XiConstitutionLicense":
   [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/XiConstitutionLicense.olean"]],
+  "Echonomics.WardMonitor":
+  [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/WardMonitor.olean"]],
   "Echonomics.UorPrimeGeometry":
   [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/UorPrimeGeometry.olean"]],
   "Echonomics.TrifectaProtocolReview":
@@ -20,8 +22,12 @@
   [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/HundianOccupancy.olean"]],
   "Echonomics.HundianCodebookRunbook":
   [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/HundianCodebookRunbook.olean"]],
+  "Echonomics.HlixInfrastructure":
+  [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/HlixInfrastructure.olean"]],
   "Echonomics.EnergyLedger":
   [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/EnergyLedger.olean"]],
+  "Echonomics.DualPhaseLogic":
+  [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/DualPhaseLogic.olean"]],
   "Echonomics.Core":
   [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/Core.olean"]],
   "Echonomics.CivicInfrastructureSpec":
@@ -29,5 +35,7 @@
   "Echonomics.CivicDunaGate":
   [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/CivicDunaGate.olean"]],
   "Echonomics.BuurtzorgModel":
-  [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/BuurtzorgModel.olean"]]},
+  [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/BuurtzorgModel.olean"]],
+  "Echonomics.AmyMcCaeFramework":
+  [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/AmyMcCaeFramework.olean"]]},
  "dynlibs": []}

@@ -64,6 +64,45 @@ def adr0018 : ADR := {
   links := []
 }
 
+/-- ADR-0022 declaration (renumbered ADR-0016): Eight Virtues of Buurtzorg
+    Self-Governing Care Model. -/
+def adr0022 : ADR := {
+  id := 22,
+  title := "Eight Virtues of Buurtzorg Self-Governing Care Model",
+  status := ADRStatus.Accepted,
+  context := "Integrate Buurtzorg self-governing team principles into non-hierarchical civic infrastructure.",
+  decision := "Formally bind self-governing care team sizes (max 12 nurses) and autonomous decision gates.",
+  consequences := ["Autonomous care team operation", "Zero administrative bloat"],
+  supersedes := none,
+  links := []
+}
+
+/-- ADR-0024 declaration (renumbered ADR-0017): Buurtzorg Civic Infrastructure
+    Integration Schema. -/
+def adr0024 : ADR := {
+  id := 24,
+  title := "Buurtzorg Civic Infrastructure Integration Schema",
+  status := ADRStatus.Accepted,
+  context := "Map Buurtzorg nursing teams to DUNA governance nodes and local resource allocation gates.",
+  decision := "Connect care teams to DUNA constitutional voting gates and local asset routers.",
+  consequences := ["Direct healthcare resource routing", "Civic governance integration"],
+  supersedes := none,
+  links := []
+}
+
+/-- ADR-0025 declaration (renumbered ADR-0018): Buurtzorg Non-Coercive Coaching
+    & Resolution Model. -/
+def adr0025 : ADR := {
+  id := 25,
+  title := "Buurtzorg Non-Coercive Coaching & Resolution Model",
+  status := ADRStatus.Accepted,
+  context := "Establish non-coercive conflict resolution and advisory coaching gates.",
+  decision := "Enforce non-coercive coaching protocols prior to formal dispute escalation.",
+  consequences := ["Non-coercive resolution", "Restorative civic harmony"],
+  supersedes := none,
+  links := []
+}
+
 /-! ## ADR-0016: Eight Virtues & Self-Governing Teams -/
 
 /-- The eight Bushidō virtues formalized as duty code for people who hold

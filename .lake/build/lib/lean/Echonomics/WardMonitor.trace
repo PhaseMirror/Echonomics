@@ -1,0 +1,33 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["c8fa5ef4cc6bd763.olean"],
+  "m": false,
+  "i": "678cbce4c1323beb.ilean",
+  "c": "2a0c920d0c256021.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/lean /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/WardMonitor.lean -o /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/WardMonitor.olean -i /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/lib/lean/Echonomics/WardMonitor.ilean -c /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/WardMonitor.c --setup /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/WardMonitor.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["deps",
+   [["Echonomics/Echonomics:extraDep",
+     [["@Echonomics:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["Echonomics.Core transitive imports (legacy)", "00000000000006bb"],
+      ["Echonomics.Core:importAllArts", "74c47d4f1dfe6424"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
+   "3eca9d16ab6c877d"],
+  ["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/lean/Echonomics/WardMonitor.lean",
+   "93aa4e63157408ea"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: Echonomics.WardMonitor", "40bd42370604efe0"],
+  ["Package.id?: (some Echonomics)", "d80dab19a23b5a78"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "a7291bb23852a710"}

@@ -1,0 +1,18 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs": "a59a8ee20789e1a9.o",
+ "log":
+ [{"message":
+   ".> /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/clang -c -o /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/HlixInfrastructure.c.o.export /media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/HlixInfrastructure.c -I /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/include -fstack-clash-protection -ffp-contract=off -fdata-sections -ffunction-sections -fPIC -fvisibility=hidden -Wno-unused-command-line-argument --sysroot /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2 -nostdinc -isystem /home/citizen/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/include/clang -O3 -DNDEBUG -DLEAN_EXPORTING",
+   "level": "trace"}],
+ "inputs":
+ [["Echonomics.HlixInfrastructure:c",
+   [["/media/citizen/b361d448-7c51-413a-aa23-9515cb626930/home/citizen/Multiplicity/packages/Echonomics/.lake/build/ir/Echonomics/HlixInfrastructure.c",
+     "81adde5fd418dfcf"],
+    ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
+     "3eca9d16ab6c877d"]]],
+  ["Lean 4.33.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17",
+   "3eca9d16ab6c877d"],
+  ["traceArgs: #[-O3, -DNDEBUG, -DLEAN_EXPORTING]", "c1efb66122fb2b9a"],
+  ["x86_64-unknown-linux-gnu", "53a0e8937c307c28"]],
+ "depHash": "788990b5e4c5b51c"}
