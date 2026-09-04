@@ -18,6 +18,7 @@ pub mod ward_monitor;
 pub mod spiralcore_engine;
 pub mod v4p_wada;
 pub mod bushido_mcp;
+pub mod riemann_duality;
 
 pub use hundian::{HundianState, PauliKey, GateResult, SpinTag, PeriodStatus};
 pub use duna::DunaGovernance;
@@ -38,3 +39,4 @@ pub use ward_monitor::{WardState, MonitorEntry, ENERGY_RED_BOUND, TDI_AMBER_BOUN
 pub use spiralcore_engine::{SpiralcoreStateVector, SpiralcoreVersion};
 pub use v4p_wada::{V4pAddress, AgentDomainType, AgentRole, RootElectionState, RouteDemarcationResult};
 pub use bushido_mcp::{Witness, WitnessStore, CCommitment, CError};
+pub use riemann_duality::{calculate_chebyshev_psi, calculate_spectral_psi_truncated, evaluate_duality_discrepancy, prime_valuation};
